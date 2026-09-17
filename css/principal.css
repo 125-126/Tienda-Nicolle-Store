@@ -2904,3 +2904,29 @@ a {
         font-size: 8px !important;
     }
 }
+
+/* =========================================================
+   HERO — IMAGEN RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .hero {
+        min-height: 570px;
+
+        background-position: 65% center;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .hero {
+        min-height: 510px;
+
+        background-position: 68% center;
+    }
+
+}
+
+
