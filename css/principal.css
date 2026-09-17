@@ -636,144 +636,79 @@ ol {
 
 
 /* ============================================================
-   14. HERO
+   14. HERO — SOLO IMAGEN
    ============================================================ */
 
 .hero {
     position: relative;
 
-    min-height: 650px;
+    width: 100%;
 
-    display: flex;
+    height: 650px;
 
-    align-items: center;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(45, 25, 30, 0.66),
-            rgba(45, 25, 30, 0.22)
-        ),
-        url("../img/hero.jpeg")
-        center center /
-        cover
-        no-repeat;
-
-    color:
-        var(--white);
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
+    overflow: hidden;
 
     background:
-        linear-gradient(
-            180deg,
-            rgba(30, 18, 21, 0.08),
-            rgba(30, 18, 21, 0.18)
-        );
-
-    pointer-events: none;
+        var(--cream-dark);
 }
 
-.hero-content {
-    position: relative;
-
-    z-index: 2;
-
-    width: min(
-        700px,
-        100%
-    );
-
-    padding: 80px 0;
-}
-
-.hero-kicker {
+.hero-image {
     display: block;
 
-    margin-bottom: 18px;
+    width: 100%;
+    height: 100%;
 
-    color:
-        var(--rose-light);
+    object-fit: cover;
 
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 0.25em;
-
-    text-transform: uppercase;
+    object-position: center center;
 }
 
-.hero h1 {
-    max-width: 680px;
 
-    margin: 0 0 22px;
+/* ============================================================
+   HERO — TABLET
+   ============================================================ */
 
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+@media (max-width: 850px) {
 
-    font-size:
-        clamp(48px, 6vw, 78px);
+    .hero {
+        height: 520px;
+    }
 
-    font-weight: 500;
-
-    line-height: 0.95;
+    .hero-image {
+        object-position: center center;
+    }
 }
 
-.hero p {
-    max-width: 530px;
 
-    margin: 0 0 30px;
+/* ============================================================
+   HERO — CELULAR
+   ============================================================ */
 
-    color:
-        rgba(255, 255, 255, 0.88);
+@media (max-width: 650px) {
 
-    font-size: 15px;
+    .hero {
+        height: 430px;
+    }
 
-    line-height: 1.8;
+    .hero-image {
+        object-position: center center;
+    }
 }
 
-.hero-actions {
-    display: flex;
 
-    flex-wrap: wrap;
+/* ============================================================
+   HERO — CELULAR PEQUEÑO
+   ============================================================ */
 
-    gap: 12px;
-}
+@media (max-width: 400px) {
 
-.hero-scroll {
-    position: absolute;
+    .hero {
+        height: 360px;
+    }
 
-    left: 50%;
-    bottom: 25px;
-
-    z-index: 3;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    color:
-        rgba(255, 255, 255, 0.7);
-
-    font-size: 8px;
-    font-weight: 700;
-
-    letter-spacing: 0.2em;
-
-    text-transform: uppercase;
-
-    transform:
-        translateX(-50%);
+    .hero-image {
+        object-position: center center;
+    }
 }
 
 
