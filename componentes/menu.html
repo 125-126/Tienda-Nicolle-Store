@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nicolle Store</title>
+
+    <!-- CSS PRINCIPAL -->
+    <link
+        rel="stylesheet"
+        href="../css/principal.css"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body class="menu-page">
+
+
+    <!-- =====================================================
+         BARRA SUPERIOR
+         ===================================================== -->
+
+    <div class="top-bar">
+
+        <div class="top-bar-inner">
+
+            <div class="top-bar-message">
+                <i class="fa-regular fa-heart"></i>
+
+                <span>
+                    Envíos y atención personalizada
+                </span>
+            </div>
+
+            <span class="top-bar-separator">
+                •
+            </span>
+
+            <div class="top-bar-message">
+
+                <span>
+                    Descubre tu ritual de belleza
+                </span>
+
+                <i class="fa-solid fa-sparkles"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER PRINCIPAL
+         ===================================================== -->
+
+    <header
+        class="site-header"
+        id="siteHeader"
+    >
+
+        <div class="header-inner">
+
+
+            <!-- =================================================
+                 LOGO
+                 ================================================= -->
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="Nicolle Store - Inicio"
+            >
+
+                <span class="brand-script">
+                    Nicolle
+                </span>
+
+                <span class="brand-store">
+                    STORE
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+                 ================================================= -->
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="../index.html"
+                    class="active"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="../paginas/cabello.html"
+                >
+                    Cabello
+                </a>
+
+                <a
+                    href="../paginas/piel.html"
+                >
+                    Piel
+                </a>
+
+                <a
+                    href="../paginas/maquillaje.html"
+                >
+                    Maquillaje
+                </a>
+
+                <a
+                    href="../paginas/pestanas.html"
+                >
+                    Pestañas
+                </a>
+
+                <a
+                    href="../paginas/belleza.html"
+                >
+                    Belleza
+                </a>
+
+            </nav>
+
+
+
+            <!-- =================================================
+                 ACCIONES
+                 ================================================= -->
+
+            <div class="header-actions">
+
+
+                <!-- BUSCAR -->
+
+                <button
+                    type="button"
+                    class="header-action"
+                    id="searchButton"
+                    aria-label="Buscar"
+                    title="Buscar"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+
+                <!-- FAVORITOS -->
+
+                <button
+                    type="button"
+                    class="header-action"
+                    id="favoriteButton"
+                    aria-label="Favoritos"
+                    title="Favoritos"
+                >
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </button>
+
+
+
+                <!-- CARRITO -->
+
+                <button
+                    type="button"
+                    class="header-action cart-button"
+                    id="cartButton"
+                    aria-label="Carrito"
+                    title="Carrito"
+                >
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+
+
+                <!-- MENÚ MÓVIL -->
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PANEL DE BÚSQUEDA
+         ===================================================== -->
+
+    <div
+        class="search-panel"
+        id="searchPanel"
+        aria-hidden="true"
+    >
+
+        <div class="search-panel-inner">
+
+
+            <div class="search-panel-header">
+
+                <span class="search-panel-label">
+                    Buscar en Nicolle Store
+                </span>
+
+                <button
+                    type="button"
+                    class="search-close"
+                    id="closeSearch"
+                    aria-label="Cerrar búsqueda"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="search-field">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="¿Qué estás buscando?"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
