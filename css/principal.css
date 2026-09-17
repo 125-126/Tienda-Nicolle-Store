@@ -636,35 +636,26 @@ ol {
 
 
 /* ============================================================
-   14. HERO
+   14. HERO — IMAGEN DIRECTAMENTE DESDE CSS
    ============================================================ */
 
 .hero {
     position: relative;
+
     width: 100%;
     height: 650px;
+
     overflow: hidden;
-    background: #eee;
-}
 
+    /* ========================================================
+       RUTA DE LA IMAGEN
+       ======================================================== */
 
-/* ============================================================
-   IMAGEN HERO
-   ============================================================ */
+    background-image: url("../img/hero.jpeg");
 
-.hero-image {
-    position: absolute;
-    inset: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center center;
-
-    z-index: 1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 
@@ -685,8 +676,14 @@ ol {
 
     color: #ffffff;
 
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.30);
 }
+
+
+/* ============================================================
+   PEQUEÑO TEXTO SUPERIOR
+   ============================================================ */
 
 .hero-kicker {
     display: block;
@@ -703,12 +700,21 @@ ol {
     text-transform: uppercase;
 }
 
+
+/* ============================================================
+   TITULO
+   ============================================================ */
+
 .hero-content h1 {
     margin: 0;
 
-    font-family: "Cormorant Garamond", Georgia, serif;
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 
-    font-size: clamp(42px, 5vw, 64px);
+    font-size:
+        clamp(42px, 5vw, 64px);
 
     font-weight: 500;
 
@@ -722,6 +728,11 @@ ol {
 
     font-style: italic;
 }
+
+
+/* ============================================================
+   DESCRIPCIÓN
+   ============================================================ */
 
 .hero-content p {
     margin: 13px 0 0;
@@ -743,6 +754,8 @@ ol {
 
     .hero {
         height: 520px;
+
+        background-position: center center;
     }
 
     .hero-content {
@@ -766,10 +779,8 @@ ol {
 
     .hero {
         height: 430px;
-    }
 
-    .hero-image {
-        object-position: center center;
+        background-position: center center;
     }
 
     .hero-content {
@@ -790,6 +801,7 @@ ol {
 
     .hero-content h1 {
         font-size: 34px;
+
         line-height: 0.98;
     }
 
@@ -811,6 +823,8 @@ ol {
 
     .hero {
         height: 360px;
+
+        background-position: center center;
     }
 
     .hero-content {
@@ -820,19 +834,18 @@ ol {
         width: 220px;
     }
 
-    .hero-content h1 {
-        font-size: 30px;
-    }
-
     .hero-kicker {
         font-size: 6px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
     }
 
     .hero-content p {
         font-size: 7px;
     }
 }
-
 /* ============================================================
    15. BOTONES
    ============================================================ */
