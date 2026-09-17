@@ -1091,7 +1091,7 @@ ol {
 
 
 /* ============================================================
-   17. CATEGORÍAS
+   CATEGORÍAS
    ============================================================ */
 
 .category-grid {
@@ -1099,52 +1099,68 @@ ol {
     display: grid;
 
     grid-template-columns:
-        repeat(
-            4,
-            minmax(0, 1fr)
-        );
+        repeat(4, minmax(0, 1fr));
 
     gap: 18px;
 }
+
 
 .category-card {
 
     position: relative;
 
-    min-height: 470px;
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 460px;
 
     overflow: hidden;
 
-    background:
-        var(--white);
+    background: var(--white);
+
+    color: var(--text);
 
     border:
-        1px solid var(--border);
+        1px solid
+        rgba(79, 43, 48, 0.08);
 
     border-radius: 6px;
 
     box-shadow:
-        var(--shadow-sm);
+        0 8px 28px
+        rgba(79, 43, 48, 0.06);
 
     transition:
-        transform var(--transition),
-        box-shadow var(--transition);
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
 }
+
 
 .category-card:hover {
 
     transform:
-        translateY(-6px);
+        translateY(-7px);
+
+    border-color:
+        rgba(79, 43, 48, 0.14);
 
     box-shadow:
-        var(--shadow-lg);
+        0 18px 40px
+        rgba(79, 43, 48, 0.12);
 }
+
+
+/* ------------------------------------------------------------
+   IMAGEN
+   ------------------------------------------------------------ */
 
 .category-image {
 
     position: relative;
 
-    height: 335px;
+    height: 350px;
 
     overflow: hidden;
 
@@ -1152,35 +1168,81 @@ ol {
         var(--cream-dark);
 }
 
+
+.category-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 60%,
+            rgba(0, 0, 0, 0.10) 100%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.45s ease;
+}
+
+
+.category-card:hover
+.category-image::after {
+
+    opacity: 1;
+}
+
+
 .category-image img {
 
     width: 100%;
     height: 100%;
 
+    max-width: none;
+
+    display: block;
+
     object-fit: cover;
 
     transition:
-        transform 0.6s ease;
+        transform 0.8s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
 }
+
 
 .category-card:hover
 .category-image img {
 
     transform:
-        scale(1.05);
+        scale(1.055);
 }
+
+
+/* ------------------------------------------------------------
+   INFORMACIÓN
+   ------------------------------------------------------------ */
 
 .category-info {
 
-    position: relative;
-
-    min-height: 135px;
+    flex: 1;
 
     display: grid;
 
     grid-template-columns:
         auto
-        1fr
+        minmax(0, 1fr)
         auto;
 
     align-items: center;
@@ -1188,37 +1250,47 @@ ol {
     gap: 12px;
 
     padding:
-        20px;
-    
+        18px 17px;
+
     background:
         var(--white);
 }
 
-.category-info > span {
 
-    align-self: flex-start;
+.category-number {
 
-    padding-top: 2px;
+    align-self: start;
+
+    padding-top: 3px;
 
     color:
         var(--rose);
 
     font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+        "DM Sans",
+        sans-serif;
 
-    font-size: 14px;
+    font-size: 9px;
 
-    font-style: italic;
+    font-weight: 600;
+
+    letter-spacing:
+        0.08em;
 }
 
-.category-info h3 {
 
-    margin: 0 0 5px;
+.category-text {
+
+    min-width: 0;
+}
+
+
+.category-text h3 {
+
+    margin: 0 0 4px;
 
     color:
-        var(--brown);
+        var(--text);
 
     font-family:
         "Cormorant Garamond",
@@ -1229,55 +1301,87 @@ ol {
 
     font-weight: 600;
 
-    line-height: 1.05;
+    line-height: 1;
+
+    letter-spacing:
+        -0.01em;
+
+    transition:
+        color 0.3s ease;
 }
 
-.category-info p {
+
+.category-card:hover
+.category-text h3 {
+
+    color:
+        var(--wine);
+}
+
+
+.category-text p {
 
     margin: 0;
 
     color:
         var(--text-light);
 
-    font-size: 11px;
+    font-size: 10px;
 
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
-.category-info > i {
 
-    width: 32px;
-    height: 32px;
+/* ------------------------------------------------------------
+   FLECHA
+   ------------------------------------------------------------ */
+
+.category-arrow {
+
+    width: 34px;
+    height: 34px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(79, 43, 48, 0.14);
+
     border-radius: 50%;
 
-    background:
-        var(--cream-dark);
-
     color:
-        var(--wine);
+        var(--text);
 
-    font-size: 11px;
+    font-size: 9px;
 
     transition:
-        all var(--transition);
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
 }
 
+
 .category-card:hover
-.category-info > i {
+.category-arrow {
 
     background:
+        var(--wine);
+
+    border-color:
         var(--wine);
 
     color:
         var(--white);
-}
 
+    transform:
+        translateX(3px);
+}
 
 /* ============================================================
    18. PRODUCTOS
@@ -2426,6 +2530,7 @@ ol {
 
     .container {
         width: calc(100% - 28px);
+        max-width: none;
     }
 
 
@@ -2487,9 +2592,12 @@ ol {
     .cart-count {
         min-width: 14px;
         height: 14px;
+
         top: -3px;
         right: -3px;
+
         font-size: 7px;
+        line-height: 14px;
     }
 
     .menu-frame {
@@ -2538,6 +2646,8 @@ ol {
     }
 
     .section-heading p {
+        max-width: 340px;
+
         font-size: 11px;
         line-height: 1.65;
     }
@@ -2549,34 +2659,44 @@ ol {
 
     .hero {
         position: relative;
+
+        width: 100%;
         height: 430px;
+
         overflow: hidden;
     }
 
     /*
-     * La imagen ahora funciona como elemento real.
-     * Esto evita problemas de rutas y mejora el control
-     * sobre el recorte en celulares.
+     * IMAGEN REAL DEL HERO
      */
 
     .hero-image {
         position: absolute;
+
         inset: 0;
 
         width: 100%;
         height: 100%;
+
         max-width: none;
 
-        object-fit: cover;
-        object-position: 62% center;
-
         display: block;
+
+        object-fit: cover;
+
+        object-position: 62% center;
     }
+
+
+    /*
+     * CAPA DE LEGIBILIDAD
+     */
 
     .hero::after {
         content: "";
 
         position: absolute;
+
         inset: 0;
 
         z-index: 1;
@@ -2587,11 +2707,16 @@ ol {
             linear-gradient(
                 180deg,
                 rgba(25, 12, 17, 0.03) 0%,
-                rgba(25, 12, 17, 0.06) 42%,
-                rgba(25, 12, 17, 0.32) 72%,
-                rgba(25, 12, 17, 0.62) 100%
+                rgba(25, 12, 17, 0.06) 40%,
+                rgba(25, 12, 17, 0.30) 70%,
+                rgba(25, 12, 17, 0.68) 100%
             );
     }
+
+
+    /*
+     * CONTENIDO
+     */
 
     .hero-content {
         position: absolute;
@@ -2612,15 +2737,19 @@ ol {
         letter-spacing: 0.20em;
 
         text-shadow:
-            0 2px 10px rgba(0, 0, 0, 0.35);
+            0 2px 10px
+            rgba(0, 0, 0, 0.35);
     }
 
     .hero-content h1 {
+        margin: 0;
+
         font-size: 34px;
         line-height: 0.98;
 
         text-shadow:
-            0 3px 18px rgba(0, 0, 0, 0.40);
+            0 3px 18px
+            rgba(0, 0, 0, 0.40);
     }
 
     .hero-content p {
@@ -2630,7 +2759,8 @@ ol {
         letter-spacing: 0.04em;
 
         text-shadow:
-            0 2px 10px rgba(0, 0, 0, 0.35);
+            0 2px 10px
+            rgba(0, 0, 0, 0.35);
     }
 
 
@@ -2659,6 +2789,7 @@ ol {
         margin-bottom: 13px;
 
         font-size: clamp(31px, 9vw, 40px);
+
         line-height: 1;
     }
 
@@ -2679,7 +2810,10 @@ ol {
 
     .category-grid {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
 
         gap: 10px;
     }
@@ -2701,12 +2835,26 @@ ol {
             rgba(79, 43, 48, 0.07);
     }
 
+
+    /* IMAGEN */
+
     .category-image {
         height: 62%;
     }
 
+    .category-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* INFORMACIÓN */
+
     .category-info {
         min-height: 0;
+
         height: 38%;
 
         display: grid;
@@ -2723,12 +2871,26 @@ ol {
         padding: 9px 8px;
     }
 
-    .category-info > span {
-        font-size: 9px;
+
+    /* NÚMERO */
+
+    .category-number {
+        align-self: start;
+
+        padding-top: 2px;
+
+        font-size: 8px;
     }
 
-    .category-info h3 {
-        margin-bottom: 2px;
+
+    /* TEXTO */
+
+    .category-text {
+        min-width: 0;
+    }
+
+    .category-text h3 {
+        margin: 0 0 2px;
 
         font-size:
             clamp(
@@ -2740,8 +2902,10 @@ ol {
         line-height: 1;
     }
 
-    .category-info p {
+    .category-text p {
         max-width: 100%;
+
+        margin: 0;
 
         font-size: 7px;
         line-height: 1.3;
@@ -2754,9 +2918,19 @@ ol {
         overflow: hidden;
     }
 
-    .category-info > i {
+
+    /* FLECHA */
+
+    .category-arrow {
         width: 24px;
         height: 24px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
 
         font-size: 8px;
     }
@@ -2768,7 +2942,10 @@ ol {
 
     .product-grid {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
 
         gap: 10px;
     }
@@ -2822,6 +2999,7 @@ ol {
         min-height: 430px;
 
         display: flex;
+
         align-items: flex-end;
 
         overflow: hidden;
@@ -2832,10 +3010,13 @@ ol {
     }
 
 
-    /* IMAGEN */
+    /* --------------------------------------------------------
+       IMAGEN
+       -------------------------------------------------------- */
 
     .beauty-banner-image {
         position: absolute;
+
         inset: 0;
 
         z-index: 1;
@@ -2853,11 +3034,6 @@ ol {
 
         object-fit: cover;
 
-        /*
-         * Ajuste pensado para celular.
-         * Si la modelo/producto de la foto está
-         * a otro lado, este valor se puede modificar.
-         */
         object-position: 60% center;
 
         transition:
@@ -2871,16 +3047,12 @@ ol {
 
     .beauty-banner-overlay {
         position: absolute;
+
         inset: 0;
 
         z-index: 2;
 
         pointer-events: none;
-
-        /*
-         * Más oscuro en la parte inferior,
-         * exactamente donde vive el texto.
-         */
 
         background:
             linear-gradient(
@@ -2917,7 +3089,8 @@ ol {
         font-size: 8px;
 
         text-shadow:
-            0 2px 8px rgba(0, 0, 0, 0.35);
+            0 2px 8px
+            rgba(0, 0, 0, 0.35);
     }
 
     .beauty-banner-content h2 {
@@ -2952,6 +3125,7 @@ ol {
 
     .beauty-banner-content h2 em {
         color: var(--rose-light);
+
         font-style: italic;
     }
 
@@ -2961,7 +3135,12 @@ ol {
         margin: 0 0 20px;
 
         color:
-            rgba(255, 255, 255, 0.94);
+            rgba(
+                255,
+                255,
+                255,
+                0.94
+            );
 
         font-size: 10px;
 
@@ -2995,17 +3174,29 @@ ol {
 
         border:
             1px solid
-            rgba(255, 255, 255, 0.78);
+            rgba(
+                255,
+                255,
+                255,
+                0.78
+            );
 
         border-radius: 2px;
 
         background:
-            rgba(255, 255, 255, 0.10);
+            rgba(
+                255,
+                255,
+                255,
+                0.10
+            );
 
         color: var(--white);
 
         backdrop-filter: blur(9px);
-        -webkit-backdrop-filter: blur(9px);
+
+        -webkit-backdrop-filter:
+            blur(9px);
 
         font-size: 8px;
 
@@ -3027,6 +3218,7 @@ ol {
             background 0.35s ease;
     }
 
+
     .beauty-button::before {
         content: "";
 
@@ -3036,7 +3228,8 @@ ol {
 
         z-index: -1;
 
-        background: var(--white);
+        background:
+            var(--white);
 
         transform:
             translateX(-101%);
@@ -3045,11 +3238,14 @@ ol {
             transform 0.35s ease;
     }
 
+
     .beauty-button span,
     .beauty-button i {
         position: relative;
+
         z-index: 2;
     }
+
 
     .beauty-button i {
         font-size: 9px;
@@ -3058,6 +3254,7 @@ ol {
             transform 0.35s ease;
     }
 
+
     .beauty-button:hover {
         color: var(--wine);
 
@@ -3065,7 +3262,12 @@ ol {
             var(--white);
 
         background:
-            rgba(255, 255, 255, 0.16);
+            rgba(
+                255,
+                255,
+                255,
+                0.16
+            );
 
         transform:
             translateY(-2px);
@@ -3075,10 +3277,12 @@ ol {
             rgba(0, 0, 0, 0.18);
     }
 
+
     .beauty-button:hover::before {
         transform:
             translateX(0);
     }
+
 
     .beauty-button:hover i {
         transform:
@@ -3170,7 +3374,10 @@ ol {
 
     .footer-grid {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
 
         gap: 28px 18px;
 
@@ -3268,12 +3475,19 @@ ol {
 
     .brand-store {
         font-size: 6px;
+        letter-spacing: 0.20em;
     }
 
     .header-action,
     .mobile-menu-button {
         width: 28px;
         height: 28px;
+    }
+
+    .header-action svg,
+    .mobile-menu-button svg {
+        width: 13px;
+        height: 13px;
     }
 
     .menu-frame {
@@ -3297,14 +3511,27 @@ ol {
         object-position: 64% center;
     }
 
+    .hero::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(25, 12, 17, 0.03) 0%,
+                rgba(25, 12, 17, 0.08) 40%,
+                rgba(25, 12, 17, 0.34) 68%,
+                rgba(25, 12, 17, 0.72) 100%
+            );
+    }
+
     .hero-content {
         left: 16px;
         bottom: 22px;
+
         width: 220px;
         max-width: calc(100% - 32px);
     }
 
     .hero-kicker {
+        margin-bottom: 6px;
         font-size: 6px;
     }
 
@@ -3313,6 +3540,7 @@ ol {
     }
 
     .hero-content p {
+        margin-top: 7px;
         font-size: 7px;
     }
 
@@ -3327,6 +3555,11 @@ ol {
 
     .section-heading {
         margin-bottom: 23px;
+        gap: 8px;
+    }
+
+    .section-eyebrow {
+        font-size: 7px;
     }
 
     .section-heading h2 {
@@ -3336,6 +3569,53 @@ ol {
                 9vw,
                 36px
             );
+    }
+
+    .section-heading p {
+        max-width: 300px;
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+
+    /* --------------------------------------------------------
+       INTRO
+       -------------------------------------------------------- */
+
+    .intro-grid {
+        gap: 14px;
+    }
+
+    .intro-label {
+        font-size: 22px;
+    }
+
+    .intro-label > div {
+        width: 34px;
+        margin: 7px 0;
+    }
+
+    .intro-label small {
+        font-size: 6px;
+    }
+
+    .intro-content h2 {
+        font-size:
+            clamp(
+                29px,
+                9vw,
+                36px
+            );
+    }
+
+    .intro-content p {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .text-link {
+        margin-top: 14px;
+        font-size: 7px;
     }
 
 
@@ -3354,6 +3634,8 @@ ol {
                 51vw,
                 195px
             );
+
+        border-radius: 5px;
     }
 
     .category-image {
@@ -3363,21 +3645,24 @@ ol {
     .category-info {
         height: 40%;
         padding: 7px;
+        gap: 5px;
     }
 
-    .category-info > span {
-        font-size: 8px;
-    }
-
-    .category-info h3 {
-        font-size: 13px;
-    }
-
-    .category-info p {
+    .category-number {
         font-size: 7px;
     }
 
-    .category-info > i {
+    .category-text h3 {
+        margin-bottom: 2px;
+        font-size: 13px;
+    }
+
+    .category-text p {
+        font-size: 7px;
+        line-height: 1.25;
+    }
+
+    .category-arrow {
         width: 21px;
         height: 21px;
         font-size: 7px;
@@ -3392,12 +3677,22 @@ ol {
         gap: 8px;
     }
 
+    .product-card {
+        border-radius: 4px;
+    }
+
     .product-info {
         padding: 8px;
     }
 
     .product-info h3 {
+        margin-bottom: 3px;
         font-size: 14px;
+    }
+
+    .product-info p {
+        font-size: 7px;
+        line-height: 1.35;
     }
 
     .product-price {
@@ -3435,7 +3730,8 @@ ol {
     }
 
     .beauty-banner-content {
-        padding: 38px 0 32px;
+        padding:
+            38px 0 32px;
     }
 
     .beauty-banner-content .section-eyebrow {
@@ -3454,6 +3750,8 @@ ol {
                 10vw,
                 42px
             );
+
+        line-height: 0.96;
     }
 
     .beauty-banner-content p {
@@ -3487,8 +3785,13 @@ ol {
        BENEFICIOS
        -------------------------------------------------------- */
 
+    .benefits-grid {
+        gap: 8px;
+    }
+
     .benefit-item {
         padding: 12px 10px;
+        gap: 9px;
     }
 
     .benefit-icon {
@@ -3499,7 +3802,13 @@ ol {
     }
 
     .benefit-item h3 {
+        margin-bottom: 2px;
         font-size: 16px;
+    }
+
+    .benefit-item p {
+        font-size: 7px;
+        line-height: 1.4;
     }
 
 
@@ -3509,6 +3818,7 @@ ol {
 
     .newsletter-box {
         padding: 22px 15px;
+        gap: 17px;
     }
 
     .newsletter-content h2 {
@@ -3522,6 +3832,16 @@ ol {
 
     .newsletter-content p {
         font-size: 9px;
+        line-height: 1.6;
+    }
+
+    .newsletter-input input {
+        height: 40px;
+        font-size: 9px;
+    }
+
+    .newsletter-form .btn-primary {
+        min-height: 40px;
     }
 
 
@@ -3539,6 +3859,16 @@ ol {
 
     .footer-column a {
         font-size: 8px;
+    }
+
+    .footer-column h3 {
+        font-size: 7px;
+    }
+
+    .footer-social a {
+        width: 26px;
+        height: 26px;
+        font-size: 9px;
     }
 
 
