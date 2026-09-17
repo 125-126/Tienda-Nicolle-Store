@@ -3173,3 +3173,124 @@ ol {
             auto !important;
     }
 }
+
+
+/* =========================================================
+   ANIMACIONES CONTROLADAS POR JAVASCRIPT
+   ========================================================= */
+
+.intro-content,
+.intro-label,
+.section-heading,
+.category-card,
+.beauty-banner-image,
+.beauty-banner-content,
+.benefit-item,
+.newsletter-box,
+.footer-brand,
+.footer-column {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.intro-label {
+    transform: translateX(-20px);
+}
+
+.category-card {
+    transform: translateY(30px);
+}
+
+.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) translateX(0) !important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.hero.hero-loaded {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
+
+.category-image img,
+.beauty-banner-image img {
+    transition: transform 0.6s ease;
+}
+
+.image-loaded {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast.error {
+    /* El estilo visual puede ser definido por tu CSS principal */
+}
+
+
+/* =========================================================
+   RESPETO A REDUCIR MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .intro-content,
+    .intro-label,
+    .section-heading,
+    .category-card,
+    .beauty-banner-image,
+    .beauty-banner-content,
+    .benefit-item,
+    .newsletter-box,
+    .footer-brand,
+    .footer-column {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
