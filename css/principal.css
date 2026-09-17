@@ -772,7 +772,7 @@ ol {
 
 
 /* ============================================================
-   CELULAR
+   HERO — CELULAR
    ============================================================ */
 
 @media (max-width: 650px) {
@@ -780,7 +780,16 @@ ol {
     .hero {
         height: 430px;
 
+        background-image: url("../img/hero.jpeg");
+
+        background-size: cover;
+
+        /*
+         * Ajustamos la fotografía para celular
+         */
         background-position: center center;
+
+        background-repeat: no-repeat;
     }
 
     .hero-content {
@@ -801,7 +810,6 @@ ol {
 
     .hero-content h1 {
         font-size: 34px;
-
         line-height: 0.98;
     }
 
@@ -816,7 +824,7 @@ ol {
 
 
 /* ============================================================
-   CELULAR PEQUEÑO
+   HERO — CELULAR PEQUEÑO
    ============================================================ */
 
 @media (max-width: 400px) {
@@ -824,7 +832,13 @@ ol {
     .hero {
         height: 360px;
 
+        background-image: url("../img/hero.jpeg");
+
+        background-size: cover;
+
         background-position: center center;
+
+        background-repeat: no-repeat;
     }
 
     .hero-content {
