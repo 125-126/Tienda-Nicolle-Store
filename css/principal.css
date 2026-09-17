@@ -1468,47 +1468,124 @@ ol {
         var(--white);
 }
 
+
+/* ============================================================
+   IMAGEN
+   ============================================================ */
+
 .beauty-banner-image {
 
     position: absolute;
 
     inset: 0;
 
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+.beauty-banner-image img {
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    display: block;
+
+    transition:
+        transform 1.2s ease;
+}
+
+
+/* ============================================================
+   OVERLAY
+   ============================================================ */
+
+.beauty-banner-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    /*
+     * El lado izquierdo queda más oscuro
+     * para que el texto siempre tenga contraste.
+     *
+     * El lado derecho permanece más transparente
+     * para conservar la fotografía.
+     */
+
     background:
         linear-gradient(
             90deg,
-            rgba(55, 24, 32, 0.86),
-            rgba(55, 24, 32, 0.25)
-        ),
-        url("../img/banner-belleza.jpg")
-        center /
-        cover
-        no-repeat;
+            rgba(45, 20, 27, 0.82) 0%,
+            rgba(45, 20, 27, 0.60) 32%,
+            rgba(45, 20, 27, 0.24) 65%,
+            rgba(45, 20, 27, 0.08) 100%
+        );
 }
+
+
+/* ============================================================
+   CONTENIDO
+   ============================================================ */
 
 .beauty-banner-content {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 3;
 
     width:
         min(
             620px,
             100%
         );
+
+    padding:
+        80px 0;
 }
+
+
+/* ============================================================
+   ETIQUETA
+   ============================================================ */
 
 .beauty-banner-content
 .section-eyebrow {
 
+    margin-bottom: 14px;
+
     color:
         var(--rose-light);
+
+    text-shadow:
+        0 1px 8px
+        rgba(0, 0, 0, 0.25);
 }
+
+
+/* ============================================================
+   TÍTULO
+   ============================================================ */
 
 .beauty-banner-content h2 {
 
-    margin: 0 0 18px;
+    max-width: 600px;
+
+    margin: 0 0 20px;
+
+    color:
+        var(--white);
 
     font-family:
         "Cormorant Garamond",
@@ -1517,15 +1594,23 @@ ol {
 
     font-size:
         clamp(
-            42px,
+            46px,
             5vw,
-            68px
+            70px
         );
 
     font-weight: 500;
 
-    line-height: 0.95;
+    line-height: 0.94;
+
+    letter-spacing:
+        -0.02em;
+
+    text-shadow:
+        0 3px 18px
+        rgba(0, 0, 0, 0.35);
 }
+
 
 .beauty-banner-content h2 em {
 
@@ -1535,18 +1620,159 @@ ol {
     font-style: italic;
 }
 
+
+/* ============================================================
+   DESCRIPCIÓN
+   ============================================================ */
+
 .beauty-banner-content p {
 
-    max-width: 500px;
+    max-width: 480px;
 
-    margin: 0 0 28px;
+    margin: 0 0 30px;
 
     color:
-        rgba(255, 255, 255, 0.84);
+        rgba(255, 255, 255, 0.92);
 
     font-size: 14px;
 
     line-height: 1.8;
+
+    text-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.30);
+}
+
+
+/* ============================================================
+   BOTÓN PREMIUM
+   ============================================================ */
+
+.beauty-button {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    min-height: 48px;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.75);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        var(--white);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing:
+        0.14em;
+
+    text-transform:
+        uppercase;
+
+    overflow: hidden;
+
+    transition:
+        all 0.35s ease;
+}
+
+
+/* Brillo que aparece al pasar el mouse */
+
+.beauty-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        var(--white);
+
+    transform:
+        translateX(-101%);
+
+    transition:
+        transform 0.35s ease;
+
+    z-index: -1;
+}
+
+
+.beauty-button span,
+.beauty-button i {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Flecha */
+
+.beauty-button i {
+
+    font-size: 10px;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* Hover */
+
+.beauty-button:hover {
+
+    color:
+        var(--wine);
+
+    border-color:
+        var(--white);
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.16);
+}
+
+
+.beauty-button:hover::before {
+
+    transform:
+        translateX(0);
+}
+
+
+.beauty-button:hover i {
+
+    transform:
+        translateX(5px);
 }
 
 
