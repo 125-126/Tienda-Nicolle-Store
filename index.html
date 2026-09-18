@@ -4,224 +4,254 @@
 
 <head>
 
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Nicolle Store</title>
+    <title>Nicolle Store</title>
 
 
-<!-- =====================================================
-     CSS PRINCIPAL
-====================================================== -->
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
-<link
-    rel="stylesheet"
-    href="css/principal.css"
->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
+
+    <!-- =====================================================
+         CSS PRINCIPAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/principal.css"
+    >
 
 </head>
 
 <body>
 
 
-<!-- =====================================================
-     MENÚ
+    <!-- =====================================================
+         MENÚ
 
-     IMPORTANTE:
-     EL MENÚ COMPLETO ESTÁ EN:
+         IMPORTANTE:
+         EL MENÚ COMPLETO ESTÁ EN:
 
-     componentes/menu.html
+         componentes/menu.html
 
-     Aquí NO colocamos el código del menú.
-====================================================== -->
+         AQUÍ NO COLOCAMOS EL CÓDIGO DEL MENÚ.
+    ====================================================== -->
 
-<div class="menu-container">
+    <div class="menu-container">
 
-    <iframe
-        id="menuFrame"
-        src="componentes/menu.html"
-        title="Menú principal de Nicolle Store"
-        scrolling="no"
-        frameborder="0">
-    </iframe>
+        <iframe
+            id="menuFrame"
+            src="componentes/menu.html"
+            title="Menú principal de Nicolle Store"
+            scrolling="no"
+            frameborder="0">
+        </iframe>
 
-</div>
+    </div>
 
 
-<!-- =====================================================
-     CONTENIDO PRINCIPAL
-====================================================== -->
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
 
-<main id="contenido">
+    <main id="contenido">
 
-```
-<!-- =================================================
-     HERO
-================================================== -->
 
-<section class="hero">
+        <!-- =================================================
+             HERO
+        ================================================== -->
 
+        <section class="hero">
 
-    <!-- =================================================
-         VIDEO DEL HERO
-    ================================================== -->
 
-    <video
-        id="heroVideo"
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
+            <!-- =================================================
+                 VIDEO DEL HERO
+            ================================================== -->
 
-        <source
-            src="video/hero.mp4"
-            type="video/mp4"
-        >
+            <video
+                id="heroVideo"
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+            >
 
-    </video>
+                <source
+                    src="video/hero.mp4"
+                    type="video/mp4"
+                >
 
+            </video>
 
-    <!-- =================================================
-         BOTÓN DE AUDIO
-    ================================================== -->
 
-    <button
-        id="heroSoundButton"
-        class="hero-sound-button"
-        type="button"
-        aria-label="Activar sonido"
-        title="Activar sonido"
-    >
+            <!-- =================================================
+                 BOTÓN DE AUDIO
+            ================================================== -->
 
-        <i class="fa-solid fa-volume-xmark"></i>
+            <button
+                id="heroSoundButton"
+                class="hero-sound-button"
+                type="button"
+                aria-label="Activar sonido"
+                title="Activar sonido"
+            >
 
-    </button>
+                <i class="fa-solid fa-volume-xmark"></i>
 
+            </button>
 
-</section>
-```
 
-</main>
+        </section>
 
-<!-- =====================================================
-     CONTROL DEL AUDIO
-====================================================== -->
 
-<script>
+    </main>
 
-    const heroVideo = document.getElementById("heroVideo");
 
-    const heroSoundButton =
-        document.getElementById("heroSoundButton");
+    <!-- =====================================================
+         CONTROL DEL AUDIO DEL HERO
+    ====================================================== -->
 
+    <script>
 
-    heroSoundButton.addEventListener("click", function() {
+        const heroVideo =
+            document.getElementById("heroVideo");
 
+        const heroSoundButton =
+            document.getElementById("heroSoundButton");
 
-        /*
-         * Si el video está silenciado,
-         * activamos el sonido.
-         */
 
-        if (heroVideo.muted) {
+        heroSoundButton.addEventListener(
+            "click",
+            function() {
 
-            heroVideo.muted = false;
 
-            heroSoundButton.innerHTML =
-                '<i class="fa-solid fa-volume-high"></i>';
+                /*
+                 * Si el video está silenciado,
+                 * activamos el sonido.
+                 */
 
-            heroSoundButton.setAttribute(
-                "aria-label",
-                "Silenciar video"
-            );
+                if (heroVideo.muted) {
 
-            heroSoundButton.setAttribute(
-                "title",
-                "Silenciar video"
-            );
+                    heroVideo.muted = false;
 
-        }
 
+                    heroSoundButton.innerHTML =
+                        '<i class="fa-solid fa-volume-high"></i>';
 
-        /*
-         * Si el video tiene sonido,
-         * lo silenciamos.
-         */
 
-        else {
+                    heroSoundButton.setAttribute(
+                        "aria-label",
+                        "Silenciar video"
+                    );
 
-            heroVideo.muted = true;
 
-            heroSoundButton.innerHTML =
-                '<i class="fa-solid fa-volume-xmark"></i>';
+                    heroSoundButton.setAttribute(
+                        "title",
+                        "Silenciar video"
+                    );
 
-            heroSoundButton.setAttribute(
-                "aria-label",
-                "Activar sonido"
-            );
+                }
 
-            heroSoundButton.setAttribute(
-                "title",
-                "Activar sonido"
-            );
 
-        }
+                /*
+                 * Si el video tiene sonido,
+                 * lo silenciamos.
+                 */
 
-    });
+                else {
 
-</script>
+                    heroVideo.muted = true;
 
 
+                    heroSoundButton.innerHTML =
+                        '<i class="fa-solid fa-volume-xmark"></i>';
 
-<!-- =====================================================
-     AJUSTE AUTOMÁTICO DEL IFRAME
 
-     Esto permite que el menú móvil se expanda
-     cuando presionamos la hamburguesa.
-====================================================== -->
+                    heroSoundButton.setAttribute(
+                        "aria-label",
+                        "Activar sonido"
+                    );
 
-<script>
 
-    const menuFrame = document.getElementById("menuFrame");
+                    heroSoundButton.setAttribute(
+                        "title",
+                        "Activar sonido"
+                    );
 
+                }
 
-    window.addEventListener("message", function(event) {
+            }
 
-        if (!event.data) {
-            return;
-        }
+        );
 
+    </script>
 
-        if (event.data.tipo !== "nicolle-menu-altura") {
-            return;
-        }
 
+    <!-- =====================================================
+         AJUSTE AUTOMÁTICO DEL IFRAME
 
-        const altura = Number(event.data.altura);
+         Esto permite que el menú móvil se expanda
+         cuando presionamos la hamburguesa.
+    ====================================================== -->
 
+    <script>
 
-        if (!Number.isFinite(altura)) {
-            return;
-        }
+        const menuFrame =
+            document.getElementById("menuFrame");
 
 
-        menuFrame.style.height = altura + "px";
+        window.addEventListener(
+            "message",
+            function(event) {
 
-    });
 
+                if (!event.data) {
+                    return;
+                }
 
-</script>
+
+                if (
+                    event.data.tipo !==
+                    "nicolle-menu-altura"
+                ) {
+                    return;
+                }
+
+
+                const altura =
+                    Number(event.data.altura);
+
+
+                if (!Number.isFinite(altura)) {
+                    return;
+                }
+
+
+                menuFrame.style.height =
+                    altura + "px";
+
+            }
+
+        );
+
+    </script>
 
 
 </body>
 
 </html>
+
