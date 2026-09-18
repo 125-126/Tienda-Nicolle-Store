@@ -12,6 +12,11 @@
 
     <title>Nicolle Store</title>
 
+
+    <!-- =====================================================
+         CSS PRINCIPAL
+    ====================================================== -->
+
     <link
         rel="stylesheet"
         href="css/principal.css"
@@ -25,7 +30,13 @@
 
     <!-- =====================================================
          MENÚ
-         EL MENÚ COMPLETO ESTÁ EN componentes/menu.html
+
+         IMPORTANTE:
+         EL MENÚ COMPLETO ESTÁ EN:
+
+         componentes/menu.html
+
+         Aquí NO colocamos el código del menú.
     ====================================================== -->
 
     <div class="menu-container">
@@ -34,7 +45,8 @@
             id="menuFrame"
             src="componentes/menu.html"
             title="Menú principal de Nicolle Store"
-            scrolling="no">
+            scrolling="no"
+            frameborder="0">
         </iframe>
 
     </div>
@@ -42,30 +54,39 @@
 
     <!-- =====================================================
          CONTENIDO PRINCIPAL
+
+         Aquí posteriormente colocaremos:
+         - Inicio
+         - Productos
+         - Categorías
+         - etc.
     ====================================================== -->
 
-    <main id="contenido"></main>
+    <main id="contenido">
+
+    </main>
 
 
     <!-- =====================================================
-         CONTROL DE ALTURA DEL MENÚ
+         AJUSTE AUTOMÁTICO DEL IFRAME
+         
+         Esto permite que el menú móvil se expanda
+         cuando presionamos la hamburguesa.
     ====================================================== -->
 
     <script>
 
-        window.addEventListener("message", function (event) {
+        const menuFrame = document.getElementById("menuFrame");
 
-            if (
-                !event.data ||
-                event.data.tipo !== "nicolle-menu-altura"
-            ) {
+
+        window.addEventListener("message", function(event) {
+
+            if (!event.data) {
                 return;
             }
 
 
-            const iframe = document.getElementById("menuFrame");
-
-            if (!iframe) {
+            if (event.data.tipo !== "nicolle-menu-altura") {
                 return;
             }
 
@@ -78,9 +99,10 @@
             }
 
 
-            iframe.style.height = altura + "px";
+            menuFrame.style.height = altura + "px";
 
         });
+
 
     </script>
 
