@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mi Carrito | Nicolle Store</title>
 
-    <!-- Google Fonts -->
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Estilos principales -->
-    <link rel="stylesheet" href="css/principal.css">
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
-    <!-- Estilos del carrito -->
-    <link rel="stylesheet" href="css/carrito.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         ESTILOS PRINCIPALES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/principal.css"
+    >
+
+
+    <!-- =====================================================
+         ESTILOS DEL CARRITO
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/carrito.css"
+    >
+
 </head>
+
 
 <body>
 
+
     <!-- =====================================================
-         MENÚ
+         MENÚ PRINCIPAL
     ====================================================== -->
 
     <div class="menu-container">
@@ -43,7 +76,7 @@
 
 
     <!-- =====================================================
-         ENCABEZADO DEL CARRITO
+         HERO DEL CARRITO
     ====================================================== -->
 
     <section class="carrito-hero">
@@ -54,11 +87,14 @@
                 NICOLLE STORE
             </span>
 
+
             <h1>
                 Mi <em>carrito.</em>
             </h1>
 
+
             <div class="carrito-linea"></div>
+
 
             <p>
                 Revisa tus productos favoritos antes de finalizar tu compra.
@@ -70,18 +106,22 @@
 
 
     <!-- =====================================================
-         CONTENIDO DEL CARRITO
+         CONTENIDO PRINCIPAL
     ====================================================== -->
 
     <main class="carrito-contenedor">
 
-        <!-- TÍTULO -->
+
+        <!-- =================================================
+             TÍTULO
+        ================================================== -->
 
         <div class="carrito-titulo">
 
             <h2>
                 Tus productos
             </h2>
+
 
             <p>
                 Aquí aparecerán los productos que hayas agregado.
@@ -91,49 +131,43 @@
 
 
         <!-- =================================================
-             CARRITO
+             CONTENIDO DEL CARRITO
         ================================================== -->
 
         <section class="carrito-contenido">
 
-            <!-- PRODUCTOS -->
 
-            <div class="carrito-productos" id="carritoProductos">
+            <!-- =================================================
+                 LISTA DE PRODUCTOS
+            ================================================== -->
+
+            <div
+                class="carrito-productos"
+                id="carritoProductos">
 
                 <!--
-                    JavaScript colocará aquí los productos
-                    agregados al carrito.
+                    IMPORTANTE:
+
+                    No colocamos aquí manualmente el mensaje
+                    de carrito vacío.
+
+                    carrito.js se encargará de mostrar:
+
+                    - Los productos cuando existan.
+                    - El mensaje de carrito vacío cuando no existan.
                 -->
-
-                <div class="carrito-vacio" id="carritoVacio">
-
-                    <div class="carrito-vacio-icono">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </div>
-
-                    <h3>
-                        Tu carrito está vacío
-                    </h3>
-
-                    <p>
-                        Aún no has agregado ningún producto.
-                    </p>
-
-                    <a href="index.html" class="btn-seguir-comprando">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Seguir comprando
-                    </a>
-
-                </div>
 
             </div>
 
 
             <!-- =================================================
-                 RESUMEN
+                 RESUMEN DE COMPRA
             ================================================== -->
 
             <aside class="carrito-resumen">
+
+
+                <!-- CABECERA -->
 
                 <div class="resumen-cabecera">
 
@@ -144,7 +178,12 @@
                 </div>
 
 
+                <!-- DETALLE -->
+
                 <div class="resumen-detalle">
+
+
+                    <!-- PRODUCTOS -->
 
                     <div class="resumen-fila">
 
@@ -159,6 +198,8 @@
                     </div>
 
 
+                    <!-- SUBTOTAL -->
+
                     <div class="resumen-fila">
 
                         <span>
@@ -171,6 +212,8 @@
 
                     </div>
 
+
+                    <!-- ENVÍO -->
 
                     <div class="resumen-fila">
 
@@ -187,11 +230,16 @@
                 </div>
 
 
+                <!-- =================================================
+                     TOTAL
+                ================================================== -->
+
                 <div class="resumen-total">
 
                     <span>
                         Total
                     </span>
+
 
                     <strong id="totalCarrito">
                         $0.00
@@ -199,6 +247,10 @@
 
                 </div>
 
+
+                <!-- =================================================
+                     FINALIZAR POR WHATSAPP
+                ================================================== -->
 
                 <button
                     type="button"
@@ -211,6 +263,10 @@
 
                 </button>
 
+
+                <!-- =================================================
+                     CONTINUAR COMPRANDO
+                ================================================== -->
 
                 <a
                     href="index.html"
@@ -237,15 +293,22 @@
 
         <div class="footer-contenido">
 
+
+            <!-- =================================================
+                 MARCA
+            ================================================== -->
+
             <div class="footer-marca">
 
                 <h2>
                     Nicolle Store
                 </h2>
 
+
                 <p>
                     Beauty & Style
                 </p>
+
 
                 <span>
                     Belleza, estilo y detalles para ti.
@@ -254,35 +317,46 @@
             </div>
 
 
+            <!-- =================================================
+                 ENLACES
+            ================================================== -->
+
             <div class="footer-enlaces">
 
                 <h3>
                     Explora
                 </h3>
 
+
                 <a href="index.html">
                     Inicio
                 </a>
+
 
                 <a href="paginas/cabello.html">
                     Cabello
                 </a>
 
+
                 <a href="paginas/piel.html">
                     Piel
                 </a>
+
 
                 <a href="paginas/maquillaje.html">
                     Maquillaje
                 </a>
 
+
                 <a href="paginas/accesorios.html">
                     Accesorios
                 </a>
 
+
                 <a href="paginas/joyeria.html">
                     Joyería
                 </a>
+
 
                 <a href="paginas/bolsos.html">
                     Bolsos
@@ -291,21 +365,33 @@
             </div>
 
 
+            <!-- =================================================
+                 CARRITO
+            ================================================== -->
+
             <div class="footer-carrito">
 
                 <h3>
                     Tu compra
                 </h3>
 
+
                 <a href="carrito.html">
+
                     <i class="fa-solid fa-bag-shopping"></i>
+
                     Mi carrito
+
                 </a>
 
             </div>
 
         </div>
 
+
+        <!-- =================================================
+             COPYRIGHT
+        ================================================== -->
 
         <div class="footer-bottom">
 
@@ -324,24 +410,37 @@
 
     <script>
 
-        window.addEventListener("message", function(event) {
+        window.addEventListener(
+            "message",
+            function(event) {
 
-            if (!event.data) return;
+                if (!event.data) {
+                    return;
+                }
 
-            if (event.data.tipo === "nicolle-menu-altura") {
 
-                const menuFrame = document.getElementById("menuFrame");
+                if (
+                    event.data.tipo ===
+                    "nicolle-menu-altura"
+                ) {
 
-                if (menuFrame) {
+                    const menuFrame =
+                        document.getElementById(
+                            "menuFrame"
+                        );
 
-                    menuFrame.style.height =
-                        event.data.altura + "px";
+
+                    if (menuFrame) {
+
+                        menuFrame.style.height =
+                            event.data.altura + "px";
+
+                    }
 
                 }
 
             }
-
-        });
+        );
 
     </script>
 
@@ -352,5 +451,7 @@
 
     <script src="js/carrito.js"></script>
 
+
 </body>
+
 </html>
