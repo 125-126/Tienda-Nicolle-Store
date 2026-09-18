@@ -12,7 +12,6 @@
 
     <title>Nicolle Store</title>
 
-    <!-- CSS PRINCIPAL -->
     <link
         rel="stylesheet"
         href="css/principal.css"
@@ -26,12 +25,13 @@
 
     <!-- =====================================================
          MENÚ
-         El menú completo está en componentes/menu.html
+         EL MENÚ COMPLETO ESTÁ EN componentes/menu.html
     ====================================================== -->
 
     <div class="menu-container">
 
         <iframe
+            id="menuFrame"
             src="componentes/menu.html"
             title="Menú principal de Nicolle Store"
             scrolling="no">
@@ -41,13 +41,48 @@
 
 
     <!-- =====================================================
-         CONTENIDO DE LA PÁGINA
-         POR AHORA LO DEJAMOS VACÍO
+         CONTENIDO PRINCIPAL
     ====================================================== -->
 
-    <main id="contenido">
+    <main id="contenido"></main>
 
-    </main>
+
+    <!-- =====================================================
+         CONTROL DE ALTURA DEL MENÚ
+    ====================================================== -->
+
+    <script>
+
+        window.addEventListener("message", function (event) {
+
+            if (
+                !event.data ||
+                event.data.tipo !== "nicolle-menu-altura"
+            ) {
+                return;
+            }
+
+
+            const iframe = document.getElementById("menuFrame");
+
+            if (!iframe) {
+                return;
+            }
+
+
+            const altura = Number(event.data.altura);
+
+
+            if (!Number.isFinite(altura)) {
+                return;
+            }
+
+
+            iframe.style.height = altura + "px";
+
+        });
+
+    </script>
 
 
 </body>
