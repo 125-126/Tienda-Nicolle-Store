@@ -131,3 +131,343 @@ body {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            105deg,
+            #fffafa 0%,
+            #fffafa 42%,
+            #fdf4f5 100%
+        );
+
+}
+
+
+/* ============================================================
+   FOTO MARCA DE AGUA
+============================================================ */
+
+.hero-watermark {
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 58%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #fffafa 0%,
+            rgba(255, 250, 250, 0.72) 25%,
+            rgba(255, 250, 250, 0.18) 65%,
+            rgba(255, 250, 250, 0.05) 100%
+        ),
+        url("../imagenes/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.72;
+
+    pointer-events: none;
+
+}
+
+
+/* ============================================================
+   CONTENIDO
+============================================================ */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 70px 70px;
+
+}
+
+
+.hero-small {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #d79da6;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+}
+
+
+.hero h1 {
+
+    margin: 0;
+
+    color: #62bcb5;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(58px, 6vw, 92px);
+
+    font-weight: 600;
+
+    line-height: 0.92;
+
+}
+
+
+.hero p {
+
+    margin-top: 22px;
+
+    color: #8b7e80;
+
+    font-size: 15px;
+
+}
+
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 30px;
+
+    min-width: 155px;
+
+    height: 48px;
+
+    padding: 0 25px;
+
+    border-radius: 30px;
+
+    background: #62bcb5;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 25px rgba(98, 188, 181, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.hero-button:hover {
+
+    background: #d79da6;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(215, 157, 166, 0.25);
+
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 950px) {
+
+    .hero {
+
+        min-height: 560px;
+
+    }
+
+
+    .hero-watermark {
+
+        width: 65%;
+
+        opacity: 0.58;
+
+    }
+
+
+    .hero-content {
+
+        padding: 60px 35px;
+
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        min-height: 570px;
+
+        align-items: flex-end;
+
+    }
+
+
+    .hero-watermark {
+
+        top: 0;
+        right: 0;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0.38;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(255, 250, 250, 0.35) 0%,
+                rgba(255, 250, 250, 0.72) 55%,
+                #fffafa 100%
+            ),
+            url("../imagenes/hero.jpg");
+
+        background-position: center top;
+
+    }
+
+
+    .hero-content {
+
+        padding:
+            45px 24px 55px;
+
+    }
+
+
+    .hero-small {
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 58px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 13px;
+
+        margin-top: 18px;
+
+    }
+
+
+    .hero-button {
+
+        margin-top: 24px;
+
+        height: 46px;
+
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR PEQUEÑO
+============================================================ */
+
+@media (max-width: 390px) {
+
+    .hero {
+
+        min-height: 530px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 51px;
+
+    }
+
+
+    .hero-content {
+
+        padding:
+            35px 20px 45px;
+
+    }
+
+}
+
+
+
+
+
+
