@@ -12,11 +12,15 @@
 
     <title>Nicolle Store - Menú</title>
 
+
     <!-- =====================================================
          FUENTES
     ====================================================== -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
     <link
         rel="preconnect"
@@ -29,6 +33,7 @@
         rel="stylesheet"
     >
 
+
     <!-- =====================================================
          FONT AWESOME
     ====================================================== -->
@@ -37,6 +42,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
+
 
     <style>
 
@@ -76,47 +82,62 @@
         ==================================================== */
 
         * {
+
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+
         }
 
 
         html {
+
             width: 100%;
             min-height: 100%;
+
         }
 
 
         body {
+
             width: 100%;
             min-height: 100%;
+
             margin: 0;
             padding: 0;
+
             background: #ffffff;
+
             color: var(--text);
-            font-family: "DM Sans", sans-serif;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
         }
 
 
         body.locked {
+
             overflow: hidden;
+
         }
 
 
         button,
         input {
+
             font-family: inherit;
+
         }
 
 
-        button {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-
+        button,
         a {
-            -webkit-tap-highlight-color: transparent;
+
+            -webkit-tap-highlight-color:
+                transparent;
+
         }
 
 
@@ -273,20 +294,21 @@
             position: absolute;
 
             left: 11px;
-
             right: 11px;
-
             bottom: 2px;
 
             height: 2px;
 
             border-radius: 10px;
 
-            background: var(--aqua);
+            background:
+                var(--aqua);
 
-            transform: scaleX(0);
+            transform:
+                scaleX(0);
 
-            transform-origin: center;
+            transform-origin:
+                center;
 
             transition:
                 transform 0.25s ease;
@@ -296,7 +318,8 @@
 
         .nav-link:hover {
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
             transform:
                 translateY(-1px);
@@ -314,7 +337,8 @@
 
         .nav-link.active {
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
             font-weight: 600;
 
@@ -351,16 +375,17 @@
             position: relative;
 
             width: 43px;
-
             height: 43px;
 
             border: none;
 
             border-radius: 50%;
 
-            background: transparent;
+            background:
+                transparent;
 
-            color: var(--text);
+            color:
+                var(--text);
 
             font-size: 17px;
 
@@ -411,11 +436,9 @@
             position: absolute;
 
             top: 1px;
-
             right: -1px;
 
             min-width: 17px;
-
             height: 17px;
 
             padding: 0 4px;
@@ -423,7 +446,6 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             border-radius: 50%;
@@ -431,7 +453,8 @@
             background:
                 var(--pink-dark);
 
-            color: white;
+            color:
+                white;
 
             font-size: 9px;
 
@@ -453,7 +476,6 @@
             position: relative;
 
             width: 43px;
-
             height: 43px;
 
             border: none;
@@ -466,7 +488,6 @@
             cursor: pointer;
 
             align-items: center;
-
             justify-content: center;
 
             flex-direction: column;
@@ -483,7 +504,6 @@
             display: block;
 
             width: 20px;
-
             height: 2px;
 
             border-radius: 10px;
@@ -536,7 +556,8 @@
 
             width: 100%;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
             border-top:
                 1px solid var(--border);
@@ -572,7 +593,8 @@
 
             justify-content: space-between;
 
-            color: var(--text);
+            color:
+                var(--text);
 
             text-decoration: none;
 
@@ -583,7 +605,8 @@
 
             font-weight: 500;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
             transition:
                 background 0.2s ease,
@@ -613,7 +636,8 @@
             color:
                 var(--aqua-dark);
 
-            padding-left: 29px;
+            padding-left:
+                29px;
 
         }
 
@@ -634,7 +658,8 @@
 
             gap: 10px;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
         }
 
@@ -648,9 +673,11 @@
 
             border-radius: 14px;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
-            color: var(--text);
+            color:
+                var(--text);
 
             cursor: pointer;
 
@@ -664,7 +691,8 @@
 
             font-size: 12px;
 
-            transition: 0.2s ease;
+            transition:
+                0.2s ease;
 
         }
 
@@ -729,7 +757,6 @@
             z-index: 4000;
 
             top: 0;
-
             left: 0;
 
             width: 100%;
@@ -787,14 +814,16 @@
 
             gap: 13px;
 
-            padding: 0 18px;
+            padding:
+                0 18px;
 
             border:
                 1px solid var(--border);
 
             border-radius: 30px;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
             box-shadow:
                 0 5px 20px
@@ -823,9 +852,11 @@
 
             outline: none;
 
-            background: transparent;
+            background:
+                transparent;
 
-            color: var(--text);
+            color:
+                var(--text);
 
             font-size: 14px;
 
@@ -834,7 +865,8 @@
 
         .search-input-wrapper input::placeholder {
 
-            color: #aaa;
+            color:
+                #aaa;
 
         }
 
@@ -842,7 +874,6 @@
         .search-input-wrapper button {
 
             width: 32px;
-
             height: 32px;
 
             border: none;
@@ -906,7 +937,6 @@
             z-index: 5100;
 
             top: 0;
-
             right: 0;
 
             width:
@@ -914,7 +944,8 @@
 
             height: 100vh;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
             box-shadow:
                 var(--shadow-panel);
@@ -1009,7 +1040,6 @@
         .panel-close {
 
             width: 38px;
-
             height: 38px;
 
             border: none;
@@ -1027,10 +1057,10 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            transition: 0.2s ease;
+            transition:
+                0.2s ease;
 
         }
 
@@ -1040,7 +1070,8 @@
             background:
                 var(--pink);
 
-            color: white;
+            color:
+                white;
 
             transform:
                 rotate(90deg);
@@ -1084,7 +1115,6 @@
         .empty-icon {
 
             width: 75px;
-
             height: 75px;
 
             margin-bottom: 20px;
@@ -1100,7 +1130,6 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             font-size: 25px;
@@ -1148,45 +1177,55 @@
 
             .header-inner {
 
-                padding-left: 25px;
+                padding-left:
+                    25px;
 
-                padding-right: 25px;
+                padding-right:
+                    25px;
 
-                gap: 15px;
+                gap:
+                    15px;
 
             }
 
 
             .brand-name {
 
-                font-size: 38px;
+                font-size:
+                    38px;
 
             }
 
 
             .desktop-nav {
 
-                gap: 0;
+                gap:
+                    0;
 
             }
 
 
             .nav-link {
 
-                padding-left: 7px;
+                padding-left:
+                    7px;
 
-                padding-right: 7px;
+                padding-right:
+                    7px;
 
-                font-size: 13px;
+                font-size:
+                    13px;
 
             }
 
 
             .nav-link::after {
 
-                left: 7px;
+                left:
+                    7px;
 
-                right: 7px;
+                right:
+                    7px;
 
             }
 
@@ -1201,14 +1240,16 @@
 
             .desktop-nav {
 
-                display: none;
+                display:
+                    none;
 
             }
 
 
             .header-inner {
 
-                min-height: 88px;
+                min-height:
+                    88px;
 
                 justify-content:
                     space-between;
@@ -1221,27 +1262,33 @@
 
             .header-actions {
 
-                gap: 3px;
+                gap:
+                    3px;
 
             }
 
 
             .mobile-menu-button {
 
-                display: flex;
+                display:
+                    flex;
 
             }
 
 
             .mobile-menu {
 
-                display: block;
+                display:
+                    block;
 
-                max-height: 0;
+                max-height:
+                    0;
 
-                opacity: 0;
+                opacity:
+                    0;
 
-                visibility: hidden;
+                visibility:
+                    hidden;
 
                 transition:
                     max-height 0.4s ease,
@@ -1253,11 +1300,14 @@
 
             .mobile-menu.open {
 
-                max-height: 700px;
+                max-height:
+                    700px;
 
-                opacity: 1;
+                opacity:
+                    1;
 
-                visibility: visible;
+                visibility:
+                    visible;
 
             }
 
@@ -1272,70 +1322,86 @@
 
             .header-inner {
 
-                min-height: 74px;
+                min-height:
+                    74px;
 
                 padding:
                     7px 12px;
 
-                gap: 5px;
+                gap:
+                    5px;
 
             }
 
 
             .brand-name {
 
-                font-size: 31px;
+                font-size:
+                    31px;
 
             }
 
 
             .brand-subtitle {
 
-                margin-top: 4px;
+                margin-top:
+                    4px;
 
-                padding-left: 4px;
+                padding-left:
+                    4px;
 
-                font-size: 8px;
+                font-size:
+                    8px;
 
-                letter-spacing: 3px;
+                letter-spacing:
+                    3px;
 
             }
 
 
             .header-actions {
 
-                gap: 0;
+                gap:
+                    0;
 
             }
 
 
             .header-button {
 
-                width: 37px;
+                width:
+                    37px;
 
-                height: 37px;
+                height:
+                    37px;
 
-                font-size: 15px;
+                font-size:
+                    15px;
 
             }
 
 
             .mobile-menu-button {
 
-                width: 40px;
+                width:
+                    40px;
 
-                height: 40px;
+                height:
+                    40px;
 
             }
 
 
             .mobile-nav-link {
 
-                min-height: 52px;
+                min-height:
+                    52px;
 
-                padding-left: 19px;
+                padding-left:
+                    19px;
 
-                padding-right: 19px;
+                padding-right:
+                    19px;
 
             }
 
@@ -1350,19 +1416,22 @@
 
             .mobile-menu-actions button {
 
-                min-height: 45px;
+                min-height:
+                    45px;
 
                 padding:
                     0 7px;
 
-                font-size: 11px;
+                font-size:
+                    11px;
 
             }
 
 
             .side-panel {
 
-                width: 92vw;
+                width:
+                    92vw;
 
             }
 
@@ -1377,34 +1446,41 @@
 
             .brand-name {
 
-                font-size: 28px;
+                font-size:
+                    28px;
 
             }
 
 
             .brand-subtitle {
 
-                font-size: 7px;
+                font-size:
+                    7px;
 
-                letter-spacing: 2px;
+                letter-spacing:
+                    2px;
 
             }
 
 
             .header-button {
 
-                width: 35px;
+                width:
+                    35px;
 
-                height: 35px;
+                height:
+                    35px;
 
             }
 
 
             .mobile-menu-button {
 
-                width: 38px;
+                width:
+                    38px;
 
-                height: 38px;
+                height:
+                    38px;
 
             }
 
@@ -1434,6 +1510,7 @@
 
             <a
                 href="../index.html"
+                target="_parent"
                 class="brand"
                 aria-label="Nicolle Store"
             >
@@ -1458,10 +1535,12 @@
                 aria-label="Navegación principal"
             >
 
+
                 <!-- INICIO -->
 
                 <a
                     href="../index.html"
+                    target="_parent"
                     class="nav-link"
                 >
                     Inicio
@@ -1472,6 +1551,7 @@
 
                 <a
                     href="../paginas/cabello.html"
+                    target="_parent"
                     class="nav-link"
                 >
                     Cabello
@@ -1482,6 +1562,7 @@
 
                 <a
                     href="../paginas/piel.html"
+                    target="_parent"
                     class="nav-link"
                 >
                     Piel
@@ -1492,6 +1573,7 @@
 
                 <a
                     href="../paginas/maquillaje.html"
+                    target="_parent"
                     class="nav-link"
                 >
                     Maquillaje
@@ -1502,6 +1584,7 @@
 
                 <a
                     href="../paginas/accesorios.html"
+                    target="_parent"
                     class="nav-link"
                 >
                     Accesorios
@@ -1512,6 +1595,7 @@
 
                 <a
                     href="../paginas/joyeria.html"
+                    target="_parent"
                     class="nav-link"
                 >
                     Joyería
@@ -1522,10 +1606,12 @@
 
                 <a
                     href="../paginas/bolsos.html"
+                    target="_parent"
                     class="nav-link"
                 >
                     Bolsos
                 </a>
+
 
             </nav>
 
@@ -1544,6 +1630,7 @@
                     class="header-button"
                     id="searchButton"
                     aria-label="Buscar"
+                    title="Buscar"
                 >
 
                     <i
@@ -1560,6 +1647,7 @@
                     class="header-button"
                     id="favoritesButton"
                     aria-label="Favoritos"
+                    title="Favoritos"
                 >
 
                     <i
@@ -1583,6 +1671,7 @@
                     class="header-button"
                     id="cartButton"
                     aria-label="Carrito"
+                    title="Carrito"
                 >
 
                     <i
@@ -1607,6 +1696,7 @@
                     id="mobileMenuButton"
                     aria-label="Abrir menú"
                     aria-expanded="false"
+                    title="Menú"
                 >
 
                     <span></span>
@@ -1642,6 +1732,7 @@
 
                 <a
                     href="../index.html"
+                    target="_parent"
                     class="mobile-nav-link"
                 >
 
@@ -1660,6 +1751,7 @@
 
                 <a
                     href="../paginas/cabello.html"
+                    target="_parent"
                     class="mobile-nav-link"
                 >
 
@@ -1678,6 +1770,7 @@
 
                 <a
                     href="../paginas/piel.html"
+                    target="_parent"
                     class="mobile-nav-link"
                 >
 
@@ -1696,6 +1789,7 @@
 
                 <a
                     href="../paginas/maquillaje.html"
+                    target="_parent"
                     class="mobile-nav-link"
                 >
 
@@ -1714,6 +1808,7 @@
 
                 <a
                     href="../paginas/accesorios.html"
+                    target="_parent"
                     class="mobile-nav-link"
                 >
 
@@ -1732,6 +1827,7 @@
 
                 <a
                     href="../paginas/joyeria.html"
+                    target="_parent"
                     class="mobile-nav-link"
                 >
 
@@ -1750,6 +1846,7 @@
 
                 <a
                     href="../paginas/bolsos.html"
+                    target="_parent"
                     class="mobile-nav-link"
                 >
 
@@ -1855,6 +1952,7 @@
                     type="button"
                     id="closeSearchButton"
                     aria-label="Cerrar búsqueda"
+                    title="Cerrar"
                 >
 
                     <i
@@ -1910,6 +2008,7 @@
                 class="panel-close"
                 id="closeFavoritesButton"
                 aria-label="Cerrar favoritos"
+                title="Cerrar"
             >
 
                 <i
@@ -1980,6 +2079,7 @@
                 class="panel-close"
                 id="closeCartButton"
                 aria-label="Cerrar carrito"
+                title="Cerrar"
             >
 
                 <i
@@ -2211,6 +2311,11 @@
                 "Cerrar menú"
             );
 
+            mobileMenuButton.setAttribute(
+                "title",
+                "Cerrar menú"
+            );
+
             document.body.classList.add(
                 "locked"
             );
@@ -2245,6 +2350,11 @@
 
             mobileMenuButton.setAttribute(
                 "aria-label",
+                "Abrir menú"
+            );
+
+            mobileMenuButton.setAttribute(
+                "title",
                 "Abrir menú"
             );
 
@@ -2621,4 +2731,3 @@
 </body>
 
 </html>
-
