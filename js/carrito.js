@@ -961,9 +961,7 @@ function configurarFinalizarCompra() {
     if (
         boton.dataset.whatsappConfigurado === "true"
     ) {
-
         return;
-
     }
 
 
@@ -1007,7 +1005,7 @@ function configurarFinalizarCompra() {
 
 
             /* -----------------------------------------
-               CONSTRUIR MENSAJE
+               ENCABEZADO
             ----------------------------------------- */
 
             let mensaje =
@@ -1016,23 +1014,7 @@ function configurarFinalizarCompra() {
 
 
             mensaje +=
-                "🛍️ *NUEVA SOLICITUD DE COMPRA*\n\n";
-
-
-            mensaje +=
-                "Hola, me gustaría realizar la siguiente compra:\n\n";
-
-
-            mensaje +=
-                "━━━━━━━━━━━━━━━━━━━━\n";
-
-
-            mensaje +=
-                "📦 *DETALLE DEL PEDIDO*\n";
-
-
-            mensaje +=
-                "━━━━━━━━━━━━━━━━━━━━\n\n";
+                "Hola, me gustaría realizar este pedido:\n\n";
 
 
             /* -----------------------------------------
@@ -1058,24 +1040,12 @@ function configurarFinalizarCompra() {
                         `🛍️ *${producto.nombre}*\n`;
 
 
-                    if (producto.categoria) {
-
-                        mensaje +=
-                            `   Categoría: ${producto.categoria}\n`;
-
-                    }
+                    mensaje +=
+                        `Cantidad: ${cantidad} × ${formatearPrecio(precioUnitario)}\n`;
 
 
                     mensaje +=
-                        `   Cantidad: ${cantidad}\n`;
-
-
-                    mensaje +=
-                        `   Precio unitario: ${formatearPrecio(precioUnitario)}\n`;
-
-
-                    mensaje +=
-                        `   Subtotal: *${formatearPrecio(subtotalProducto)}*\n\n`;
+                        `Subtotal: *${formatearPrecio(subtotalProducto)}*\n`;
 
 
                     if (
@@ -1084,7 +1054,7 @@ function configurarFinalizarCompra() {
                     ) {
 
                         mensaje +=
-                            "────────────────────\n\n";
+                            "\n";
 
                     }
 
@@ -1097,19 +1067,11 @@ function configurarFinalizarCompra() {
             ----------------------------------------- */
 
             mensaje +=
-                "━━━━━━━━━━━━━━━━━━━━\n";
+                "\n━━━━━━━━━━━━━━━━━━━━\n";
 
 
             mensaje +=
-                "🧾 *RESUMEN DEL PEDIDO*\n";
-
-
-            mensaje +=
-                "━━━━━━━━━━━━━━━━━━━━\n\n";
-
-
-            mensaje +=
-                `📦 Productos: ${cantidadTotal}\n`;
+                `📦 ${cantidadTotal} producto${cantidadTotal !== 1 ? "s" : ""}\n`;
 
 
             mensaje +=
@@ -1121,47 +1083,35 @@ function configurarFinalizarCompra() {
 
 
             mensaje +=
-                `\n💳 *TOTAL: ${formatearPrecio(subtotal)}*\n\n`;
+                `💳 *TOTAL: ${formatearPrecio(subtotal)}*\n`;
 
 
             /* -----------------------------------------
-               MENSAJE FINAL
+               DATOS DEL CLIENTE
             ----------------------------------------- */
 
             mensaje +=
-                "━━━━━━━━━━━━━━━━━━━━\n";
+                "\n📍 *Datos de entrega*\n";
 
 
             mensaje +=
-                "📲 *DATOS DE ENTREGA*\n";
+                "Nombre:\n";
 
 
             mensaje +=
-                "━━━━━━━━━━━━━━━━━━━━\n\n";
+                "Teléfono:\n";
 
 
             mensaje +=
-                "Por favor, indícame la información necesaria para coordinar mi pedido y entrega.\n\n";
+                "Dirección / zona:\n";
 
 
-            mensaje +=
-                "📍 Dirección o zona:\n";
-
-
-            mensaje +=
-                "📞 Teléfono:\n";
-
+            /* -----------------------------------------
+               DESPEDIDA
+            ----------------------------------------- */
 
             mensaje +=
-                "👤 Nombre:\n\n";
-
-
-            mensaje +=
-                "💗 Gracias por elegir *Nicolle Store*.\n";
-
-
-            mensaje +=
-                "Esperamos atenderte muy pronto. ✨";
+                "\n💗 ¡Gracias por elegir Nicolle Store!";
 
 
             /* -----------------------------------------
