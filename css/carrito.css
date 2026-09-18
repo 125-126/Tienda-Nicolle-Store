@@ -1,0 +1,1023 @@
+/* =========================================================
+   NICOLLE STORE
+   CARRITO
+========================================================= */
+
+
+/* =========================================================
+   CONTENEDOR GENERAL
+========================================================= */
+
+.carrito-hero {
+    width: 100%;
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(253, 245, 246, 0.88),
+            rgba(253, 245, 246, 0.96)
+        );
+
+    text-align: center;
+    padding: 70px 20px;
+}
+
+
+.carrito-hero-contenido {
+    max-width: 800px;
+    width: 100%;
+}
+
+
+.carrito-marca {
+    display: block;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: #62bcb5;
+
+    margin-bottom: 12px;
+}
+
+
+.carrito-hero h1 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    color: #51484a;
+}
+
+
+.carrito-hero h1 em {
+    font-family: "Great Vibes", cursive;
+    font-style: normal;
+
+    color: #d79da6;
+}
+
+
+.carrito-linea {
+    width: 70px;
+    height: 2px;
+
+    background: #62bcb5;
+
+    margin: 28px auto;
+}
+
+
+.carrito-hero p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #625457;
+}
+
+
+/* =========================================================
+   CONTENEDOR DEL CARRITO
+========================================================= */
+
+.carrito-contenedor {
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding: 80px 0 100px;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.carrito-titulo {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.carrito-titulo h2 {
+    margin: 0 0 8px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+
+    color: #51484a;
+}
+
+
+.carrito-titulo p {
+    margin: 0;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.95rem;
+
+    color: #625457;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.carrito-contenido {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 380px;
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   LISTA DE PRODUCTOS
+========================================================= */
+
+.carrito-productos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   PRODUCTO INDIVIDUAL
+========================================================= */
+
+.carrito-producto {
+    display: grid;
+
+    grid-template-columns: 110px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(215, 157, 166, 0.25);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(81, 72, 74, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.carrito-producto:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(81, 72, 74, 0.11);
+}
+
+
+/* =========================================================
+   IMAGEN DEL PRODUCTO
+========================================================= */
+
+.carrito-producto-imagen {
+    width: 110px;
+    height: 110px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #fdf5f6;
+}
+
+
+.carrito-producto-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+========================================================= */
+
+.carrito-producto-info {
+    min-width: 0;
+}
+
+
+.carrito-producto-info h3 {
+    margin: 0 0 7px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+
+    color: #51484a;
+}
+
+
+.carrito-producto-categoria {
+    margin: 0 0 12px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: #62bcb5;
+}
+
+
+.carrito-producto-precio {
+    margin: 0;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: #d79da6;
+}
+
+
+/* =========================================================
+   CONTROLES DEL PRODUCTO
+========================================================= */
+
+.carrito-producto-controles {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 13px;
+}
+
+
+.cantidad-control {
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid rgba(98, 188, 181, 0.45);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background: #fdf5f6;
+}
+
+
+.cantidad-control button {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #51484a;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.cantidad-control button:hover {
+    background: #62bcb5;
+
+    color: #ffffff;
+}
+
+
+.cantidad-control span {
+    min-width: 34px;
+
+    text-align: center;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    color: #51484a;
+}
+
+
+.carrito-producto-subtotal {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: #51484a;
+}
+
+
+.btn-eliminar-producto {
+    border: none;
+
+    background: transparent;
+
+    color: #d79da6;
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.78rem;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.btn-eliminar-producto:hover {
+    color: #b86f7a;
+}
+
+
+/* =========================================================
+   CARRITO VACÍO
+========================================================= */
+
+.carrito-vacio {
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(215, 157, 166, 0.25);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(81, 72, 74, 0.06);
+}
+
+
+.carrito-vacio-icono {
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fdf5f6;
+
+    color: #62bcb5;
+
+    font-size: 2rem;
+
+    margin-bottom: 22px;
+}
+
+
+.carrito-vacio h3 {
+    margin: 0 0 8px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 600;
+
+    color: #51484a;
+}
+
+
+.carrito-vacio p {
+    margin: 0 0 25px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+
+    color: #625457;
+}
+
+
+/* =========================================================
+   BOTÓN SEGUIR COMPRANDO
+========================================================= */
+
+.btn-seguir-comprando {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    background: #62bcb5;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.btn-seguir-comprando:hover {
+    background: #4da9a2;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESUMEN DE COMPRA
+========================================================= */
+
+.carrito-resumen {
+    position: sticky;
+
+    top: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(215, 157, 166, 0.25);
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(81, 72, 74, 0.08);
+}
+
+
+/* =========================================================
+   CABECERA RESUMEN
+========================================================= */
+
+.resumen-cabecera {
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(98, 188, 181, 0.2);
+}
+
+
+.resumen-cabecera h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 600;
+
+    color: #51484a;
+}
+
+
+/* =========================================================
+   DETALLES
+========================================================= */
+
+.resumen-detalle {
+    padding: 22px 0;
+
+    border-bottom: 1px solid rgba(98, 188, 181, 0.2);
+}
+
+
+.resumen-fila {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.88rem;
+
+    color: #625457;
+}
+
+
+.resumen-fila:last-child {
+    margin-bottom: 0;
+}
+
+
+.resumen-fila span:last-child {
+    font-weight: 600;
+
+    color: #51484a;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.resumen-total {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 22px 0 25px;
+}
+
+
+.resumen-total span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    color: #51484a;
+}
+
+
+.resumen-total strong {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    color: #d79da6;
+}
+
+
+/* =========================================================
+   BOTÓN FINALIZAR COMPRA
+========================================================= */
+
+.btn-finalizar {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #62bcb5;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.btn-finalizar:hover {
+    background: #4da9a2;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(98, 188, 181, 0.25);
+}
+
+
+.btn-finalizar i {
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   BOTÓN CONTINUAR
+========================================================= */
+
+.btn-continuar {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+    border: 1px solid rgba(215, 157, 166, 0.5);
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #625457;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.btn-continuar:hover {
+    background: #fdf5f6;
+
+    color: #d79da6;
+
+    border-color: #d79da6;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #51484a;
+
+    padding-top: 65px;
+}
+
+
+.footer-contenido {
+    width: min(1150px, 92%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    gap: 50px;
+
+    padding-bottom: 50px;
+}
+
+
+.footer-marca h2 {
+    margin: 0 0 5px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+.footer-marca p {
+    margin: 0 0 14px;
+
+    font-family: "Great Vibes", cursive;
+    font-size: 1.7rem;
+
+    color: #d79da6;
+}
+
+
+.footer-marca span {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+.footer-enlaces,
+.footer-carrito {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.footer-enlaces h3,
+.footer-carrito h3 {
+    margin: 0 0 17px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+.footer-enlaces a,
+.footer-carrito a {
+    margin-bottom: 9px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.footer-enlaces a:hover,
+.footer-carrito a:hover {
+    color: #8fd8d2;
+}
+
+
+.footer-carrito a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.footer-carrito i {
+    color: #d79da6;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.72rem;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .carrito-contenido {
+        grid-template-columns: 1fr;
+    }
+
+
+    .carrito-resumen {
+        position: static;
+    }
+
+
+    .footer-contenido {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .carrito-hero {
+        min-height: 300px;
+
+        padding: 55px 20px;
+    }
+
+
+    .carrito-marca {
+        font-size: 0.72rem;
+
+        letter-spacing: 3px;
+    }
+
+
+    .carrito-hero h1 {
+        font-size: 3.5rem;
+    }
+
+
+    .carrito-hero p {
+        font-size: 0.85rem;
+    }
+
+
+    .carrito-contenedor {
+        width: 92%;
+
+        padding: 55px 0 70px;
+    }
+
+
+    .carrito-titulo {
+        margin-bottom: 30px;
+    }
+
+
+    .carrito-titulo h2 {
+        font-size: 2.7rem;
+    }
+
+
+    .carrito-producto {
+        grid-template-columns: 85px minmax(0, 1fr);
+
+        gap: 15px;
+
+        padding: 14px;
+    }
+
+
+    .carrito-producto-imagen {
+        width: 85px;
+        height: 85px;
+    }
+
+
+    .carrito-producto-info h3 {
+        font-size: 1.35rem;
+    }
+
+
+    .carrito-producto-controles {
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+
+        padding-top: 8px;
+
+        border-top: 1px solid rgba(98, 188, 181, 0.15);
+    }
+
+
+    .carrito-resumen {
+        padding: 22px;
+    }
+
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-bottom: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .carrito-hero {
+        min-height: 285px;
+    }
+
+
+    .carrito-hero h1 {
+        font-size: 3rem;
+    }
+
+
+    .carrito-producto {
+        grid-template-columns: 75px minmax(0, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .carrito-producto-imagen {
+        width: 75px;
+        height: 75px;
+    }
+
+
+    .carrito-producto-info h3 {
+        font-size: 1.2rem;
+    }
+
+
+    .carrito-producto-precio {
+        font-size: 0.9rem;
+    }
+
+
+    .carrito-producto-controles {
+        gap: 8px;
+    }
+
+
+    .cantidad-control button {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .cantidad-control span {
+        min-width: 30px;
+    }
+
+}
