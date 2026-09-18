@@ -1,10 +1,91 @@
 /* =========================================================
-   CABELLO - NICOLLE STORE
+   CABELLO — NICOLLE STORE
 ========================================================= */
 
 
 /* =========================================================
-   HERO — CABELLO
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --cabello-aqua: #62bcb5;
+
+    --cabello-aqua-claro: #8fd8d2;
+
+    --cabello-rosa: #d79da6;
+
+    --cabello-rosa-claro: #e9bfc5;
+
+    --cabello-oscuro: #51484a;
+
+    --cabello-gris: #625457;
+
+    --cabello-fondo: #fdf5f6;
+
+    --cabello-blanco: #ffffff;
+
+}
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    background:
+        var(--cabello-fondo);
+
+    color:
+        var(--cabello-oscuro);
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   MENÚ
+========================================================= */
+
+.menu-container {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+}
+
+
+.menu-container iframe {
+
+    display: block;
+
+    width: 100%;
+
+    min-height: 1px;
+
+    border: 0;
+
+}
+
+
+/* =========================================================
+   HERO
 ========================================================= */
 
 .cabello-hero {
@@ -13,17 +94,16 @@
 
     width: 100%;
 
-    height: 620px;
+    height: 560px;
+
+    min-height: 560px;
+
+    max-height: 560px;
 
     overflow: hidden;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #51484a;
+    background:
+        #51484a;
 
 }
 
@@ -42,17 +122,52 @@
 
     height: 100%;
 
-    display: block;
+    /*
+       IMPORTANTE:
+
+       cover llena completamente el hero,
+       pero puede recortar bastante el video.
+
+       Ahora usamos un pequeño zoom inverso
+       mediante transform para mostrar más
+       contenido del video.
+    */
 
     object-fit: cover;
 
     object-position: center center;
 
+    transform:
+        scale(0.92);
+
+    transform-origin: center center;
+
+}
+
+
+/*
+   Evita que el fondo quede visible
+   alrededor del video.
+*/
+
+.cabello-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -30px;
+
+    background:
+        inherit;
+
+    z-index: 0;
+
 }
 
 
 /* =========================================================
-   CAPA OSCURA
+   OVERLAY
 ========================================================= */
 
 .cabello-hero-overlay {
@@ -65,16 +180,19 @@
 
     background:
         linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.15),
-            rgba(0, 0, 0, 0.38)
+            90deg,
+            rgba(36, 31, 32, 0.64) 0%,
+            rgba(36, 31, 32, 0.34) 45%,
+            rgba(36, 31, 32, 0.10) 100%
         );
+
+    pointer-events: none;
 
 }
 
 
 /* =========================================================
-   CONTENIDO HERO
+   CONTENIDO DEL HERO
 ========================================================= */
 
 .cabello-hero-contenido {
@@ -83,17 +201,27 @@
 
     z-index: 2;
 
-    width: 90%;
+    width: min(
+        1200px,
+        calc(100% - 50px)
+    );
 
-    max-width: 850px;
+    height: 100%;
 
     margin: 0 auto;
 
-    padding: 20px;
+    display: flex;
 
-    text-align: center;
+    flex-direction: column;
 
-    color: #ffffff;
+    justify-content: center;
+
+    align-items: flex-start;
+
+    box-sizing: border-box;
+
+    padding:
+        40px 0;
 
 }
 
@@ -104,11 +232,10 @@
 
 .cabello-etiqueta {
 
-    display: block;
-
     margin-bottom: 15px;
 
-    color: #ffffff;
+    color:
+        var(--cabello-aqua-claro);
 
     font-family:
         "DM Sans",
@@ -122,87 +249,83 @@
 
     text-transform: uppercase;
 
-    text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.3);
-
 }
 
 
 /* =========================================================
-   TITULO
+   TITULO HERO
 ========================================================= */
 
 .cabello-hero-contenido h1 {
 
+    max-width: 650px;
+
     margin: 0;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     font-family:
         "Cormorant Garamond",
+        Georgia,
         serif;
 
-    font-size:
-        clamp(
-            46px,
-            6vw,
-            76px
-        );
+    font-size: clamp(
+        48px,
+        6vw,
+        78px
+    );
 
     font-weight: 500;
 
-    line-height: 1;
+    line-height: 0.95;
 
     letter-spacing: -1px;
 
     text-shadow:
-        0 3px 15px rgba(0, 0, 0, 0.25);
+        0 3px 15px
+        rgba(0, 0, 0, 0.18);
 
 }
 
-
-/* =========================================================
-   TEXTO CURSIVO
-========================================================= */
 
 .cabello-hero-contenido h1 em {
 
     display: block;
 
-    margin-top: 5px;
-
-    color: #f2c5cc;
+    color:
+        var(--cabello-rosa-claro);
 
     font-family:
         "Great Vibes",
         cursive;
 
-    font-size: 1.08em;
+    font-size: 0.82em;
+
+    font-style: normal;
 
     font-weight: 400;
 
-    font-style: normal;
+    letter-spacing: 0;
 
 }
 
 
 /* =========================================================
-   LINEA
+   LÍNEA
 ========================================================= */
 
 .cabello-linea {
 
-    display: block;
-
-    width: 55px;
+    width: 75px;
 
     height: 2px;
 
-    margin: 22px auto;
+    margin:
+        25px 0 18px;
 
-    border-radius: 20px;
-
-    background: #ffffff;
+    background:
+        var(--cabello-aqua-claro);
 
 }
 
@@ -213,16 +336,16 @@
 
 .cabello-hero-contenido p {
 
-    max-width: 540px;
+    max-width: 450px;
 
-    margin: 0 auto;
+    margin: 0;
 
     color:
         rgba(
             255,
             255,
             255,
-            0.94
+            0.90
         );
 
     font-family:
@@ -231,10 +354,9 @@
 
     font-size: 14px;
 
-    line-height: 1.7;
+    font-weight: 400;
 
-    text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.7;
 
 }
 
@@ -247,38 +369,17 @@
 
     position: absolute;
 
-    right: 25px;
+    right: 28px;
 
     bottom: 25px;
 
     z-index: 5;
 
-    width: 46px;
+    width: 45px;
 
-    height: 46px;
+    height: 45px;
 
     padding: 0;
-
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.75
-        );
-
-    border-radius: 50%;
-
-    background:
-        rgba(
-            0,
-            0,
-            0,
-            0.28
-        );
-
-    color: #ffffff;
 
     display: flex;
 
@@ -286,19 +387,40 @@
 
     justify-content: center;
 
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            40,
+            35,
+            36,
+            0.38
+        );
+
+    color:
+        #ffffff;
+
     cursor: pointer;
 
-    font-size: 15px;
-
     backdrop-filter:
-        blur(6px);
+        blur(7px);
 
     -webkit-backdrop-filter:
-        blur(6px);
+        blur(7px);
 
     transition:
         background 0.25s ease,
-        transform 0.25s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease;
 
 }
 
@@ -307,90 +429,72 @@
 
     background:
         rgba(
-            255,
-            255,
-            255,
-            0.18
+            98,
+            188,
+            181,
+            0.72
         );
 
+    border-color:
+        #ffffff;
+
     transform:
-        scale(1.06);
+        scale(1.07);
 
 }
 
 
-.cabello-hero-sonido:active {
+.cabello-hero-sonido i {
 
-    transform:
-        scale(0.95);
+    font-size: 14px;
 
 }
 
 
 /* =========================================================
-   PRODUCTOS
+   SECCIÓN PRODUCTOS
 ========================================================= */
 
 .cabello-productos {
 
     width: 100%;
 
-    padding: 85px 25px;
+    padding:
+        75px 25px
+        90px;
 
-    background: #ffffff;
+    box-sizing: border-box;
 
-}
-
-
-.cabello-productos-contenedor {
-
-    width: 100%;
-
-    max-width: 1250px;
-
-    margin: 0 auto;
+    background:
+        var(--cabello-fondo);
 
 }
 
 
 /* =========================================================
-   CATEGORÍAS
+   ENCABEZADO PRODUCTOS
 ========================================================= */
 
-.categoria-productos {
+.cabello-productos-header {
 
-    margin-bottom: 90px;
+    max-width: 900px;
 
-}
-
-
-.categoria-productos:last-child {
-
-    margin-bottom: 0;
-
-}
-
-
-/* =========================================================
-   ENCABEZADO CATEGORÍA
-========================================================= */
-
-.categoria-productos-encabezado {
-
-    margin-bottom: 38px;
+    margin:
+        0 auto 65px;
 
     text-align: center;
 
 }
 
 
-.categoria-productos-encabezado span {
+.cabello-productos-header > span {
 
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 
-    color: #62bcb5;
+    color:
+        var(--cabello-aqua);
 
     font-family:
         "DM Sans",
@@ -400,93 +504,209 @@
 
     font-weight: 700;
 
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
+    letter-spacing: 4px;
 
 }
 
 
-.categoria-productos-encabezado h2 {
+.cabello-productos-header h2 {
 
     margin: 0;
 
-    color: #51484a;
+    color:
+        var(--cabello-oscuro);
 
     font-family:
         "Cormorant Garamond",
+        Georgia,
         serif;
 
-    font-size:
-        clamp(
-            32px,
-            4vw,
-            48px
-        );
+    font-size: clamp(
+        36px,
+        5vw,
+        52px
+    );
 
-    font-weight: 600;
+    font-weight: 500;
 
-    line-height: 1.1;
+    line-height: 1;
 
 }
 
 
-.categoria-linea {
+.cabello-productos-header p {
 
-    display: block;
+    margin:
+        14px 0 0;
 
-    width: 45px !important;
+    color:
+        #8d8183;
 
-    height: 2px;
+    font-family:
+        "DM Sans",
+        sans-serif;
 
-    margin: 16px auto 0;
-
-    background: #e9bfc5;
+    font-size: 13px;
 
 }
 
 
 /* =========================================================
-   GRID
-   2 PRODUCTOS POR FILA
+   CATEGORÍAS
+========================================================= */
+
+.producto-categoria {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin:
+        0 auto 75px;
+
+}
+
+
+.producto-categoria:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   TÍTULO DE CATEGORÍA
+========================================================= */
+
+.categoria-titulo {
+
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+}
+
+
+.categoria-titulo span {
+
+    width: 45px;
+
+    height: 1px;
+
+    flex-shrink: 0;
+
+    background:
+        var(--cabello-rosa);
+
+}
+
+
+.categoria-titulo h3 {
+
+    margin: 0;
+
+    color:
+        var(--cabello-oscuro);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   GRID DE PRODUCTOS
 ========================================================= */
 
 .productos-grid {
 
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
-        repeat(
-            2,
-            minmax(0, 1fr)
-        );
+        repeat(2, minmax(0, 1fr));
 
-    gap: 28px;
-
-    width: 100%;
-
-    max-width: 850px;
-
-    margin: 0 auto;
+    gap: 20px;
 
 }
 
 
 /* =========================================================
-   TARJETA
+   TARJETA PRODUCTO
 ========================================================= */
 
 .producto-card {
 
     min-width: 0;
 
-    background: #ffffff;
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            215,
+            157,
+            166,
+            0.22
+        );
+
+    border-radius: 12px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            81,
+            72,
+            74,
+            0.07
+        );
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
+
+}
+
+
+.producto-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(
+            81,
+            72,
+            74,
+            0.13
+        );
 
 }
 
 
 /* =========================================================
-   IMAGEN
+   IMAGEN PRODUCTO
 ========================================================= */
 
 .producto-imagen {
@@ -497,34 +717,24 @@
 
     overflow: hidden;
 
-    border-radius: 20px;
-
-    background: #fdf5f6;
-
-    box-shadow:
-        0 10px 30px
-        rgba(
-            110,
-            87,
-            91,
-            0.10
-        );
+    background:
+        #f5eeee;
 
 }
 
 
 .producto-imagen img {
 
+    display: block;
+
     width: 100%;
 
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
 
     transition:
-        transform 0.4s ease;
+        transform 0.45s ease;
 
 }
 
@@ -533,7 +743,7 @@
 .producto-imagen img {
 
     transform:
-        scale(1.04);
+        scale(1.035);
 
 }
 
@@ -544,29 +754,41 @@
 
 .producto-comprar {
 
-    width: 100%;
+    width: calc(
+        100% - 24px
+    );
 
-    min-height: 48px;
+    min-height: 42px;
 
-    margin-top: 14px;
+    margin:
+        12px;
 
-    padding: 0 20px;
+    padding:
+        10px 15px;
 
-    border:
-        1px solid
-        #8fd8d2;
+    display: flex;
 
-    border-radius: 25px;
+    align-items: center;
 
-    background: #ffffff;
+    justify-content: center;
 
-    color: #62bcb5;
+    gap: 8px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background:
+        var(--cabello-aqua);
+
+    color:
+        #ffffff;
 
     font-family:
         "DM Sans",
         sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 700;
 
@@ -576,55 +798,267 @@
 
     cursor: pointer;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
     transition:
         background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-
-}
-
-
-.producto-comprar i {
-
-    font-size: 13px;
+        transform 0.25s ease;
 
 }
 
 
 .producto-comprar:hover {
 
-    background: #8fd8d2;
-
-    color: #ffffff;
+    background:
+        #4ea9a2;
 
     transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(
-            98,
-            188,
-            181,
-            0.20
-        );
+        translateY(-1px);
 
 }
 
 
-.producto-comprar:active {
+.producto-comprar i {
 
-    transform:
-        scale(0.98);
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cabello-footer {
+
+    width: 100%;
+
+    margin: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #51484a 0%,
+            #625457 100%
+        );
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   CONTENIDO FOOTER
+========================================================= */
+
+.cabello-footer-contenido {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding:
+        55px 25px 40px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+}
+
+
+/* =========================================================
+   MARCA FOOTER
+========================================================= */
+
+.cabello-footer-marca {
+
+    flex: 1;
+
+}
+
+
+.cabello-footer-marca h2 {
+
+    margin:
+        0 0 5px;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+}
+
+
+.cabello-footer-marca p {
+
+    margin:
+        8px 0 0;
+
+    color:
+        var(--cabello-rosa-claro);
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 25px;
+
+}
+
+
+/* =========================================================
+   LINKS FOOTER
+========================================================= */
+
+.cabello-footer-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 28px;
+
+}
+
+
+.cabello-footer-links a {
+
+    position: relative;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.88
+        );
+
+    text-decoration: none;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+.cabello-footer-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--cabello-aqua-claro);
+
+    transition:
+        width 0.25s ease;
+
+}
+
+
+.cabello-footer-links a:hover {
+
+    color:
+        var(--cabello-aqua-claro);
+
+}
+
+
+.cabello-footer-links a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.cabello-footer-bottom {
+
+    width: 100%;
+
+    padding:
+        18px 25px;
+
+    box-sizing: border-box;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    text-align: center;
+
+}
+
+
+.cabello-footer-bottom p {
+
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.60
+        );
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.4px;
 
 }
 
@@ -637,31 +1071,41 @@
 
     .cabello-hero {
 
-        height: 500px;
+        height: 470px;
+
+        min-height: 470px;
+
+        max-height: 470px;
 
     }
 
 
-    .cabello-hero-contenido h1 {
+    .cabello-hero-video {
 
-        font-size: 58px;
-
-    }
-
-
-    .cabello-productos {
-
-        padding:
-            70px 20px;
+        transform:
+            scale(0.90);
 
     }
 
 
-    .productos-grid {
+    .cabello-hero-contenido {
 
-        max-width: 760px;
+        width:
+            calc(100% - 50px);
 
-        gap: 22px;
+    }
+
+
+    .cabello-footer-contenido {
+
+        gap: 30px;
+
+    }
+
+
+    .cabello-footer-links {
+
+        gap: 18px 22px;
 
     }
 
@@ -669,14 +1113,12 @@
 
 
 /* =========================================================
-   CELULAR
+   MÓVIL
 ========================================================= */
 
 @media (max-width: 700px) {
 
-    /* -----------------------------------------------------
-       HERO
-    ----------------------------------------------------- */
+    /* HERO */
 
     .cabello-hero {
 
@@ -689,7 +1131,15 @@
     }
 
 
+    /*
+       En móvil reducimos todavía más el zoom
+       para que se vea una mayor parte del video.
+    */
+
     .cabello-hero-video {
+
+        transform:
+            scale(0.82);
 
         object-position:
             center center;
@@ -701,9 +1151,25 @@
 
         background:
             linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.12),
-                rgba(0, 0, 0, 0.42)
+                90deg,
+                rgba(
+                    36,
+                    31,
+                    32,
+                    0.65
+                ) 0%,
+                rgba(
+                    36,
+                    31,
+                    32,
+                    0.34
+                ) 65%,
+                rgba(
+                    36,
+                    31,
+                    32,
+                    0.12
+                ) 100%
             );
 
     }
@@ -711,17 +1177,18 @@
 
     .cabello-hero-contenido {
 
-        width: 94%;
+        width:
+            calc(100% - 40px);
 
         padding:
-            15px 10px;
+            25px 0;
 
     }
 
 
     .cabello-etiqueta {
 
-        margin-bottom: 8px;
+        margin-bottom: 9px;
 
         font-size: 8px;
 
@@ -732,39 +1199,39 @@
 
     .cabello-hero-contenido h1 {
 
-        font-size: 34px;
+        max-width: 330px;
 
-        line-height: 1.03;
+        font-size: 43px;
 
-        letter-spacing: 0;
+        line-height: 0.94;
+
+        letter-spacing: -0.5px;
 
     }
 
 
     .cabello-hero-contenido h1 em {
 
-        margin-top: 2px;
-
-        font-size: 1.04em;
+        font-size: 0.78em;
 
     }
 
 
     .cabello-linea {
 
-        width: 38px;
+        width: 48px;
 
-        height: 1.5px;
+        height: 1px;
 
         margin:
-            12px auto;
+            15px 0 10px;
 
     }
 
 
     .cabello-hero-contenido p {
 
-        max-width: 290px;
+        max-width: 270px;
 
         font-size: 10px;
 
@@ -773,141 +1240,151 @@
     }
 
 
-    /* -----------------------------------------------------
-       SONIDO
-    ----------------------------------------------------- */
-
     .cabello-hero-sonido {
 
-        right: 12px;
+        right: 15px;
 
-        bottom: 12px;
+        bottom: 15px;
 
-        width: 36px;
+        width: 37px;
 
-        height: 36px;
+        height: 37px;
+
+    }
+
+
+    .cabello-hero-sonido i {
 
         font-size: 11px;
 
     }
 
 
-    /* -----------------------------------------------------
-       PRODUCTOS
-    ----------------------------------------------------- */
+
+    /* PRODUCTOS */
 
     .cabello-productos {
 
         padding:
-            52px 13px;
+            55px 14px
+            65px;
 
     }
 
 
-    .categoria-productos {
+    .cabello-productos-header {
 
-        margin-bottom:
-            60px;
-
-    }
-
-
-    .categoria-productos-encabezado {
-
-        margin-bottom:
-            24px;
+        margin-bottom: 45px;
 
     }
 
 
-    .categoria-productos-encabezado span {
-
-        margin-bottom: 6px;
+    .cabello-productos-header > span {
 
         font-size: 8px;
 
-        letter-spacing: 2px;
+        letter-spacing: 3px;
 
     }
 
 
-    .categoria-productos-encabezado h2 {
+    .cabello-productos-header h2 {
 
-        font-size: 30px;
+        font-size: 35px;
 
-    }
-
-
-    .categoria-linea {
-
-        width: 36px !important;
-
-        margin-top: 11px;
+        line-height: 0.98;
 
     }
 
 
-    /* -----------------------------------------------------
-       2 PRODUCTOS POR FILA
-    ----------------------------------------------------- */
+    .cabello-productos-header p {
+
+        margin-top: 10px;
+
+        font-size: 11px;
+
+    }
+
+
+    /* CATEGORÍAS */
+
+    .producto-categoria {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .categoria-titulo {
+
+        gap: 10px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .categoria-titulo span {
+
+        width: 25px;
+
+    }
+
+
+    .categoria-titulo h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    /* GRID */
 
     .productos-grid {
 
         grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
+            repeat(2, minmax(0, 1fr));
 
-        gap: 11px;
-
-        max-width: 100%;
+        gap: 10px;
 
     }
 
 
-    /* -----------------------------------------------------
-       IMAGEN
-    ----------------------------------------------------- */
+    /* TARJETAS */
+
+    .producto-card {
+
+        border-radius: 9px;
+
+    }
+
 
     .producto-imagen {
 
         aspect-ratio: 1 / 1;
 
-        border-radius: 12px;
-
-        box-shadow:
-            0 6px 16px
-            rgba(
-                110,
-                87,
-                91,
-                0.08
-            );
-
     }
 
 
-    /* -----------------------------------------------------
-       BOTÓN
-    ----------------------------------------------------- */
-
     .producto-comprar {
 
-        min-height: 39px;
+        width:
+            calc(100% - 14px);
 
-        margin-top: 8px;
+        min-height: 36px;
+
+        margin: 7px;
 
         padding:
-            0 5px;
-
-        border-radius: 20px;
-
-        font-size: 8.5px;
-
-        letter-spacing: 0.4px;
+            8px 5px;
 
         gap: 5px;
+
+        border-radius: 6px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.7px;
 
     }
 
@@ -918,11 +1395,76 @@
 
     }
 
+
+
+    /* FOOTER */
+
+    .cabello-footer-contenido {
+
+        padding:
+            42px 20px 32px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 28px;
+
+    }
+
+
+    .cabello-footer-marca h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .cabello-footer-marca p {
+
+        font-size: 23px;
+
+    }
+
+
+    .cabello-footer-links {
+
+        justify-content: center;
+
+        gap:
+            18px 22px;
+
+    }
+
+
+    .cabello-footer-links a {
+
+        font-size: 9px;
+
+    }
+
+
+    .cabello-footer-bottom {
+
+        padding:
+            15px;
+
+    }
+
+
+    .cabello-footer-bottom p {
+
+        font-size: 9px;
+
+        line-height: 1.5;
+
+    }
+
 }
 
 
 /* =========================================================
-   CELULAR PEQUEÑO
+   CELULARES PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 480px) {
@@ -938,144 +1480,136 @@
     }
 
 
-    .cabello-hero-contenido {
+    .cabello-hero-video {
 
-        width: 96%;
-
-        padding:
-            12px 7px;
+        transform:
+            scale(0.78);
 
     }
 
 
-    .cabello-etiqueta {
+    .cabello-hero-contenido {
 
-        font-size: 7.5px;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 7px;
+        width:
+            calc(100% - 30px);
 
     }
 
 
     .cabello-hero-contenido h1 {
 
-        font-size: 30px;
+        font-size: 37px;
 
-    }
-
-
-    .cabello-hero-contenido h1 em {
-
-        font-size: 1.02em;
-
-    }
-
-
-    .cabello-linea {
-
-        width: 34px;
-
-        margin:
-            10px auto;
+        max-width: 300px;
 
     }
 
 
     .cabello-hero-contenido p {
 
-        max-width: 270px;
+        max-width: 245px;
 
         font-size: 9px;
 
-        line-height: 1.4;
-
     }
 
-
-    .cabello-hero-sonido {
-
-        right: 10px;
-
-        bottom: 10px;
-
-        width: 34px;
-
-        height: 34px;
-
-        font-size: 10px;
-
-    }
-
-
-    /* -----------------------------------------------------
-       PRODUCTOS
-    ----------------------------------------------------- */
 
     .cabello-productos {
 
         padding:
-            45px 11px;
+            45px 10px
+            55px;
 
     }
 
 
-    .categoria-productos {
+    .cabello-productos-header {
 
-        margin-bottom:
-            52px;
-
-    }
-
-
-    .categoria-productos-encabezado {
-
-        margin-bottom:
-            21px;
+        margin-bottom: 38px;
 
     }
 
 
-    .categoria-productos-encabezado h2 {
+    .cabello-productos-header h2 {
 
-        font-size: 27px;
+        font-size: 31px;
+
+    }
+
+
+    .categoria-titulo {
+
+        gap: 7px;
+
+    }
+
+
+    .categoria-titulo span {
+
+        width: 18px;
+
+    }
+
+
+    .categoria-titulo h3 {
+
+        font-size: 19px;
 
     }
 
 
     .productos-grid {
 
-        gap: 9px;
-
-    }
-
-
-    .producto-imagen {
-
-        border-radius: 10px;
+        gap: 8px;
 
     }
 
 
     .producto-comprar {
 
-        min-height: 37px;
+        width:
+            calc(100% - 10px);
 
-        margin-top: 7px;
+        margin: 5px;
 
-        border-radius: 19px;
+        min-height: 33px;
 
         font-size: 8px;
-
-        letter-spacing: 0.3px;
-
-        gap: 4px;
 
     }
 
 
-    .producto-comprar i {
+    .cabello-footer-contenido {
+
+        padding:
+            38px 15px 28px;
+
+    }
+
+
+    .cabello-footer-marca h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .cabello-footer-marca p {
+
+        font-size: 21px;
+
+    }
+
+
+    .cabello-footer-links {
+
+        gap:
+            15px 18px;
+
+    }
+
+
+    .cabello-footer-links a {
 
         font-size: 8px;
 
@@ -1085,7 +1619,7 @@
 
 
 /* =========================================================
-   CELULAR MUY PEQUEÑO
+   CELULARES MUY PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 360px) {
@@ -1101,49 +1635,44 @@
     }
 
 
+    .cabello-hero-video {
+
+        transform:
+            scale(0.74);
+
+    }
+
+
     .cabello-hero-contenido h1 {
 
-        font-size: 27px;
+        font-size: 33px;
 
     }
 
 
     .cabello-hero-contenido p {
 
-        max-width: 245px;
-
-        font-size: 8.5px;
+        font-size: 8px;
 
     }
 
 
-    .cabello-productos {
+    .cabello-hero-sonido {
 
-        padding:
-            40px 9px;
+        right: 12px;
 
-    }
+        bottom: 12px;
 
+        width: 34px;
 
-    .productos-grid {
-
-        gap: 7px;
+        height: 34px;
 
     }
 
 
-    .producto-imagen {
+    .categoria-titulo h3 {
 
-        border-radius: 8px;
-
-    }
-
-
-    .producto-comprar {
-
-        min-height: 35px;
-
-        font-size: 7.5px;
+        font-size: 17px;
 
     }
 
