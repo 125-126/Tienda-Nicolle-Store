@@ -1,32 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 
 <head>
 
-
     <meta charset="UTF-8">
-
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
-
     <title>Nicolle Store - Menú</title>
-
 
     <!-- =====================================================
          FUENTES
     ====================================================== -->
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
         rel="preconnect"
@@ -34,12 +24,10 @@
         crossorigin
     >
 
-
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
         rel="stylesheet"
     >
-
 
     <!-- =====================================================
          FONT AWESOME
@@ -50,9 +38,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-
     <style>
-
 
         /* ====================================================
            VARIABLES
@@ -61,35 +47,23 @@
         :root {
 
             --aqua: #8fd8d2;
-
             --aqua-dark: #62bcb5;
-
             --aqua-soft: #e8f8f6;
 
-
             --pink: #e9bfc5;
-
             --pink-dark: #d79da6;
-
             --pink-soft: #fdf0f2;
 
-
             --cream: #fffafa;
-
             --white: #ffffff;
 
-
             --text: #51484a;
-
             --text-soft: #8b7e80;
-
 
             --border: #f0e1e3;
 
-
             --shadow-soft:
                 0 8px 30px rgba(110, 87, 91, 0.08);
-
 
             --shadow-panel:
                 -12px 0 40px rgba(70, 50, 55, 0.12);
@@ -102,70 +76,47 @@
         ==================================================== */
 
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
 
 
         html {
-
             width: 100%;
-
             min-height: 100%;
-
         }
 
 
         body {
-
             width: 100%;
-
             min-height: 100%;
-
             margin: 0;
-
             padding: 0;
-
             background: #ffffff;
-
             color: var(--text);
-
             font-family: "DM Sans", sans-serif;
-
         }
 
 
         body.locked {
-
             overflow: hidden;
-
         }
 
 
         button,
         input {
-
             font-family: inherit;
-
         }
 
 
         button {
-
             -webkit-tap-highlight-color: transparent;
-
         }
 
 
         a {
-
             -webkit-tap-highlight-color: transparent;
-
         }
 
 
@@ -181,11 +132,14 @@
 
             width: 100%;
 
-            background: rgba(255, 255, 255, 0.98);
+            background:
+                rgba(255, 255, 255, 0.98);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
-            box-shadow: var(--shadow-soft);
+            box-shadow:
+                var(--shadow-soft);
 
         }
 
@@ -234,7 +188,9 @@
 
             color: var(--aqua-dark);
 
-            font-family: "Great Vibes", cursive;
+            font-family:
+                "Great Vibes",
+                cursive;
 
             font-size: 43px;
 
@@ -253,7 +209,9 @@
 
             color: var(--pink-dark);
 
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
             font-size: 12px;
 
@@ -330,7 +288,8 @@
 
             transform-origin: center;
 
-            transition: transform 0.25s ease;
+            transition:
+                transform 0.25s ease;
 
         }
 
@@ -339,14 +298,16 @@
 
             color: var(--aqua-dark);
 
-            transform: translateY(-1px);
+            transform:
+                translateY(-1px);
 
         }
 
 
         .nav-link:hover::after {
 
-            transform: scaleX(1);
+            transform:
+                scaleX(1);
 
         }
 
@@ -362,7 +323,8 @@
 
         .nav-link.active::after {
 
-            transform: scaleX(1);
+            transform:
+                scaleX(1);
 
         }
 
@@ -420,18 +382,22 @@
 
         .header-button:hover {
 
-            background: var(--aqua-soft);
+            background:
+                var(--aqua-soft);
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
-            transform: translateY(-1px);
+            transform:
+                translateY(-1px);
 
         }
 
 
         .header-button:active {
 
-            transform: scale(0.94);
+            transform:
+                scale(0.94);
 
         }
 
@@ -462,7 +428,8 @@
 
             border-radius: 50%;
 
-            background: var(--pink-dark);
+            background:
+                var(--pink-dark);
 
             color: white;
 
@@ -493,7 +460,8 @@
 
             border-radius: 50%;
 
-            background: var(--aqua-soft);
+            background:
+                var(--aqua-soft);
 
             cursor: pointer;
 
@@ -520,7 +488,8 @@
 
             border-radius: 10px;
 
-            background: var(--aqua-dark);
+            background:
+                var(--aqua-dark);
 
             transition:
                 transform 0.3s ease,
@@ -529,7 +498,8 @@
         }
 
 
-        .mobile-menu-button.open span:nth-child(1) {
+        .mobile-menu-button.open
+        span:nth-child(1) {
 
             transform:
                 translateY(7px)
@@ -538,14 +508,16 @@
         }
 
 
-        .mobile-menu-button.open span:nth-child(2) {
+        .mobile-menu-button.open
+        span:nth-child(2) {
 
             opacity: 0;
 
         }
 
 
-        .mobile-menu-button.open span:nth-child(3) {
+        .mobile-menu-button.open
+        span:nth-child(3) {
 
             transform:
                 translateY(-7px)
@@ -566,10 +538,12 @@
 
             background: #ffffff;
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
 
             box-shadow:
-                0 18px 35px rgba(80, 60, 64, 0.12);
+                0 18px 35px
+                rgba(80, 60, 64, 0.12);
 
             overflow: hidden;
 
@@ -602,7 +576,8 @@
 
             text-decoration: none;
 
-            border-bottom: 1px solid #f5e9eb;
+            border-bottom:
+                1px solid #f5e9eb;
 
             font-size: 15px;
 
@@ -620,7 +595,8 @@
 
         .mobile-nav-link i {
 
-            color: var(--pink-dark);
+            color:
+                var(--pink-dark);
 
             font-size: 11px;
 
@@ -631,9 +607,11 @@
         .mobile-nav-link:active,
         .mobile-nav-link.active {
 
-            background: var(--aqua-soft);
+            background:
+                var(--aqua-soft);
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
             padding-left: 29px;
 
@@ -646,11 +624,13 @@
 
         .mobile-menu-actions {
 
-            padding: 14px 18px 18px;
+            padding:
+                14px 18px 18px;
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr;
 
             gap: 10px;
 
@@ -663,7 +643,8 @@
 
             min-height: 48px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             border-radius: 14px;
 
@@ -690,18 +671,22 @@
 
         .mobile-menu-actions button:hover {
 
-            background: var(--aqua-soft);
+            background:
+                var(--aqua-soft);
 
-            border-color: var(--aqua);
+            border-color:
+                var(--aqua);
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
         }
 
 
         .mobile-menu-actions button i {
 
-            color: var(--pink-dark);
+            color:
+                var(--pink-dark);
 
         }
 
@@ -716,9 +701,11 @@
 
             border-radius: 50%;
 
-            background: var(--pink-soft);
+            background:
+                var(--pink-soft);
 
-            color: var(--pink-dark);
+            color:
+                var(--pink-dark);
 
             display: flex;
 
@@ -747,25 +734,32 @@
 
             width: 100%;
 
-            padding: 18px 24px;
+            padding:
+                18px 24px;
 
-            background: rgba(255, 255, 255, 0.99);
+            background:
+                rgba(255, 255, 255, 0.99);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
             box-shadow:
-                0 15px 35px rgba(80, 60, 64, 0.12);
+                0 15px 35px
+                rgba(80, 60, 64, 0.12);
 
-            transform: translateY(-110%);
+            transform:
+                translateY(-110%);
 
-            transition: transform 0.3s ease;
+            transition:
+                transform 0.3s ease;
 
         }
 
 
         .search-panel.open {
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
 
         }
 
@@ -795,21 +789,24 @@
 
             padding: 0 18px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             border-radius: 30px;
 
             background: #ffffff;
 
             box-shadow:
-                0 5px 20px rgba(100, 75, 80, 0.06);
+                0 5px 20px
+                rgba(100, 75, 80, 0.06);
 
         }
 
 
         .search-input-wrapper > i {
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
         }
 
@@ -852,9 +849,11 @@
 
             border-radius: 50%;
 
-            background: var(--pink-soft);
+            background:
+                var(--pink-soft);
 
-            color: var(--pink-dark);
+            color:
+                var(--pink-dark);
 
             cursor: pointer;
 
@@ -873,7 +872,8 @@
 
             inset: 0;
 
-            background: rgba(60, 45, 48, 0.28);
+            background:
+                rgba(60, 45, 48, 0.28);
 
             opacity: 0;
 
@@ -909,17 +909,21 @@
 
             right: 0;
 
-            width: min(430px, 92vw);
+            width:
+                min(430px, 92vw);
 
             height: 100vh;
 
             background: #ffffff;
 
-            box-shadow: var(--shadow-panel);
+            box-shadow:
+                var(--shadow-panel);
 
-            transform: translateX(110%);
+            transform:
+                translateX(110%);
 
-            transition: transform 0.35s ease;
+            transition:
+                transform 0.35s ease;
 
             display: flex;
 
@@ -930,7 +934,8 @@
 
         .side-panel.open {
 
-            transform: translateX(0);
+            transform:
+                translateX(0);
 
         }
 
@@ -943,7 +948,8 @@
 
             min-height: 105px;
 
-            padding: 25px 25px 20px;
+            padding:
+                25px 25px 20px;
 
             display: flex;
 
@@ -951,7 +957,8 @@
 
             justify-content: space-between;
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
             background:
                 linear-gradient(
@@ -969,7 +976,8 @@
 
             margin-bottom: 4px;
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
             font-size: 10px;
 
@@ -984,9 +992,12 @@
 
         .side-panel-header h2 {
 
-            color: var(--text);
+            color:
+                var(--text);
 
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
             font-size: 30px;
 
@@ -1005,9 +1016,11 @@
 
             border-radius: 50%;
 
-            background: var(--pink-soft);
+            background:
+                var(--pink-soft);
 
-            color: var(--pink-dark);
+            color:
+                var(--pink-dark);
 
             cursor: pointer;
 
@@ -1024,11 +1037,13 @@
 
         .panel-close:hover {
 
-            background: var(--pink);
+            background:
+                var(--pink);
 
             color: white;
 
-            transform: rotate(90deg);
+            transform:
+                rotate(90deg);
 
         }
 
@@ -1041,7 +1056,8 @@
 
             flex: 1;
 
-            padding: 30px 24px;
+            padding:
+                30px 24px;
 
             overflow-y: auto;
 
@@ -1075,9 +1091,11 @@
 
             border-radius: 50%;
 
-            background: var(--aqua-soft);
+            background:
+                var(--aqua-soft);
 
-            color: var(--aqua-dark);
+            color:
+                var(--aqua-dark);
 
             display: flex;
 
@@ -1094,9 +1112,12 @@
 
             margin-bottom: 8px;
 
-            color: var(--text);
+            color:
+                var(--text);
 
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
             font-size: 25px;
 
@@ -1109,7 +1130,8 @@
 
             max-width: 280px;
 
-            color: var(--text-soft);
+            color:
+                var(--text-soft);
 
             font-size: 13px;
 
@@ -1188,7 +1210,8 @@
 
                 min-height: 88px;
 
-                justify-content: space-between;
+                justify-content:
+                    space-between;
 
                 padding:
                     9px 20px;
@@ -1387,9 +1410,7 @@
 
         }
 
-
     </style>
-
 
 </head>
 
@@ -1437,33 +1458,24 @@
                 aria-label="Navegación principal"
             >
 
-
-<a
-    href="../index.html"
-    class="nav-link"
->
-    Inicio
-</a>
-
-
                 <a
-                    href="#categorias"
+                    href="../index.html"
                     class="nav-link"
                 >
-                    Categorías
+                    Inicio
                 </a>
 
 
-<a
-    href="../paginas/cabello.html"
-    class="nav-link"
->
-    Cabello
-</a>
+                <a
+                    href="cabello.html"
+                    class="nav-link"
+                >
+                    Cabello
+                </a>
 
 
                 <a
-                    href="#piel"
+                    href="piel.html"
                     class="nav-link"
                 >
                     Piel
@@ -1471,7 +1483,7 @@
 
 
                 <a
-                    href="#maquillaje"
+                    href="maquillaje.html"
                     class="nav-link"
                 >
                     Maquillaje
@@ -1479,7 +1491,7 @@
 
 
                 <a
-                    href="#accesorios"
+                    href="accesorios.html"
                     class="nav-link"
                 >
                     Accesorios
@@ -1487,7 +1499,7 @@
 
 
                 <a
-                    href="#joyeria"
+                    href="joyeria.html"
                     class="nav-link"
                 >
                     Joyería
@@ -1495,12 +1507,11 @@
 
 
                 <a
-                    href="#bolsos"
+                    href="bolsos.html"
                     class="nav-link"
                 >
                     Bolsos
                 </a>
-
 
             </nav>
 
@@ -1521,7 +1532,9 @@
                     aria-label="Buscar"
                 >
 
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i
+                        class="fa-solid fa-magnifying-glass"
+                    ></i>
 
                 </button>
 
@@ -1535,7 +1548,9 @@
                     aria-label="Favoritos"
                 >
 
-                    <i class="fa-regular fa-heart"></i>
+                    <i
+                        class="fa-regular fa-heart"
+                    ></i>
 
                     <span
                         class="action-badge"
@@ -1556,7 +1571,9 @@
                     aria-label="Carrito"
                 >
 
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i
+                        class="fa-solid fa-bag-shopping"
+                    ></i>
 
                     <span
                         class="action-badge"
@@ -1579,9 +1596,7 @@
                 >
 
                     <span></span>
-
                     <span></span>
-
                     <span></span>
 
                 </button>
@@ -1609,94 +1624,114 @@
             >
 
 
-<a
-    href="../index.html"
-    class="mobile-nav-link"
->
-    <span>Inicio</span>
-
-    <i class="fa-solid fa-chevron-right"></i>
-</a>
-
-
                 <a
-                    href="#categorias"
+                    href="../index.html"
                     class="mobile-nav-link"
                 >
 
-                    <span>Categorías</span>
+                    <span>
+                        Inicio
+                    </span>
 
-                    <i class="fa-solid fa-chevron-right"></i>
-
-                </a>
-
-
-<a
-    href="../paginas/cabello.html"
-    class="mobile-nav-link"
->
-    <span>Cabello</span>
-
-    <i class="fa-solid fa-chevron-right"></i>
-</a>
-
-
-                <a
-                    href="#piel"
-                    class="mobile-nav-link"
-                >
-
-                    <span>Piel</span>
-
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
 
                 </a>
 
 
                 <a
-                    href="#maquillaje"
+                    href="cabello.html"
                     class="mobile-nav-link"
                 >
 
-                    <span>Maquillaje</span>
+                    <span>
+                        Cabello
+                    </span>
 
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
 
                 </a>
 
 
                 <a
-                    href="#accesorios"
+                    href="piel.html"
                     class="mobile-nav-link"
                 >
 
-                    <span>Accesorios</span>
+                    <span>
+                        Piel
+                    </span>
 
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
 
                 </a>
 
 
                 <a
-                    href="#joyeria"
+                    href="maquillaje.html"
                     class="mobile-nav-link"
                 >
 
-                    <span>Joyería</span>
+                    <span>
+                        Maquillaje
+                    </span>
 
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
 
                 </a>
 
 
                 <a
-                    href="#bolsos"
+                    href="accesorios.html"
                     class="mobile-nav-link"
                 >
 
-                    <span>Bolsos</span>
+                    <span>
+                        Accesorios
+                    </span>
 
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
+
+                </a>
+
+
+                <a
+                    href="joyeria.html"
+                    class="mobile-nav-link"
+                >
+
+                    <span>
+                        Joyería
+                    </span>
+
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
+
+                </a>
+
+
+                <a
+                    href="bolsos.html"
+                    class="mobile-nav-link"
+                >
+
+                    <span>
+                        Bolsos
+                    </span>
+
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
 
                 </a>
 
@@ -1716,13 +1751,17 @@
                     id="mobileFavoritesButton"
                 >
 
-                    <i class="fa-regular fa-heart"></i>
+                    <i
+                        class="fa-regular fa-heart"
+                    ></i>
 
                     <span>
                         Favoritos
                     </span>
 
-                    <strong id="mobileFavoritesBadge">
+                    <strong
+                        id="mobileFavoritesBadge"
+                    >
                         0
                     </strong>
 
@@ -1734,13 +1773,17 @@
                     id="mobileCartButton"
                 >
 
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i
+                        class="fa-solid fa-bag-shopping"
+                    ></i>
 
                     <span>
                         Carrito
                     </span>
 
-                    <strong id="mobileCartBadge">
+                    <strong
+                        id="mobileCartBadge"
+                    >
                         0
                     </strong>
 
@@ -1767,12 +1810,11 @@
 
         <div class="search-panel-inner">
 
-
             <div class="search-input-wrapper">
 
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                ></i>
 
                 <input
                     type="search"
@@ -1781,20 +1823,19 @@
                     autocomplete="off"
                 >
 
-
                 <button
                     type="button"
                     id="closeSearchButton"
                     aria-label="Cerrar búsqueda"
                 >
 
-                    <i class="fa-solid fa-xmark"></i>
+                    <i
+                        class="fa-solid fa-xmark"
+                    ></i>
 
                 </button>
 
-
             </div>
-
 
         </div>
 
@@ -1821,9 +1862,7 @@
         aria-label="Favoritos"
     >
 
-
         <div class="side-panel-header">
-
 
             <div>
 
@@ -1845,31 +1884,30 @@
                 aria-label="Cerrar favoritos"
             >
 
-                <i class="fa-solid fa-xmark"></i>
+                <i
+                    class="fa-solid fa-xmark"
+                ></i>
 
             </button>
-
 
         </div>
 
 
         <div class="panel-content">
 
-
             <div class="empty-panel">
-
 
                 <div class="empty-icon">
 
-                    <i class="fa-regular fa-heart"></i>
+                    <i
+                        class="fa-regular fa-heart"
+                    ></i>
 
                 </div>
-
 
                 <h3>
                     Aún no tienes favoritos
                 </h3>
-
 
                 <p>
                     Cuando encuentres productos que te encanten,
@@ -1877,12 +1915,9 @@
                     fácilmente.
                 </p>
 
-
             </div>
 
-
         </div>
-
 
     </aside>
 
@@ -1897,9 +1932,7 @@
         aria-label="Carrito"
     >
 
-
         <div class="side-panel-header">
-
 
             <div>
 
@@ -1921,43 +1954,39 @@
                 aria-label="Cerrar carrito"
             >
 
-                <i class="fa-solid fa-xmark"></i>
+                <i
+                    class="fa-solid fa-xmark"
+                ></i>
 
             </button>
-
 
         </div>
 
 
         <div class="panel-content">
 
-
             <div class="empty-panel">
-
 
                 <div class="empty-icon">
 
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i
+                        class="fa-solid fa-bag-shopping"
+                    ></i>
 
                 </div>
-
 
                 <h3>
                     Tu carrito está vacío
                 </h3>
-
 
                 <p>
                     Los productos que agregues a tu carrito
                     aparecerán aquí.
                 </p>
 
-
             </div>
 
-
         </div>
-
 
     </aside>
 
@@ -1968,85 +1997,122 @@
 
     <script>
 
-
         /* ====================================================
            ELEMENTOS
         ==================================================== */
 
         const mobileMenuButton =
-            document.getElementById("mobileMenuButton");
+            document.getElementById(
+                "mobileMenuButton"
+            );
 
 
         const mobileMenu =
-            document.getElementById("mobileMenu");
+            document.getElementById(
+                "mobileMenu"
+            );
 
 
         const searchButton =
-            document.getElementById("searchButton");
+            document.getElementById(
+                "searchButton"
+            );
 
 
         const searchPanel =
-            document.getElementById("searchPanel");
+            document.getElementById(
+                "searchPanel"
+            );
 
 
         const searchInput =
-            document.getElementById("searchInput");
+            document.getElementById(
+                "searchInput"
+            );
 
 
         const closeSearchButton =
-            document.getElementById("closeSearchButton");
+            document.getElementById(
+                "closeSearchButton"
+            );
 
 
         const favoritesButton =
-            document.getElementById("favoritesButton");
+            document.getElementById(
+                "favoritesButton"
+            );
 
 
         const mobileFavoritesButton =
-            document.getElementById("mobileFavoritesButton");
+            document.getElementById(
+                "mobileFavoritesButton"
+            );
 
 
         const favoritesPanel =
-            document.getElementById("favoritesPanel");
+            document.getElementById(
+                "favoritesPanel"
+            );
 
 
         const closeFavoritesButton =
-            document.getElementById("closeFavoritesButton");
+            document.getElementById(
+                "closeFavoritesButton"
+            );
 
 
         const cartButton =
-            document.getElementById("cartButton");
+            document.getElementById(
+                "cartButton"
+            );
 
 
         const mobileCartButton =
-            document.getElementById("mobileCartButton");
+            document.getElementById(
+                "mobileCartButton"
+            );
 
 
         const cartPanel =
-            document.getElementById("cartPanel");
+            document.getElementById(
+                "cartPanel"
+            );
 
 
         const closeCartButton =
-            document.getElementById("closeCartButton");
+            document.getElementById(
+                "closeCartButton"
+            );
 
 
         const sidePanelOverlay =
-            document.getElementById("sidePanelOverlay");
+            document.getElementById(
+                "sidePanelOverlay"
+            );
 
 
         const favoritesBadge =
-            document.getElementById("favoritesBadge");
+            document.getElementById(
+                "favoritesBadge"
+            );
 
 
         const mobileFavoritesBadge =
-            document.getElementById("mobileFavoritesBadge");
+            document.getElementById(
+                "mobileFavoritesBadge"
+            );
 
 
         const cartBadge =
-            document.getElementById("cartBadge");
+            document.getElementById(
+                "cartBadge"
+            );
 
 
         const mobileCartBadge =
-            document.getElementById("mobileCartBadge");
+            document.getElementById(
+                "mobileCartBadge"
+            );
 
 
         /* ====================================================
@@ -2065,7 +2131,8 @@
         function actualizarAlturaIframe() {
 
             const altura =
-                document.documentElement.scrollHeight;
+                document.documentElement
+                    .scrollHeight;
 
 
             if (
@@ -2074,11 +2141,17 @@
             ) {
 
                 window.parent.postMessage(
+
                     {
-                        tipo: "nicolle-menu-altura",
-                        altura: altura
+                        tipo:
+                            "nicolle-menu-altura",
+
+                        altura:
+                            altura
                     },
+
                     "*"
+
                 );
 
             }
@@ -2087,14 +2160,18 @@
 
 
         /* ====================================================
-           ABRIR / CERRAR MENÚ MÓVIL
+           ABRIR MENÚ MÓVIL
         ==================================================== */
 
         function abrirMenuMovil() {
 
-            mobileMenu.classList.add("open");
+            mobileMenu.classList.add(
+                "open"
+            );
 
-            mobileMenuButton.classList.add("open");
+            mobileMenuButton.classList.add(
+                "open"
+            );
 
             mobileMenuButton.setAttribute(
                 "aria-expanded",
@@ -2106,24 +2183,32 @@
                 "Cerrar menú"
             );
 
+            document.body.classList.add(
+                "locked"
+            );
 
-            document.body.classList.add("locked");
 
-
-            setTimeout(function() {
-
-                actualizarAlturaIframe();
-
-            }, 50);
+            setTimeout(
+                actualizarAlturaIframe,
+                50
+            );
 
         }
 
 
+        /* ====================================================
+           CERRAR MENÚ MÓVIL
+        ==================================================== */
+
         function cerrarMenuMovil() {
 
-            mobileMenu.classList.remove("open");
+            mobileMenu.classList.remove(
+                "open"
+            );
 
-            mobileMenuButton.classList.remove("open");
+            mobileMenuButton.classList.remove(
+                "open"
+            );
 
             mobileMenuButton.setAttribute(
                 "aria-expanded",
@@ -2135,15 +2220,15 @@
                 "Abrir menú"
             );
 
+            document.body.classList.remove(
+                "locked"
+            );
 
-            document.body.classList.remove("locked");
 
-
-            setTimeout(function() {
-
-                actualizarAlturaIframe();
-
-            }, 450);
+            setTimeout(
+                actualizarAlturaIframe,
+                450
+            );
 
         }
 
@@ -2153,7 +2238,9 @@
             function() {
 
                 if (
-                    mobileMenu.classList.contains("open")
+                    mobileMenu.classList.contains(
+                        "open"
+                    )
                 ) {
 
                     cerrarMenuMovil();
@@ -2169,7 +2256,7 @@
 
 
         /* ====================================================
-           CERRAR MENÚ AL SELECCIONAR OPCIÓN
+           CERRAR MENÚ AL SELECCIONAR
         ==================================================== */
 
         const mobileLinks =
@@ -2178,18 +2265,20 @@
             );
 
 
-        mobileLinks.forEach(function(link) {
+        mobileLinks.forEach(
+            function(link) {
 
-            link.addEventListener(
-                "click",
-                function() {
+                link.addEventListener(
+                    "click",
+                    function() {
 
-                    cerrarMenuMovil();
+                        cerrarMenuMovil();
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
 
         /* ====================================================
@@ -2198,20 +2287,27 @@
 
         function abrirBusqueda() {
 
-            searchPanel.classList.add("open");
+            searchPanel.classList.add(
+                "open"
+            );
 
-            setTimeout(function() {
+            setTimeout(
+                function() {
 
-                searchInput.focus();
+                    searchInput.focus();
 
-            }, 250);
+                },
+                250
+            );
 
         }
 
 
         function cerrarBusqueda() {
 
-            searchPanel.classList.remove("open");
+            searchPanel.classList.remove(
+                "open"
+            );
 
             searchInput.value = "";
 
@@ -2246,24 +2342,38 @@
 
             cerrarMenuMovil();
 
-            cartPanel.classList.remove("open");
+            cartPanel.classList.remove(
+                "open"
+            );
 
-            favoritesPanel.classList.add("open");
+            favoritesPanel.classList.add(
+                "open"
+            );
 
-            sidePanelOverlay.classList.add("open");
+            sidePanelOverlay.classList.add(
+                "open"
+            );
 
-            document.body.classList.add("locked");
+            document.body.classList.add(
+                "locked"
+            );
 
         }
 
 
         function cerrarFavoritos() {
 
-            favoritesPanel.classList.remove("open");
+            favoritesPanel.classList.remove(
+                "open"
+            );
 
-            sidePanelOverlay.classList.remove("open");
+            sidePanelOverlay.classList.remove(
+                "open"
+            );
 
-            document.body.classList.remove("locked");
+            document.body.classList.remove(
+                "locked"
+            );
 
         }
 
@@ -2306,24 +2416,38 @@
 
             cerrarMenuMovil();
 
-            favoritesPanel.classList.remove("open");
+            favoritesPanel.classList.remove(
+                "open"
+            );
 
-            cartPanel.classList.add("open");
+            cartPanel.classList.add(
+                "open"
+            );
 
-            sidePanelOverlay.classList.add("open");
+            sidePanelOverlay.classList.add(
+                "open"
+            );
 
-            document.body.classList.add("locked");
+            document.body.classList.add(
+                "locked"
+            );
 
         }
 
 
         function cerrarCarrito() {
 
-            cartPanel.classList.remove("open");
+            cartPanel.classList.remove(
+                "open"
+            );
 
-            sidePanelOverlay.classList.remove("open");
+            sidePanelOverlay.classList.remove(
+                "open"
+            );
 
-            document.body.classList.remove("locked");
+            document.body.classList.remove(
+                "locked"
+            );
 
         }
 
@@ -2382,7 +2506,9 @@
             "keydown",
             function(event) {
 
-                if (event.key === "Escape") {
+                if (
+                    event.key === "Escape"
+                ) {
 
                     cerrarBusqueda();
 
@@ -2461,10 +2587,10 @@
             200
         );
 
-
     </script>
 
 
 </body>
 
 </html>
+
