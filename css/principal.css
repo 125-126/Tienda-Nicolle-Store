@@ -472,99 +472,81 @@ p {
 
 
 /* =========================================================
-   08. CATEGORÍAS
+   CATEGORÍAS
    ========================================================= */
 
 .categories {
+    position: relative;
     overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--color-bg-soft) 0%,
-            #f8f2ef 100%
-        );
+    background: linear-gradient(
+        180deg,
+        var(--color-bg-soft) 0%,
+        #f8f2ef 100%
+    );
 }
 
+.categories .container {
+    width: 100%;
+}
 
 .categories .section-heading {
-    max-width: 750px;
-
-    margin: 0 auto 58px;
-
+    max-width: 760px;
+    margin: 0 auto 55px;
     text-align: center;
 }
 
-
 .categories .section-kicker {
-    display: inline-block;
-
-    margin-bottom: 13px;
-
-    color: var(--color-primary-dark);
-
-    font-size: 0.72rem;
-
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
     font-weight: 700;
-
-    letter-spacing: 0.20em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-primary);
 }
-
 
 .categories .section-title {
-    margin: 0;
-
-    color: var(--color-text);
-
+    margin: 0 0 15px;
     font-family: var(--font-display);
-
-    font-size: clamp(
-        3rem,
-        6vw,
-        5rem
-    );
-
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
     font-weight: 500;
-
-    line-height: 0.95;
-
-    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--color-text);
 }
-
 
 .categories .section-description {
     max-width: 620px;
-
-    margin: 20px auto 0;
-
-    color: var(--color-text-soft);
-
-    font-size: 0.96rem;
-
+    margin: 0 auto;
+    font-family: var(--font-body);
+    font-size: 1rem;
     line-height: 1.8;
+    color: var(--color-text-soft);
 }
 
 
 /* =========================================================
-   GRID DE CATEGORÍAS
-   2 COLUMNAS EN ESCRITORIO
+   GRID — EXACTAMENTE 2 COLUMNAS
    ========================================================= */
 
 .categories-grid {
+    display: grid !important;
 
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    /* 2 categorías por fila */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 
     gap: 28px;
 
     width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+
+    align-items: stretch;
 }
 
 
 /* =========================================================
-   TARJETA DE CATEGORÍA
+   TARJETA
    ========================================================= */
 
 .category-card {
@@ -572,30 +554,33 @@ p {
 
     display: block;
 
+    width: 100%;
     min-width: 0;
-
     min-height: 390px;
 
     overflow: hidden;
 
-    border-radius: var(--radius-large);
+    border-radius: 26px;
 
     background: #ddd;
 
-    box-shadow: var(--shadow-soft);
+    box-shadow:
+        0 12px 35px rgba(38, 28, 25, 0.08);
+
+    text-decoration: none;
 
     isolation: isolate;
 
     transition:
-        transform var(--transition),
-        box-shadow var(--transition);
+        transform 0.35s cubic-bezier(.2, .8, .2, 1),
+        box-shadow 0.35s cubic-bezier(.2, .8, .2, 1);
 }
 
-
 .category-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 
-    box-shadow: var(--shadow-medium);
+    box-shadow:
+        0 22px 55px rgba(38, 28, 25, 0.15);
 }
 
 
@@ -608,34 +593,34 @@ p {
 
     inset: 0;
 
-    z-index: -2;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
 
     overflow: hidden;
 }
 
-
 .category-image img {
-    width: 100%;
+    display: block;
 
+    width: 100%;
     height: 100%;
 
     object-fit: cover;
-
     object-position: center;
 
     transition:
-        transform 0.8s cubic-bezier(.2,.8,.2,1);
+        transform 0.8s cubic-bezier(.2, .8, .2, 1);
 }
 
-
-.category-card:hover
-.category-image img {
+.category-card:hover .category-image img {
     transform: scale(1.07);
 }
 
 
 /* =========================================================
-   OVERLAY
+   CAPA OSCURA SOBRE LA IMAGEN
    ========================================================= */
 
 .category-overlay {
@@ -643,46 +628,34 @@ p {
 
     inset: 0;
 
+    z-index: 1;
+
     background:
         linear-gradient(
             180deg,
-            rgba(20, 15, 14, 0.03) 15%,
+            rgba(20, 15, 14, 0.02) 10%,
             rgba(20, 15, 14, 0.10) 40%,
-            rgba(20, 15, 14, 0.78) 100%
+            rgba(20, 15, 14, 0.82) 100%
         );
 
-    transition:
-        background var(--transition);
-}
-
-
-.category-card:hover
-.category-overlay {
-    background:
-        linear-gradient(
-            180deg,
-            rgba(20, 15, 14, 0.05) 10%,
-            rgba(20, 15, 14, 0.16) 40%,
-            rgba(20, 15, 14, 0.86) 100%
-        );
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   CONTENIDO DE CATEGORÍA
+   CONTENIDO DE LA TARJETA
    ========================================================= */
 
 .category-content {
     position: absolute;
 
     left: 0;
-
     right: 0;
-
     bottom: 0;
 
-    display: flex;
+    z-index: 2;
 
+    display: flex;
     align-items: flex-end;
 
     gap: 18px;
@@ -696,60 +669,26 @@ p {
    ========================================================= */
 
 .category-icon {
-    flex: 0 0 52px;
-
-    width: 52px;
-
-    height: 52px;
+    flex: 0 0 auto;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    border: 1px solid rgba(
-        255,
-        255,
-        255,
-        0.30
-    );
+    width: 48px;
+    height: 48px;
 
-    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.14
-        );
+    border-radius: 50%;
 
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
 
-    -webkit-backdrop-filter: blur(12px);
+    color: #fff;
 
-    transition:
-        transform var(--transition),
-        background var(--transition);
-}
-
-
-.category-card:hover
-.category-icon {
-    transform:
-        translateY(-4px)
-        rotate(-3deg);
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.23
-        );
+    font-size: 1.15rem;
 }
 
 
@@ -761,114 +700,49 @@ p {
     min-width: 0;
 }
 
-
 .category-info h3 {
-    margin: 0 0 5px;
-
-    color: #ffffff;
+    margin: 0 0 7px;
 
     font-family: var(--font-display);
 
-    font-size: 2rem;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
 
-    font-weight: 600;
+    font-weight: 500;
 
     line-height: 1;
 
-    letter-spacing: -0.02em;
+    color: #fff;
 }
-
 
 .category-info span {
     display: inline-flex;
-
     align-items: center;
+    gap: 8px;
 
-    gap: 9px;
+    font-family: var(--font-body);
 
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.76
-        );
-
-    font-size: 0.78rem;
-
+    font-size: 0.82rem;
     font-weight: 600;
 
+    letter-spacing: 0.04em;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.category-info span strong {
+    font-size: 1rem;
+
     transition:
-        color var(--transition),
-        gap var(--transition);
+        transform 0.3s ease;
 }
 
-
-.category-info span i {
-    font-size: 0.68rem;
-
-    transition:
-        transform var(--transition);
-}
-
-
-.category-card:hover
-.category-info span {
-    gap: 13px;
-
-    color: #ffffff;
-}
-
-
-.category-card:hover
-.category-info span i {
-    transform: translateX(3px);
+.category-card:hover .category-info span strong {
+    transform: translateX(5px);
 }
 
 
 /* =========================================================
-   EFECTO BRILLO
-   ========================================================= */
-
-.category-card::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -130%;
-
-    width: 70%;
-
-    height: 100%;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.18),
-            transparent
-        );
-
-    transform: skewX(-18deg);
-
-    transition:
-        left 0.8s ease;
-
-    z-index: 5;
-}
-
-
-.category-card:hover::after {
-    left: 145%;
-}
-
-
-/* =========================================================
-   BOTÓN CATEGORÍAS
+   BOTÓN
    ========================================================= */
 
 .categories-action {
@@ -876,81 +750,145 @@ p {
 
     justify-content: center;
 
-    margin-top: 48px;
+    margin-top: 45px;
 }
-
 
 .categories-button {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 12px;
 
-    min-height: 52px;
+    min-height: 50px;
 
     padding: 0 25px;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-primary);
 
-    border-radius: 14px;
+    border-radius: 999px;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.70
-        );
+    background: transparent;
 
-    color: var(--color-text);
-
-    font-size: 0.82rem;
-
-    font-weight: 700;
-
-    box-shadow:
-        0 8px 25px rgba(
-            50,
-            30,
-            25,
-            0.05
-        );
-
-    transition:
-        transform var(--transition),
-        background var(--transition),
-        box-shadow var(--transition);
-}
-
-
-.categories-button i {
     color: var(--color-primary);
 
+    font-family: var(--font-body);
+
+    font-size: 0.86rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
     transition:
-        transform var(--transition);
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
+.categories-button span {
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.3s ease;
+}
 
 .categories-button:hover {
-    transform: translateY(-3px);
+    background: var(--color-primary);
 
-    background: #ffffff;
+    color: #fff;
 
-    box-shadow:
-        0 14px 32px rgba(
-            50,
-            30,
-            25,
-            0.09
-        );
+    transform: translateY(-2px);
+}
+
+.categories-button:hover span {
+    transform: translateX(4px);
 }
 
 
-.categories-button:hover i {
-    transform: translateX(5px);
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 20px;
+    }
+
+    .category-card {
+        min-height: 330px;
+    }
+
+    .category-content {
+        padding: 24px;
+    }
+
+    .category-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .category-info h3 {
+        font-size: 2rem;
+    }
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .categories .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px;
+    }
+
+    .category-card {
+        min-height: 330px;
+    }
+
+    .category-content {
+        gap: 14px;
+        padding: 22px;
+    }
+
+    .category-info h3 {
+        font-size: 2rem;
+    }
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .category-card {
+        min-height: 290px;
+    }
+
+    .category-content {
+        padding: 18px;
+    }
+
+    .category-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .category-info h3 {
+        font-size: 1.75rem;
+    }
 }
 
 
