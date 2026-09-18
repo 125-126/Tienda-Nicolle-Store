@@ -31,10 +31,15 @@ function obtenerCarrito() {
         return carrito.map(producto => ({
 
             id: producto.id || "",
+
             nombre: producto.nombre || "Producto",
-            categoria: producto.categoria || "",
+
+            categoria: producto.categoria || "Producto",
+
             precio: Number(producto.precio) || 0,
+
             imagen: producto.imagen || "",
+
             cantidad: Math.max(
                 1,
                 Number(producto.cantidad) || 1
@@ -106,11 +111,11 @@ function agregarAlCarrito(producto) {
 
             nombre: producto.nombre,
 
-            categoria: producto.categoria || "",
+            categoria: producto.categoria || "Producto",
 
-            precio: Number(producto.precio),
+            precio: Number(producto.precio) || 0,
 
-            imagen: producto.imagen,
+            imagen: producto.imagen || "",
 
             cantidad: 1
 
@@ -206,7 +211,7 @@ function cambiarCantidad(id, cambio) {
 
 
 /* =========================================================
-   CALCULAR CANTIDAD TOTAL
+   CANTIDAD TOTAL
 ========================================================= */
 
 function obtenerCantidadTotal() {
@@ -227,7 +232,7 @@ function obtenerCantidadTotal() {
 
 
 /* =========================================================
-   CALCULAR SUBTOTAL
+   SUBTOTAL
 ========================================================= */
 
 function obtenerSubtotal() {
@@ -268,18 +273,14 @@ function formatearPrecio(precio) {
 
 
 /* =========================================================
-   ACTUALIZAR CONTADOR DEL CARRITO
+   ACTUALIZAR CONTADOR
 ========================================================= */
 
 function actualizarContadorCarrito() {
 
-    const cantidad = obtenerCantidadTotal();
+    const cantidad =
+        obtenerCantidadTotal();
 
-
-    /*
-     * Contadores dentro de carrito.html
-     * o cualquier página que utilice esta clase.
-     */
 
     const contadores =
         document.querySelectorAll(
@@ -289,7 +290,8 @@ function actualizarContadorCarrito() {
 
     contadores.forEach(contador => {
 
-        contador.textContent = cantidad;
+        contador.textContent =
+            cantidad;
 
         if (cantidad > 0) {
 
@@ -308,11 +310,6 @@ function actualizarContadorCarrito() {
     });
 
 
-    /*
-     * También buscamos IDs utilizados
-     * por diferentes versiones del menú.
-     */
-
     const idsContador = [
         "cartBadge",
         "cartBadgeMobile"
@@ -328,7 +325,8 @@ function actualizarContadorCarrito() {
             return;
         }
 
-        contador.textContent = cantidad;
+        contador.textContent =
+            cantidad;
 
         if (cantidad > 0) {
 
@@ -366,7 +364,8 @@ function renderizarCarrito() {
     }
 
 
-    const carrito = obtenerCarrito();
+    const carrito =
+        obtenerCarrito();
 
 
     /* -----------------------------------------
@@ -389,11 +388,15 @@ function renderizarCarrito() {
 
 
     /* -----------------------------------------
-       PRODUCTOS
+       LIMPIAR CONTENEDOR
     ----------------------------------------- */
 
     contenedor.innerHTML = "";
 
+
+    /* -----------------------------------------
+       CREAR PRODUCTOS
+    ----------------------------------------- */
 
     carrito.forEach(producto => {
 
@@ -411,7 +414,7 @@ function renderizarCarrito() {
 
 
 /* =========================================================
-   CREAR MENSAJE CARRITO VACÍO
+   CARRITO VACÍO
 ========================================================= */
 
 function crearCarritoVacio() {
@@ -459,7 +462,7 @@ function crearCarritoVacio() {
 
 
 /* =========================================================
-   CREAR PRODUCTO DEL CARRITO
+   CREAR PRODUCTO
 ========================================================= */
 
 function crearProductoCarrito(producto) {
@@ -477,12 +480,38 @@ function crearProductoCarrito(producto) {
         Number(producto.cantidad);
 
 
-    const imagen =
+    /*
+     * IMPORTANTE:
+     * Las imágenes de las páginas de categoría
+     * vienen con rutas como:
+     *
+     * ../img/categorias/cabello.jpeg
+     *
+     * Al estar carrito.html en la raíz,
+     * esa ruta necesita convertirse a:
+     *
+     * img/categorias/cabello.jpeg
+     */
+
+    let imagen =
         producto.imagen ||
         "img/categorias/portada.jpeg";
 
 
+    if (imagen.startsWith("../")) {
+
+        imagen =
+            imagen.replace(
+                /^\.\.\//,
+                ""
+            );
+
+    }
+
+
     elemento.innerHTML = `
+
+        <!-- IMAGEN -->
 
         <div class="carrito-producto-imagen">
 
@@ -494,36 +523,32 @@ function crearProductoCarrito(producto) {
         </div>
 
 
+        <!-- INFORMACIÓN -->
+
         <div class="carrito-producto-info">
 
             <p class="carrito-producto-categoria">
-
                 ${escaparHTML(
                     producto.categoria || "Producto"
                 )}
-
             </p>
 
-
             <h3>
-
                 ${escaparHTML(
-                    producto.nombre
+                    producto.nombre || "Producto"
                 )}
-
             </h3>
 
-
             <p class="carrito-producto-precio">
-
                 ${formatearPrecio(
                     producto.precio
                 )}
-
             </p>
 
         </div>
 
+
+        <!-- CONTROLES -->
 
         <div class="carrito-producto-controles">
 
@@ -540,10 +565,8 @@ function crearProductoCarrito(producto) {
                 </button>
 
 
-                <span>
-
+                <span class="cantidad-numero">
                     ${producto.cantidad}
-
                 </span>
 
 
@@ -583,9 +606,9 @@ function crearProductoCarrito(producto) {
     `;
 
 
-    /* -----------------------------------------
+    /* =====================================================
        BOTÓN MENOS
-    ----------------------------------------- */
+    ===================================================== */
 
     const btnMenos =
         elemento.querySelector(
@@ -610,9 +633,9 @@ function crearProductoCarrito(producto) {
     }
 
 
-    /* -----------------------------------------
+    /* =====================================================
        BOTÓN MÁS
-    ----------------------------------------- */
+    ===================================================== */
 
     const btnMas =
         elemento.querySelector(
@@ -637,9 +660,9 @@ function crearProductoCarrito(producto) {
     }
 
 
-    /* -----------------------------------------
-       BOTÓN ELIMINAR
-    ----------------------------------------- */
+    /* =====================================================
+       ELIMINAR
+    ===================================================== */
 
     const btnEliminar =
         elemento.querySelector(
@@ -700,6 +723,12 @@ function actualizarResumen() {
         );
 
 
+    const envioElemento =
+        document.getElementById(
+            "envioCarrito"
+        );
+
+
     if (cantidadElemento) {
 
         cantidadElemento.textContent =
@@ -724,24 +753,10 @@ function actualizarResumen() {
     }
 
 
-    /*
-     * Por ahora el envío queda como
-     * "Por calcular", tal como está
-     * diseñado en carrito.html.
-     */
-
-    const envioElemento =
-        document.getElementById(
-            "envioCarrito"
-        );
-
-
     if (envioElemento) {
 
         envioElemento.textContent =
-            cantidad > 0
-                ? "Por calcular"
-                : "Por calcular";
+            "Por calcular";
 
     }
 
@@ -780,10 +795,8 @@ function mostrarMensajeAgregado(nombre) {
         <i class="fa-solid fa-circle-check"></i>
 
         <span>
-
             ${escaparHTML(nombre)}
             agregado al carrito
-
         </span>
 
     `;
@@ -843,7 +856,7 @@ function escaparHTML(texto) {
 
 
 /* =========================================================
-   CONECTAR BOTONES "COMPRAR"
+   BOTONES COMPRAR
 ========================================================= */
 
 function conectarBotonesComprar() {
@@ -856,15 +869,12 @@ function conectarBotonesComprar() {
 
     botones.forEach(boton => {
 
-        /*
-         * Evitamos conectar el mismo botón
-         * más de una vez.
-         */
-
         if (
             boton.dataset.carritoConectado === "true"
         ) {
+
             return;
+
         }
 
 
@@ -888,7 +898,7 @@ function conectarBotonesComprar() {
                         boton.dataset.nombre,
 
                     categoria:
-                        boton.dataset.categoria || "",
+                        boton.dataset.categoria || "Producto",
 
                     precio:
                         Number(
@@ -900,10 +910,6 @@ function conectarBotonesComprar() {
 
                 };
 
-
-                /* --------------------------------
-                   VALIDAR DATOS
-                -------------------------------- */
 
                 if (
                     !producto.id ||
@@ -936,7 +942,7 @@ function conectarBotonesComprar() {
 
 
 /* =========================================================
-   BOTÓN FINALIZAR COMPRA
+   FINALIZAR COMPRA POR WHATSAPP
 ========================================================= */
 
 function configurarFinalizarCompra() {
@@ -955,7 +961,9 @@ function configurarFinalizarCompra() {
     if (
         boton.dataset.whatsappConfigurado === "true"
     ) {
+
         return;
+
     }
 
 
@@ -971,10 +979,6 @@ function configurarFinalizarCompra() {
                 obtenerCarrito();
 
 
-            /* -----------------------------------------
-               VALIDAR CARRITO
-            ----------------------------------------- */
-
             if (carrito.length === 0) {
 
                 mostrarMensajeAgregado(
@@ -985,10 +989,6 @@ function configurarFinalizarCompra() {
 
             }
 
-
-            /* -----------------------------------------
-               CREAR MENSAJE
-            ----------------------------------------- */
 
             let mensaje =
                 "Hola, quiero realizar una compra en Nicolle Store.\n\n";
@@ -1015,10 +1015,6 @@ function configurarFinalizarCompra() {
                 `\nTotal: ${formatearPrecio(total)}`;
 
 
-            /* -----------------------------------------
-               ABRIR WHATSAPP
-            ----------------------------------------- */
-
             const url =
                 "https://wa.me/" +
                 NUMERO_WHATSAPP +
@@ -1038,7 +1034,7 @@ function configurarFinalizarCompra() {
 
 
 /* =========================================================
-   SINCRONIZAR CUANDO CAMBIA localStorage
+   SINCRONIZAR LOCALSTORAGE
 ========================================================= */
 
 window.addEventListener(
@@ -1060,7 +1056,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   INICIALIZAR CARRITO
+   INICIALIZAR
 ========================================================= */
 
 document.addEventListener(
