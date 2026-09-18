@@ -6,17 +6,736 @@
 
     <title>Nicolle Store</title>
 
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS principal -->
     <link rel="stylesheet" href="css/principal.css">
 </head>
 
 <body>
 
-    <div class="menu-container">
-        <iframe
-            src="componentes/menu.html"
-            title="Menú principal de Nicolle Store">
-        </iframe>
+    <!-- =========================================================
+         MENÚ PRINCIPAL
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <!-- LOGO -->
+            <a href="index.html" class="brand">
+                <span class="brand-name">Nicolle Store</span>
+                <span class="brand-subtitle">Beauty & Style</span>
+            </a>
+
+
+            <!-- MENÚ DESKTOP -->
+            <nav class="desktop-nav">
+
+                <a href="index.html" class="nav-link active">
+                    Inicio
+                </a>
+
+                <a href="#" class="nav-link">
+                    Categorías
+                </a>
+
+                <a href="#" class="nav-link">
+                    Cabello
+                </a>
+
+                <a href="#" class="nav-link">
+                    Piel
+                </a>
+
+                <a href="#" class="nav-link">
+                    Maquillaje
+                </a>
+
+                <a href="#" class="nav-link">
+                    Accesorios
+                </a>
+
+                <a href="#" class="nav-link">
+                    Joyería
+                </a>
+
+                <a href="#" class="nav-link">
+                    Bolsos
+                </a>
+
+            </nav>
+
+
+            <!-- ACCIONES -->
+            <div class="header-actions">
+
+                <!-- BUSCAR -->
+                <button
+                    type="button"
+                    class="header-button"
+                    id="searchButton"
+                    aria-label="Buscar">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <!-- FAVORITOS -->
+                <button
+                    type="button"
+                    class="header-button favorite-button"
+                    id="favoriteButton"
+                    aria-label="Favoritos">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span class="action-badge" id="favoriteCount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- CARRITO -->
+                <button
+                    type="button"
+                    class="header-button cart-button"
+                    id="cartButton"
+                    aria-label="Carrito">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span class="action-badge" id="cartCount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- HAMBURGUESA -->
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             MENÚ MÓVIL
+        ====================================================== -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <nav class="mobile-nav">
+
+                <a href="index.html" class="mobile-nav-link active">
+                    <span>Inicio</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="#" class="mobile-nav-link">
+                    <span>Categorías</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="#" class="mobile-nav-link">
+                    <span>Cabello</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="#" class="mobile-nav-link">
+                    <span>Piel</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="#" class="mobile-nav-link">
+                    <span>Maquillaje</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="#" class="mobile-nav-link">
+                    <span>Accesorios</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="#" class="mobile-nav-link">
+                    <span>Joyería</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="#" class="mobile-nav-link">
+                    <span>Bolsos</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+            </nav>
+
+
+            <!-- ACCIONES MÓVILES -->
+            <div class="mobile-menu-actions">
+
+                <button type="button" id="mobileFavoriteButton">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Mis favoritos</span>
+                    <strong id="mobileFavoriteCount">0</strong>
+                </button>
+
+                <button type="button" id="mobileCartButton">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Mi carrito</span>
+                    <strong id="mobileCartCount">0</strong>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         BARRA DE BÚSQUEDA
+    ========================================================== -->
+
+    <div class="search-panel" id="searchPanel">
+
+        <div class="search-panel-inner">
+
+            <div class="search-input-wrapper">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="¿Qué estás buscando?"
+                    autocomplete="off">
+
+                <button
+                    type="button"
+                    id="closeSearch"
+                    aria-label="Cerrar búsqueda">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
+
+
+    <!-- =========================================================
+         PANEL DE FAVORITOS
+    ========================================================== -->
+
+    <div class="side-panel-overlay" id="favoritesOverlay"></div>
+
+    <aside class="side-panel" id="favoritesPanel">
+
+        <div class="side-panel-header">
+
+            <div>
+                <span class="panel-small-title">Nicolle Store</span>
+                <h2>Mis favoritos</h2>
+            </div>
+
+            <button
+                type="button"
+                class="panel-close"
+                id="closeFavorites">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div class="panel-content">
+
+            <div class="empty-panel">
+
+                <div class="empty-icon">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <h3>Aún no tienes favoritos</h3>
+
+                <p>
+                    Guarda aquí los productos que más te gusten.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         PANEL DEL CARRITO
+    ========================================================== -->
+
+    <div class="side-panel-overlay" id="cartOverlay"></div>
+
+    <aside class="side-panel" id="cartPanel">
+
+        <div class="side-panel-header">
+
+            <div>
+                <span class="panel-small-title">Nicolle Store</span>
+                <h2>Mi carrito</h2>
+            </div>
+
+            <button
+                type="button"
+                class="panel-close"
+                id="closeCart">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div class="panel-content">
+
+            <div class="empty-panel">
+
+                <div class="empty-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <h3>Tu carrito está vacío</h3>
+
+                <p>
+                    Aquí aparecerán los productos que agregues.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         CONTENIDO TEMPORAL
+         POR AHORA SOLO DEJAMOS EL MENÚ
+    ========================================================== -->
+
+    <main class="temporary-content">
+
+        <div class="temporary-message">
+
+            <span>NICOLLE STORE</span>
+
+            <h1>Beauty & Style</h1>
+
+            <p>
+                Nuestro espacio está tomando forma.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* =====================================================
+               ELEMENTOS
+            ====================================================== */
+
+            const mobileMenuButton =
+                document.getElementById("mobileMenuButton");
+
+            const mobileMenu =
+                document.getElementById("mobileMenu");
+
+            const searchButton =
+                document.getElementById("searchButton");
+
+            const searchPanel =
+                document.getElementById("searchPanel");
+
+            const searchInput =
+                document.getElementById("searchInput");
+
+            const closeSearch =
+                document.getElementById("closeSearch");
+
+
+            const favoriteButton =
+                document.getElementById("favoriteButton");
+
+            const favoriteCount =
+                document.getElementById("favoriteCount");
+
+            const mobileFavoriteButton =
+                document.getElementById("mobileFavoriteButton");
+
+            const mobileFavoriteCount =
+                document.getElementById("mobileFavoriteCount");
+
+
+            const cartButton =
+                document.getElementById("cartButton");
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+            const mobileCartButton =
+                document.getElementById("mobileCartButton");
+
+            const mobileCartCount =
+                document.getElementById("mobileCartCount");
+
+
+            const favoritesPanel =
+                document.getElementById("favoritesPanel");
+
+            const favoritesOverlay =
+                document.getElementById("favoritesOverlay");
+
+            const closeFavorites =
+                document.getElementById("closeFavorites");
+
+
+            const cartPanel =
+                document.getElementById("cartPanel");
+
+            const cartOverlay =
+                document.getElementById("cartOverlay");
+
+            const closeCart =
+                document.getElementById("closeCart");
+
+
+            /* =====================================================
+               MENÚ HAMBURGUESA
+            ====================================================== */
+
+            mobileMenuButton.addEventListener("click", function () {
+
+                const isOpen =
+                    mobileMenu.classList.toggle("open");
+
+                mobileMenuButton.classList.toggle("open", isOpen);
+
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+                document.body.classList.toggle(
+                    "menu-open",
+                    isOpen
+                );
+
+            });
+
+
+            /* =====================================================
+               CERRAR MENÚ AL SELECCIONAR UNA OPCIÓN
+            ====================================================== */
+
+            const mobileLinks =
+                document.querySelectorAll(".mobile-nav-link");
+
+            mobileLinks.forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    mobileMenu.classList.remove("open");
+
+                    mobileMenuButton.classList.remove("open");
+
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    document.body.classList.remove(
+                        "menu-open"
+                    );
+
+                });
+
+            });
+
+
+            /* =====================================================
+               BÚSQUEDA
+            ====================================================== */
+
+            searchButton.addEventListener("click", function () {
+
+                searchPanel.classList.add("open");
+
+                setTimeout(function () {
+                    searchInput.focus();
+                }, 150);
+
+            });
+
+
+            closeSearch.addEventListener("click", function () {
+
+                searchPanel.classList.remove("open");
+
+                searchInput.value = "";
+
+            });
+
+
+            /* =====================================================
+               FAVORITOS
+            ====================================================== */
+
+            let favorites = 0;
+
+
+            function updateFavoriteCount() {
+
+                favoriteCount.textContent = favorites;
+
+                mobileFavoriteCount.textContent = favorites;
+
+            }
+
+
+            favoriteButton.addEventListener("click", function () {
+
+                openFavorites();
+
+            });
+
+
+            mobileFavoriteButton.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu.classList.remove("open");
+
+                    mobileMenuButton.classList.remove("open");
+
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    document.body.classList.remove(
+                        "menu-open"
+                    );
+
+                    openFavorites();
+
+                }
+            );
+
+
+            function openFavorites() {
+
+                favoritesPanel.classList.add("open");
+
+                favoritesOverlay.classList.add("open");
+
+                document.body.classList.add(
+                    "panel-open"
+                );
+
+            }
+
+
+            function closeFavoritesPanel() {
+
+                favoritesPanel.classList.remove("open");
+
+                favoritesOverlay.classList.remove("open");
+
+                document.body.classList.remove(
+                    "panel-open"
+                );
+
+            }
+
+
+            closeFavorites.addEventListener(
+                "click",
+                closeFavoritesPanel
+            );
+
+
+            favoritesOverlay.addEventListener(
+                "click",
+                closeFavoritesPanel
+            );
+
+
+            /* =====================================================
+               CARRITO
+            ====================================================== */
+
+            let cartItems = 0;
+
+
+            function updateCartCount() {
+
+                cartCount.textContent = cartItems;
+
+                mobileCartCount.textContent = cartItems;
+
+            }
+
+
+            cartButton.addEventListener("click", function () {
+
+                openCart();
+
+            });
+
+
+            mobileCartButton.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu.classList.remove("open");
+
+                    mobileMenuButton.classList.remove("open");
+
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    document.body.classList.remove(
+                        "menu-open"
+                    );
+
+                    openCart();
+
+                }
+            );
+
+
+            function openCart() {
+
+                cartPanel.classList.add("open");
+
+                cartOverlay.classList.add("open");
+
+                document.body.classList.add(
+                    "panel-open"
+                );
+
+            }
+
+
+            function closeCartPanel() {
+
+                cartPanel.classList.remove("open");
+
+                cartOverlay.classList.remove("open");
+
+                document.body.classList.remove(
+                    "panel-open"
+                );
+
+            }
+
+
+            closeCart.addEventListener(
+                "click",
+                closeCartPanel
+            );
+
+
+            cartOverlay.addEventListener(
+                "click",
+                closeCartPanel
+            );
+
+
+            /* =====================================================
+               ESCAPE
+            ====================================================== */
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (event.key === "Escape") {
+
+                        mobileMenu.classList.remove("open");
+
+                        mobileMenuButton.classList.remove(
+                            "open"
+                        );
+
+                        mobileMenuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        document.body.classList.remove(
+                            "menu-open"
+                        );
+
+                        searchPanel.classList.remove(
+                            "open"
+                        );
+
+                        closeFavoritesPanel();
+
+                        closeCartPanel();
+
+                    }
+
+                }
+            );
+
+
+            /* =====================================================
+               INICIALIZAR CONTADORES
+            ====================================================== */
+
+            updateFavoriteCount();
+
+            updateCartCount();
+
+        });
+
+    </script>
 
 </body>
 </html>
