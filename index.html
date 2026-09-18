@@ -1,110 +1,159 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
 
-    <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta charset="UTF-8">
 
-    <title>Nicolle Store</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Nicolle Store</title>
 
 
-    <!-- =====================================================
-         CSS PRINCIPAL
-    ====================================================== -->
+<!-- =====================================================
+     CSS PRINCIPAL
+====================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="css/principal.css"
-    >
+<link
+    rel="stylesheet"
+    href="css/principal.css"
+>
+```
 
 </head>
 
-
 <body>
 
+```
+<!-- =====================================================
+     MENÚ
 
-    <!-- =====================================================
-         MENÚ
+     IMPORTANTE:
+     EL MENÚ COMPLETO ESTÁ EN:
 
-         IMPORTANTE:
-         EL MENÚ COMPLETO ESTÁ EN:
+     componentes/menu.html
 
-         componentes/menu.html
+     Aquí NO colocamos el código del menú.
+====================================================== -->
 
-         Aquí NO colocamos el código del menú.
-    ====================================================== -->
+<div class="menu-container">
 
-    <div class="menu-container">
+    <iframe
+        id="menuFrame"
+        src="componentes/menu.html"
+        title="Menú principal de Nicolle Store"
+        scrolling="no"
+        frameborder="0">
+    </iframe>
 
-        <iframe
-            id="menuFrame"
-            src="componentes/menu.html"
-            title="Menú principal de Nicolle Store"
-            scrolling="no"
-            frameborder="0">
-        </iframe>
-
-    </div>
-
-
-    <!-- =====================================================
-         CONTENIDO PRINCIPAL
-
-         Aquí posteriormente colocaremos:
-         - Inicio
-         - Productos
-         - Categorías
-         - etc.
-    ====================================================== -->
-
-    <main id="contenido">
-
-    </main>
+</div>
 
 
-    <!-- =====================================================
-         AJUSTE AUTOMÁTICO DEL IFRAME
-         
-         Esto permite que el menú móvil se expanda
-         cuando presionamos la hamburguesa.
-    ====================================================== -->
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+====================================================== -->
 
-    <script>
-
-        const menuFrame = document.getElementById("menuFrame");
+<main id="contenido">
 
 
-        window.addEventListener("message", function(event) {
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
-            if (!event.data) {
-                return;
-            }
-
-
-            if (event.data.tipo !== "nicolle-menu-altura") {
-                return;
-            }
+    <section class="hero">
 
 
-            const altura = Number(event.data.altura);
+        <!--
+            Imagen utilizada como marca de agua.
+            Archivo:
+
+            imagenes/hero.jpg
+        -->
+
+        <div class="hero-watermark"></div>
 
 
-            if (!Number.isFinite(altura)) {
-                return;
-            }
+        <!-- CONTENIDO DEL HERO -->
+
+        <div class="hero-content">
 
 
-            menuFrame.style.height = altura + "px";
+            <span class="hero-small">
+                BEAUTY & STYLE
+            </span>
 
-        });
+
+            <h1>
+                Tu estilo,<br>
+                tu esencia.
+            </h1>
 
 
-    </script>
+            <p>
+                Descubre algo especial para ti.
+            </p>
+
+
+            <a
+                href="#categorias"
+                class="hero-button"
+            >
+                Comprar ahora
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     AJUSTE AUTOMÁTICO DEL IFRAME
+
+     Esto permite que el menú móvil se expanda
+     cuando presionamos la hamburguesa.
+====================================================== -->
+
+<script>
+
+    const menuFrame = document.getElementById("menuFrame");
+
+
+    window.addEventListener("message", function(event) {
+
+        if (!event.data) {
+            return;
+        }
+
+
+        if (event.data.tipo !== "nicolle-menu-altura") {
+            return;
+        }
+
+
+        const altura = Number(event.data.altura);
+
+
+        if (!Number.isFinite(altura)) {
+            return;
+        }
+
+
+        menuFrame.style.height = altura + "px";
+
+    });
+
+
+</script>
 
 
 </body>
