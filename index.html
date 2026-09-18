@@ -61,46 +61,66 @@
 <main id="contenido">
 
 
+<!-- =================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+
     <!-- =================================================
-         HERO
+         VIDEO DEL HERO
     ================================================== -->
 
-    <section class="hero">
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+
+        <source
+            src="video/hero.mp4"
+            type="video/mp4"
+        >
+
+        Tu navegador no soporta videos HTML5.
+
+    </video>
 
 
-        <!--
-            Imagen utilizada como marca de agua.
-            Archivo:
+    <!-- =================================================
+         CAPA SUAVE SOBRE EL VIDEO
+    ================================================== -->
 
-            imagenes/hero.jpg
-        -->
-
-        <div class="hero-watermark"></div>
+    <div class="hero-overlay"></div>
 
 
-        <!-- CONTENIDO DEL HERO -->
+    <!-- =================================================
+         CONTENIDO DEL HERO
+    ================================================== -->
 
-        <div class="hero-content">
-
-
-
-
-
-            <a
-                href="#categorias"
-                class="hero-button"
-            >
-                Comprar ahora
-            </a>
+    <div class="hero-content">
 
 
-        </div>
+        <a
+            href="#categorias"
+            class="hero-button"
+        >
+            Comprar ahora
+        </a>
 
 
-    </section>
+    </div>
+
+
+</section>
 
 
 </main>
+
 
 
 <!-- =====================================================
