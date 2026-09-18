@@ -15,6 +15,11 @@
         content="Nicolle Store — Belleza, cuidado personal y productos seleccionados para resaltar tu esencia."
     >
 
+    <meta
+        name="theme-color"
+        content="#f8f3f0"
+    >
+
     <title>Nicolle Store | Belleza que inspira</title>
 
 
@@ -62,7 +67,7 @@
 
 
     <!-- =====================================================
-         MENÚ INDEPENDIENTE
+         MENÚ PRINCIPAL
          ===================================================== -->
 
     <iframe
@@ -70,6 +75,7 @@
         class="menu-frame"
         title="Menú principal de Nicolle Store"
         scrolling="no"
+        frameborder="0"
     ></iframe>
 
 
@@ -85,7 +91,10 @@
              HERO
              ================================================= -->
 
-        <section class="hero">
+        <section
+            class="hero"
+            id="inicio"
+        >
 
             <div class="hero-content">
 
@@ -174,316 +183,357 @@
 
 
 
-<!-- =========================================================
-     CATEGORÍAS
-     ========================================================= -->
-
-<section
-    class="categories section section-soft"
-    id="categorias"
->
-
-    <div class="container">
-
         <!-- =================================================
-             ENCABEZADO
+             CATEGORÍAS
              ================================================= -->
 
-        <div class="section-heading">
+        <section
+            class="categories section section-soft"
+            id="categorias"
+        >
 
-            <span class="section-kicker">
-                Explora nuestra colección
-            </span>
+            <div class="container">
 
-            <h2 class="section-title">
-                Categorías
-            </h2>
 
-            <p class="section-description">
-                Descubre nuestros productos organizados por categorías
-                y encuentra fácilmente lo que estás buscando.
-            </p>
+                <!-- =========================================
+                     ENCABEZADO
+                     ========================================= -->
 
-        </div>
+                <div class="section-heading">
+
+                    <span class="section-kicker">
+                        EXPLORA NUESTRA COLECCIÓN
+                    </span>
+
+
+                    <h2 class="section-title">
+                        Categorías
+                    </h2>
+
+
+                    <p class="section-description">
+                        Encuentra tus productos favoritos
+                        organizados en nuestras diferentes
+                        categorías de belleza y cuidado personal.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     GRID DE CATEGORÍAS
+                     ========================================= -->
+
+                <div class="categories-grid">
+
+
+                    <!-- =====================================
+                         CABELLO
+                         ===================================== -->
+
+                    <a
+                        href="paginas/cabello.html"
+                        class="category-card"
+                    >
+
+                        <div class="category-image">
+
+                            <img
+                                src="img/categorias/cabello.jpg"
+                                alt="Productos para el cabello"
+                                loading="lazy"
+                            >
+
+                            <div class="category-overlay"></div>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                            </div>
+
+
+                            <div class="category-info">
+
+                                <h3>
+                                    Cabello
+                                </h3>
+
+
+                                <span>
+                                    Ver productos
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- =====================================
+                         PIEL
+                         ===================================== -->
+
+                    <a
+                        href="paginas/piel.html"
+                        class="category-card"
+                    >
+
+                        <div class="category-image">
+
+                            <img
+                                src="img/categorias/piel.jpg"
+                                alt="Productos para el cuidado de la piel"
+                                loading="lazy"
+                            >
+
+                            <div class="category-overlay"></div>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-spa"></i>
+
+                            </div>
+
+
+                            <div class="category-info">
+
+                                <h3>
+                                    Piel
+                                </h3>
+
+
+                                <span>
+                                    Ver productos
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- =====================================
+                         MAQUILLAJE
+                         ===================================== -->
+
+                    <a
+                        href="paginas/maquillaje.html"
+                        class="category-card"
+                    >
+
+                        <div class="category-image">
+
+                            <img
+                                src="img/categorias/maquillaje.jpg"
+                                alt="Productos de maquillaje"
+                                loading="lazy"
+                            >
+
+                            <div class="category-overlay"></div>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-face-smile-beam"></i>
+
+                            </div>
+
+
+                            <div class="category-info">
+
+                                <h3>
+                                    Maquillaje
+                                </h3>
+
+
+                                <span>
+                                    Ver productos
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- =====================================
+                         PESTAÑAS
+                         ===================================== -->
+
+                    <a
+                        href="paginas/pestanas.html"
+                        class="category-card"
+                    >
+
+                        <div class="category-image">
+
+                            <img
+                                src="img/categorias/pestanas.jpg"
+                                alt="Productos para pestañas"
+                                loading="lazy"
+                            >
+
+                            <div class="category-overlay"></div>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </div>
+
+
+                            <div class="category-info">
+
+                                <h3>
+                                    Pestañas
+                                </h3>
+
+
+                                <span>
+                                    Ver productos
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- =========================================
+                     BOTÓN CATEGORÍAS
+                     ========================================= -->
+
+                <div class="categories-action">
+
+                    <a
+                        href="#categorias"
+                        class="categories-button"
+                    >
+
+                        <span>
+                            Explorar categorías
+                        </span>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
 
 
         <!-- =================================================
-             GRID DE CATEGORÍAS
+             BANNER DE BELLEZA
              ================================================= -->
 
-        <div class="categories-grid">
+        <section class="beauty-banner">
 
 
-            <!-- =================================================
-                 CATEGORÍA 1
-                 ================================================= -->
+            <div class="beauty-banner-image">
 
-            <a
-                href="#"
-                class="category-card"
-            >
+                <img
+                    src="img/categorias/portada.jpeg"
+                    alt="Colección de belleza Nicolle Store"
+                    loading="lazy"
+                >
 
-                <div class="category-image">
+            </div>
 
-                    <img
-                        src="{{ asset('images/categorias/categoria-1.jpg') }}"
-                        alt="Categoría 1"
-                        loading="lazy"
-                    >
 
-                    <div class="category-overlay"></div>
+            <!-- =============================================
+                 OVERLAY
+                 ============================================= -->
 
-                </div>
+            <div class="beauty-banner-overlay"></div>
 
 
-                <div class="category-content">
+            <!-- =============================================
+                 CONTENIDO
+                 ============================================= -->
 
-                    <div class="category-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
+            <div class="beauty-banner-content">
 
-                    <div class="category-info">
-
-                        <h3>
-                            Categoría 1
-                        </h3>
-
-                        <span>
-                            Ver productos
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-
-            <!-- =================================================
-                 CATEGORÍA 2
-                 ================================================= -->
-
-            <a
-                href="#"
-                class="category-card"
-            >
-
-                <div class="category-image">
-
-                    <img
-                        src="{{ asset('images/categorias/categoria-2.jpg') }}"
-                        alt="Categoría 2"
-                        loading="lazy"
-                    >
-
-                    <div class="category-overlay"></div>
-
-                </div>
-
-
-                <div class="category-content">
-
-                    <div class="category-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-
-                    <div class="category-info">
-
-                        <h3>
-                            Categoría 2
-                        </h3>
-
-                        <span>
-                            Ver productos
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-
-            <!-- =================================================
-                 CATEGORÍA 3
-                 ================================================= -->
-
-            <a
-                href="#"
-                class="category-card"
-            >
-
-                <div class="category-image">
-
-                    <img
-                        src="{{ asset('images/categorias/categoria-3.jpg') }}"
-                        alt="Categoría 3"
-                        loading="lazy"
-                    >
-
-                    <div class="category-overlay"></div>
-
-                </div>
-
-
-                <div class="category-content">
-
-                    <div class="category-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-
-                    <div class="category-info">
-
-                        <h3>
-                            Categoría 3
-                        </h3>
-
-                        <span>
-                            Ver productos
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-
-            <!-- =================================================
-                 CATEGORÍA 4
-                 ================================================= -->
-
-            <a
-                href="#"
-                class="category-card"
-            >
-
-                <div class="category-image">
-
-                    <img
-                        src="{{ asset('images/categorias/categoria-4.jpg') }}"
-                        alt="Categoría 4"
-                        loading="lazy"
-                    >
-
-                    <div class="category-overlay"></div>
-
-                </div>
-
-
-                <div class="category-content">
-
-                    <div class="category-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-
-                    <div class="category-info">
-
-                        <h3>
-                            Categoría 4
-                        </h3>
-
-                        <span>
-                            Ver productos
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-
-        </div>
-
-
-        <!-- =================================================
-             BOTÓN GENERAL
-             ================================================= -->
-
-        <div class="categories-action">
-
-            <a
-                href="#"
-                class="categories-button"
-            >
-
-                <span>
-                    Ver todas las categorías
+                <span class="section-eyebrow">
+                    TU MOMENTO
                 </span>
 
-                <i class="fas fa-arrow-right"></i>
 
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =================================================
-     BANNER DE BELLEZA
-     ================================================= -->
-
-<section class="beauty-banner">
-
-    <div class="beauty-banner-image">
-
-        <img
-            src="img/categorias/portada.jpeg"
-            alt="Colección de belleza Nicolle Store"
-            loading="lazy"
-        >
-
-    </div>
+                <h2>
+                    Haz de tu rutina
+                    <em>un momento especial.</em>
+                </h2>
 
 
-    <!-- Capa para mejorar la lectura del texto -->
-
-    <div class="beauty-banner-overlay"></div>
-
-
-    <div class="beauty-banner-content">
-
-        <span class="section-eyebrow">
-            TU MOMENTO
-        </span>
+                <p>
+                    Regálate unos minutos para ti.
+                    Descubre productos que convierten
+                    lo cotidiano en algo especial.
+                </p>
 
 
-        <h2>
-            Haz de tu rutina
-            <em>un momento especial.</em>
-        </h2>
+                <a
+                    href="paginas/belleza.html"
+                    class="beauty-button"
+                >
+
+                    <span>
+                        Explorar belleza
+                    </span>
 
 
-        <p>
-            Regálate unos minutos para ti.
-            Descubre productos que convierten
-            lo cotidiano en algo especial.
-        </p>
+                    <i class="fa-solid fa-arrow-right"></i>
 
+                </a>
 
-        <a
-            href="paginas/belleza.html"
-            class="beauty-button"
-        >
+            </div>
 
-            <span>
-                Explorar belleza
-            </span>
+        </section>
 
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
-
-    </div>
-
-</section>
 
 
         <!-- =================================================
@@ -497,7 +547,9 @@
                 <div class="benefits-grid">
 
 
-                    <!-- BENEFICIO 1 -->
+                    <!-- =====================================
+                         BENEFICIO 1
+                         ===================================== -->
 
                     <div class="benefit-item">
 
@@ -514,6 +566,7 @@
                                 Selección especial
                             </h3>
 
+
                             <p>
                                 Productos elegidos
                                 pensando en ti.
@@ -525,7 +578,9 @@
 
 
 
-                    <!-- BENEFICIO 2 -->
+                    <!-- =====================================
+                         BENEFICIO 2
+                         ===================================== -->
 
                     <div class="benefit-item">
 
@@ -542,6 +597,7 @@
                                 Atención personalizada
                             </h3>
 
+
                             <p>
                                 Estamos para ayudarte
                                 a encontrar lo que buscas.
@@ -553,7 +609,9 @@
 
 
 
-                    <!-- BENEFICIO 3 -->
+                    <!-- =====================================
+                         BENEFICIO 3
+                         ===================================== -->
 
                     <div class="benefit-item">
 
@@ -570,6 +628,7 @@
                                 Detalles que enamoran
                             </h3>
 
+
                             <p>
                                 Porque cada compra
                                 merece sentirse especial.
@@ -581,7 +640,9 @@
 
 
 
-                    <!-- BENEFICIO 4 -->
+                    <!-- =====================================
+                         BENEFICIO 4
+                         ===================================== -->
 
                     <div class="benefit-item">
 
@@ -597,6 +658,7 @@
                             <h3>
                                 Estamos contigo
                             </h3>
+
 
                             <p>
                                 Resolvemos tus dudas
@@ -665,8 +727,10 @@
                             <input
                                 type="email"
                                 id="newsletterEmail"
+                                name="email"
                                 placeholder="Tu correo electrónico"
                                 autocomplete="email"
+                                aria-label="Tu correo electrónico"
                                 required
                             >
 
@@ -678,9 +742,14 @@
                             type="submit"
                             class="btn-primary"
                         >
-                            Suscribirme
+
+                            <span>
+                                Suscribirme
+                            </span>
+
 
                             <i class="fa-solid fa-arrow-right"></i>
+
                         </button>
 
 
@@ -709,9 +778,9 @@
             <div class="footer-grid">
 
 
-                <!-- =================================================
+                <!-- =============================================
                      MARCA
-                     ================================================= -->
+                     ============================================= -->
 
                 <div class="footer-brand">
 
@@ -741,9 +810,9 @@
 
 
 
-                <!-- =================================================
+                <!-- =============================================
                      EXPLORA
-                     ================================================= -->
+                     ============================================= -->
 
                 <div class="footer-column">
 
@@ -775,9 +844,9 @@
 
 
 
-                <!-- =================================================
+                <!-- =============================================
                      DESCUBRE
-                     ================================================= -->
+                     ============================================= -->
 
                 <div class="footer-column">
 
@@ -796,22 +865,22 @@
                     </a>
 
 
-                    <a href="#productos">
-                        Favoritos
+                    <a href="#categorias">
+                        Categorías
                     </a>
 
 
-                    <a href="#categorias">
-                        Categorías
+                    <a href="#newsletterForm">
+                        Newsletter
                     </a>
 
                 </div>
 
 
 
-                <!-- =================================================
-                     REDES
-                     ================================================= -->
+                <!-- =============================================
+                     REDES SOCIALES
+                     ============================================= -->
 
                 <div class="footer-column">
 
@@ -826,24 +895,33 @@
                         <a
                             href="#"
                             aria-label="Instagram"
+                            title="Instagram"
                         >
+
                             <i class="fa-brands fa-instagram"></i>
+
                         </a>
 
 
                         <a
                             href="#"
                             aria-label="Facebook"
+                            title="Facebook"
                         >
+
                             <i class="fa-brands fa-facebook-f"></i>
+
                         </a>
 
 
                         <a
                             href="#"
                             aria-label="TikTok"
+                            title="TikTok"
                         >
+
                             <i class="fa-brands fa-tiktok"></i>
+
                         </a>
 
 
@@ -856,9 +934,9 @@
 
 
 
-            <!-- =================================================
+            <!-- =============================================
                  FOOTER BOTTOM
-                 ================================================= -->
+                 ============================================= -->
 
             <div class="footer-bottom">
 
