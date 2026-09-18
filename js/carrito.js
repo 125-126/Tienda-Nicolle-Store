@@ -4,6 +4,7 @@
 ========================================================= */
 
 const CLAVE_CARRITO = "nicolleStoreCarrito";
+const NUMERO_WHATSAPP = "50360014234";
 
 
 /* =========================================================
@@ -23,7 +24,23 @@ function obtenerCarrito() {
 
         const carrito = JSON.parse(carritoGuardado);
 
-        return Array.isArray(carrito) ? carrito : [];
+        if (!Array.isArray(carrito)) {
+            return [];
+        }
+
+        return carrito.map(producto => ({
+
+            id: producto.id || "",
+            nombre: producto.nombre || "Producto",
+            categoria: producto.categoria || "",
+            precio: Number(producto.precio) || 0,
+            imagen: producto.imagen || "",
+            cantidad: Math.max(
+                1,
+                Number(producto.cantidad) || 1
+            )
+
+        }));
 
     } catch (error) {
 
@@ -45,10 +62,21 @@ function obtenerCarrito() {
 
 function guardarCarrito(carrito) {
 
-    localStorage.setItem(
-        CLAVE_CARRITO,
-        JSON.stringify(carrito)
-    );
+    try {
+
+        localStorage.setItem(
+            CLAVE_CARRITO,
+            JSON.stringify(carrito)
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Error al guardar el carrito:",
+            error
+        );
+
+    }
 
 }
 
@@ -95,7 +123,9 @@ function agregarAlCarrito(producto) {
 
     actualizarContadorCarrito();
 
-    mostrarMensajeAgregado(producto.nombre);
+    mostrarMensajeAgregado(
+        producto.nombre
+    );
 
 }
 
@@ -113,6 +143,21 @@ function eliminarDelCarrito(id) {
     );
 
     guardarCarrito(carrito);
+
+    renderizarCarrito();
+
+    actualizarContadorCarrito();
+
+}
+
+
+/* =========================================================
+   VACIAR CARRITO
+========================================================= */
+
+function vaciarCarrito() {
+
+    guardarCarrito([]);
 
     renderizarCarrito();
 
@@ -169,8 +214,12 @@ function obtenerCantidadTotal() {
     const carrito = obtenerCarrito();
 
     return carrito.reduce(
-        (total, producto) =>
-            total + producto.cantidad,
+        (total, producto) => {
+
+            return total +
+                Number(producto.cantidad);
+
+        },
         0
     );
 
@@ -186,9 +235,15 @@ function obtenerSubtotal() {
     const carrito = obtenerCarrito();
 
     return carrito.reduce(
-        (total, producto) =>
-            total +
-            (Number(producto.precio) * producto.cantidad),
+        (total, producto) => {
+
+            return total +
+                (
+                    Number(producto.precio) *
+                    Number(producto.cantidad)
+                );
+
+        },
         0
     );
 
@@ -201,7 +256,7 @@ function obtenerSubtotal() {
 
 function formatearPrecio(precio) {
 
-    return Number(precio).toLocaleString(
+    return Number(precio || 0).toLocaleString(
         "en-US",
         {
             style: "currency",
@@ -220,6 +275,12 @@ function actualizarContadorCarrito() {
 
     const cantidad = obtenerCantidadTotal();
 
+
+    /*
+     * Contadores dentro de carrito.html
+     * o cualquier página que utilice esta clase.
+     */
+
     const contadores =
         document.querySelectorAll(
             ".contador-carrito"
@@ -227,6 +288,45 @@ function actualizarContadorCarrito() {
 
 
     contadores.forEach(contador => {
+
+        contador.textContent = cantidad;
+
+        if (cantidad > 0) {
+
+            contador.classList.add(
+                "activo"
+            );
+
+        } else {
+
+            contador.classList.remove(
+                "activo"
+            );
+
+        }
+
+    });
+
+
+    /*
+     * También buscamos IDs utilizados
+     * por diferentes versiones del menú.
+     */
+
+    const idsContador = [
+        "cartBadge",
+        "cartBadgeMobile"
+    ];
+
+
+    idsContador.forEach(id => {
+
+        const contador =
+            document.getElementById(id);
+
+        if (!contador) {
+            return;
+        }
 
         contador.textContent = cantidad;
 
@@ -267,11 +367,6 @@ function renderizarCarrito() {
 
 
     const carrito = obtenerCarrito();
-
-    const carritoVacio =
-        document.getElementById(
-            "carritoVacio"
-        );
 
 
     /* -----------------------------------------
@@ -382,12 +477,17 @@ function crearProductoCarrito(producto) {
         Number(producto.cantidad);
 
 
+    const imagen =
+        producto.imagen ||
+        "img/categorias/portada.jpeg";
+
+
     elemento.innerHTML = `
 
         <div class="carrito-producto-imagen">
 
             <img
-                src="${producto.imagen}"
+                src="${escaparHTML(imagen)}"
                 alt="${escaparHTML(producto.nombre)}"
             >
 
@@ -397,15 +497,29 @@ function crearProductoCarrito(producto) {
         <div class="carrito-producto-info">
 
             <p class="carrito-producto-categoria">
-                ${escaparHTML(producto.categoria || "Producto")}
+
+                ${escaparHTML(
+                    producto.categoria || "Producto"
+                )}
+
             </p>
 
+
             <h3>
-                ${escaparHTML(producto.nombre)}
+
+                ${escaparHTML(
+                    producto.nombre
+                )}
+
             </h3>
 
+
             <p class="carrito-producto-precio">
-                ${formatearPrecio(producto.precio)}
+
+                ${formatearPrecio(
+                    producto.precio
+                )}
+
             </p>
 
         </div>
@@ -418,7 +532,7 @@ function crearProductoCarrito(producto) {
                 <button
                     type="button"
                     class="btn-cantidad-menos"
-                    data-id="${producto.id}"
+                    data-id="${escaparHTML(producto.id)}"
                     aria-label="Disminuir cantidad">
 
                     <i class="fa-solid fa-minus"></i>
@@ -427,14 +541,16 @@ function crearProductoCarrito(producto) {
 
 
                 <span>
+
                     ${producto.cantidad}
+
                 </span>
 
 
                 <button
                     type="button"
                     class="btn-cantidad-mas"
-                    data-id="${producto.id}"
+                    data-id="${escaparHTML(producto.id)}"
                     aria-label="Aumentar cantidad">
 
                     <i class="fa-solid fa-plus"></i>
@@ -445,14 +561,16 @@ function crearProductoCarrito(producto) {
 
 
             <span class="carrito-producto-subtotal">
+
                 ${formatearPrecio(subtotal)}
+
             </span>
 
 
             <button
                 type="button"
                 class="btn-eliminar-producto"
-                data-id="${producto.id}">
+                data-id="${escaparHTML(producto.id)}">
 
                 <i class="fa-solid fa-trash"></i>
 
@@ -475,17 +593,21 @@ function crearProductoCarrito(producto) {
         );
 
 
-    btnMenos.addEventListener(
-        "click",
-        function() {
+    if (btnMenos) {
 
-            cambiarCantidad(
-                producto.id,
-                -1
-            );
+        btnMenos.addEventListener(
+            "click",
+            function() {
 
-        }
-    );
+                cambiarCantidad(
+                    producto.id,
+                    -1
+                );
+
+            }
+        );
+
+    }
 
 
     /* -----------------------------------------
@@ -498,17 +620,21 @@ function crearProductoCarrito(producto) {
         );
 
 
-    btnMas.addEventListener(
-        "click",
-        function() {
+    if (btnMas) {
 
-            cambiarCantidad(
-                producto.id,
-                1
-            );
+        btnMas.addEventListener(
+            "click",
+            function() {
 
-        }
-    );
+                cambiarCantidad(
+                    producto.id,
+                    1
+                );
+
+            }
+        );
+
+    }
 
 
     /* -----------------------------------------
@@ -521,16 +647,20 @@ function crearProductoCarrito(producto) {
         );
 
 
-    btnEliminar.addEventListener(
-        "click",
-        function() {
+    if (btnEliminar) {
 
-            eliminarDelCarrito(
-                producto.id
-            );
+        btnEliminar.addEventListener(
+            "click",
+            function() {
 
-        }
-    );
+                eliminarDelCarrito(
+                    producto.id
+                );
+
+            }
+        );
+
+    }
 
 
     return elemento;
@@ -593,6 +723,28 @@ function actualizarResumen() {
 
     }
 
+
+    /*
+     * Por ahora el envío queda como
+     * "Por calcular", tal como está
+     * diseñado en carrito.html.
+     */
+
+    const envioElemento =
+        document.getElementById(
+            "envioCarrito"
+        );
+
+
+    if (envioElemento) {
+
+        envioElemento.textContent =
+            cantidad > 0
+                ? "Por calcular"
+                : "Por calcular";
+
+    }
+
 }
 
 
@@ -628,7 +780,10 @@ function mostrarMensajeAgregado(nombre) {
         <i class="fa-solid fa-circle-check"></i>
 
         <span>
-            ${escaparHTML(nombre)} agregado al carrito
+
+            ${escaparHTML(nombre)}
+            agregado al carrito
+
         </span>
 
     `;
@@ -652,9 +807,14 @@ function mostrarMensajeAgregado(nombre) {
             "mostrar"
         );
 
+
         setTimeout(() => {
 
-            mensaje.remove();
+            if (mensaje.parentNode) {
+
+                mensaje.remove();
+
+            }
 
         }, 300);
 
@@ -672,8 +832,10 @@ function escaparHTML(texto) {
     const div =
         document.createElement("div");
 
+
     div.textContent =
         texto ?? "";
+
 
     return div.innerHTML;
 
@@ -693,6 +855,22 @@ function conectarBotonesComprar() {
 
 
     botones.forEach(boton => {
+
+        /*
+         * Evitamos conectar el mismo botón
+         * más de una vez.
+         */
+
+        if (
+            boton.dataset.carritoConectado === "true"
+        ) {
+            return;
+        }
+
+
+        boton.dataset.carritoConectado =
+            "true";
+
 
         boton.addEventListener(
             "click",
@@ -730,7 +908,8 @@ function conectarBotonesComprar() {
                 if (
                     !producto.id ||
                     !producto.nombre ||
-                    !producto.precio ||
+                    !Number.isFinite(producto.precio) ||
+                    producto.precio <= 0 ||
                     !producto.imagen
                 ) {
 
@@ -773,6 +952,17 @@ function configurarFinalizarCompra() {
     }
 
 
+    if (
+        boton.dataset.whatsappConfigurado === "true"
+    ) {
+        return;
+    }
+
+
+    boton.dataset.whatsappConfigurado =
+        "true";
+
+
     boton.addEventListener(
         "click",
         function() {
@@ -780,6 +970,10 @@ function configurarFinalizarCompra() {
             const carrito =
                 obtenerCarrito();
 
+
+            /* -----------------------------------------
+               VALIDAR CARRITO
+            ----------------------------------------- */
 
             if (carrito.length === 0) {
 
@@ -792,8 +986,12 @@ function configurarFinalizarCompra() {
             }
 
 
+            /* -----------------------------------------
+               CREAR MENSAJE
+            ----------------------------------------- */
+
             let mensaje =
-                "Hola, quiero realizar una compra en Nicolle Store.%0A%0A";
+                "Hola, quiero realizar una compra en Nicolle Store.\n\n";
 
 
             carrito.forEach(producto => {
@@ -804,7 +1002,7 @@ function configurarFinalizarCompra() {
 
 
                 mensaje +=
-                    `• ${producto.nombre} x${producto.cantidad} - ${formatearPrecio(subtotal)}%0A`;
+                    `• ${producto.nombre} x${producto.cantidad} - ${formatearPrecio(subtotal)}\n`;
 
             });
 
@@ -814,35 +1012,18 @@ function configurarFinalizarCompra() {
 
 
             mensaje +=
-                `%0A*Total: ${formatearPrecio(total)}*`;
+                `\nTotal: ${formatearPrecio(total)}`;
 
 
-            /*
-             * IMPORTANTE:
-             * Aquí colocaremos posteriormente
-             * el número real de WhatsApp de Nicolle Store.
-             */
-
-            const numeroWhatsApp =
-                "";
-
-
-            if (!numeroWhatsApp) {
-
-                alert(
-                    "El carrito está listo. Falta configurar el número de WhatsApp de Nicolle Store."
-                );
-
-                return;
-
-            }
-
+            /* -----------------------------------------
+               ABRIR WHATSAPP
+            ----------------------------------------- */
 
             const url =
                 "https://wa.me/" +
-                numeroWhatsApp +
+                NUMERO_WHATSAPP +
                 "?text=" +
-                mensaje;
+                encodeURIComponent(mensaje);
 
 
             window.open(
@@ -854,6 +1035,28 @@ function configurarFinalizarCompra() {
     );
 
 }
+
+
+/* =========================================================
+   SINCRONIZAR CUANDO CAMBIA localStorage
+========================================================= */
+
+window.addEventListener(
+    "storage",
+    function(event) {
+
+        if (
+            event.key === CLAVE_CARRITO
+        ) {
+
+            renderizarCarrito();
+
+            actualizarContadorCarrito();
+
+        }
+
+    }
+);
 
 
 /* =========================================================
