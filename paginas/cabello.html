@@ -10,12 +10,19 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Cabello | Nicolle Store</title>
+    <meta
+        name="description"
+        content="Descubre productos para el cuidado y belleza de tu cabello en Nicolle Store."
+    >
+
+    <title>
+        Cabello | Nicolle Store
+    </title>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          FONT AWESOME
-    ================================================== -->
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -23,9 +30,9 @@
     >
 
 
-    <!-- =================================================
+    <!-- =====================================================
          CSS PRINCIPAL
-    ================================================== -->
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -33,9 +40,9 @@
     >
 
 
-    <!-- =================================================
-         CSS DE CABELLO
-    ================================================== -->
+    <!-- =====================================================
+         CSS CABELLO
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -48,9 +55,9 @@
 <body>
 
 
-    <!-- =================================================
-         MENÚ PRINCIPAL
-    ================================================== -->
+    <!-- =====================================================
+         MENÚ
+    ====================================================== -->
 
     <div class="menu-container">
 
@@ -65,78 +72,97 @@
     </div>
 
 
+    <!-- =====================================================
+         CONTENIDO
+    ====================================================== -->
 
-<main id="contenido">
-
-    <!-- =================================================
-         HERO — CABELLO
-    ================================================== -->
-
-    <section class="cabello-hero">
-
-        <!-- VIDEO DEL HERO -->
-        <video
-            class="cabello-hero-video"
-            id="cabelloHeroVideo"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-        >
-            <source src="../video/cabello-hero.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
-
-        <!-- CAPA OSCURA -->
-        <div class="cabello-hero-overlay"></div>
+    <main id="contenido">
 
 
-        <!-- CONTENIDO DEL HERO -->
-        <div class="cabello-hero-contenido">
+        <!-- =================================================
+             HERO — CABELLO
+        ================================================== -->
 
-            <span class="cabello-etiqueta">
-                NICOLLE STORE
-            </span>
-
-            <h1>
-                Cuidado y belleza
-                <em>para tu cabello.</em>
-            </h1>
-
-            <span class="cabello-linea"></span>
-
-            <p>
-                Descubre productos pensados para
-                cuidar y consentir tu cabello.
-            </p>
-
-        </div>
+        <section class="cabello-hero">
 
 
-        <!-- BOTÓN DE SONIDO -->
-        <button
-            type="button"
-            class="cabello-hero-sonido"
-            id="cabelloHeroSonido"
-            aria-label="Activar sonido"
-        >
-            <i class="fa-solid fa-volume-xmark"></i>
-        </button>
+            <!-- VIDEO -->
 
-    </section>
+            <video
+                class="cabello-hero-video"
+                id="cabelloHeroVideo"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+            >
+
+                <source
+                    src="../video/cabello-hero.mp4"
+                    type="video/mp4"
+                >
+
+                Tu navegador no soporta videos HTML5.
+
+            </video>
 
 
-    <!-- =================================================
-         PRODUCTOS
-    ================================================== -->
+            <!-- CAPA OSCURA -->
 
-    <section class="cabello-productos">
+            <div class="cabello-hero-overlay"></div>
 
-        <!-- aquí continuarán las secciones de productos -->
 
-    </section>
+            <!-- CONTENIDO -->
 
+            <div class="cabello-hero-contenido">
+
+
+                <span class="cabello-etiqueta">
+                    NICOLLE STORE
+                </span>
+
+
+                <h1>
+
+                    Cuidado y belleza
+
+                    <em>
+                        para tu cabello.
+                    </em>
+
+                </h1>
+
+
+                <span class="cabello-linea"></span>
+
+
+                <p>
+
+                    Descubre productos pensados para
+                    cuidar y consentir tu cabello.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- BOTÓN SONIDO -->
+
+            <button
+                type="button"
+                class="cabello-hero-sonido"
+                id="cabelloHeroSonido"
+                aria-label="Activar sonido"
+            >
+
+                <i class="fa-solid fa-volume-xmark"></i>
+
+            </button>
+
+
+        </section>
 
 
 
@@ -145,6 +171,7 @@
         ================================================== -->
 
         <section class="cabello-productos">
+
 
             <div class="cabello-productos-contenedor">
 
@@ -155,14 +182,15 @@
 
                 <section class="categoria-productos">
 
+
                     <div class="categoria-productos-encabezado">
 
                         <span>
-                            CUIDADO DEL CABELLO
+                            CUIDADO CAPILAR
                         </span>
 
                         <h2>
-                            Shampoo &amp; Acondicionador
+                            Shampoo + Acondicionador
                         </h2>
 
                         <span class="categoria-linea"></span>
@@ -180,8 +208,9 @@
                             <div class="producto-imagen">
 
                                 <img
-                                    src="../img/productos/cabello/shampoo-1.jpeg"
-                                    alt="Shampoo"
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
                                 >
 
                             </div>
@@ -191,16 +220,13 @@
                                 class="producto-comprar"
                             >
 
-                                Comprar
+                                <i class="fa-solid fa-bag-shopping"></i>
 
-                                <i
-                                    class="fa-solid fa-bag-shopping"
-                                ></i>
+                                Comprar
 
                             </button>
 
                         </article>
-
 
 
                         <!-- PRODUCTO 2 -->
@@ -210,8 +236,9 @@
                             <div class="producto-imagen">
 
                                 <img
-                                    src="../img/productos/cabello/acondicionador-1.jpeg"
-                                    alt="Acondicionador"
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
                                 >
 
                             </div>
@@ -221,11 +248,65 @@
                                 class="producto-comprar"
                             >
 
+                                <i class="fa-solid fa-bag-shopping"></i>
+
                                 Comprar
 
-                                <i
-                                    class="fa-solid fa-bag-shopping"
-                                ></i>
+                            </button>
+
+                        </article>
+
+
+                        <!-- PRODUCTO 3 -->
+
+                        <article class="producto-card">
+
+                            <div class="producto-imagen">
+
+                                <img
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="producto-comprar"
+                            >
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+
+                                Comprar
+
+                            </button>
+
+                        </article>
+
+
+                        <!-- PRODUCTO 4 -->
+
+                        <article class="producto-card">
+
+                            <div class="producto-imagen">
+
+                                <img
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="producto-comprar"
+                            >
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+
+                                Comprar
 
                             </button>
 
@@ -244,10 +325,11 @@
 
                 <section class="categoria-productos">
 
+
                     <div class="categoria-productos-encabezado">
 
                         <span>
-                            CUIDADO
+                            CUIDADO CAPILAR
                         </span>
 
                         <h2>
@@ -269,8 +351,9 @@
                             <div class="producto-imagen">
 
                                 <img
-                                    src="../img/productos/cabello/crema-1.jpeg"
-                                    alt="Crema para el cabello"
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
                                 >
 
                             </div>
@@ -280,16 +363,13 @@
                                 class="producto-comprar"
                             >
 
-                                Comprar
+                                <i class="fa-solid fa-bag-shopping"></i>
 
-                                <i
-                                    class="fa-solid fa-bag-shopping"
-                                ></i>
+                                Comprar
 
                             </button>
 
                         </article>
-
 
 
                         <!-- PRODUCTO 2 -->
@@ -299,8 +379,9 @@
                             <div class="producto-imagen">
 
                                 <img
-                                    src="../img/productos/cabello/crema-2.jpeg"
-                                    alt="Crema para el cabello"
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
                                 >
 
                             </div>
@@ -310,11 +391,65 @@
                                 class="producto-comprar"
                             >
 
+                                <i class="fa-solid fa-bag-shopping"></i>
+
                                 Comprar
 
-                                <i
-                                    class="fa-solid fa-bag-shopping"
-                                ></i>
+                            </button>
+
+                        </article>
+
+
+                        <!-- PRODUCTO 3 -->
+
+                        <article class="producto-card">
+
+                            <div class="producto-imagen">
+
+                                <img
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="producto-comprar"
+                            >
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+
+                                Comprar
+
+                            </button>
+
+                        </article>
+
+
+                        <!-- PRODUCTO 4 -->
+
+                        <article class="producto-card">
+
+                            <div class="producto-imagen">
+
+                                <img
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="producto-comprar"
+                            >
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+
+                                Comprar
 
                             </button>
 
@@ -328,19 +463,20 @@
 
 
                 <!-- =================================================
-                     EXFOLIANTES
+                     EXFOLIANTE
                 ================================================== -->
 
                 <section class="categoria-productos">
 
+
                     <div class="categoria-productos-encabezado">
 
                         <span>
-                            CUIDADO ESPECIAL
+                            CUIDADO CAPILAR
                         </span>
 
                         <h2>
-                            Exfoliantes
+                            Exfoliante
                         </h2>
 
                         <span class="categoria-linea"></span>
@@ -358,8 +494,9 @@
                             <div class="producto-imagen">
 
                                 <img
-                                    src="../img/productos/cabello/exfoliante-1.jpeg"
-                                    alt="Exfoliante"
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
                                 >
 
                             </div>
@@ -369,16 +506,13 @@
                                 class="producto-comprar"
                             >
 
-                                Comprar
+                                <i class="fa-solid fa-bag-shopping"></i>
 
-                                <i
-                                    class="fa-solid fa-bag-shopping"
-                                ></i>
+                                Comprar
 
                             </button>
 
                         </article>
-
 
 
                         <!-- PRODUCTO 2 -->
@@ -388,8 +522,9 @@
                             <div class="producto-imagen">
 
                                 <img
-                                    src="../img/productos/cabello/exfoliante-2.jpeg"
-                                    alt="Exfoliante"
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
                                 >
 
                             </div>
@@ -399,11 +534,65 @@
                                 class="producto-comprar"
                             >
 
+                                <i class="fa-solid fa-bag-shopping"></i>
+
                                 Comprar
 
-                                <i
-                                    class="fa-solid fa-bag-shopping"
-                                ></i>
+                            </button>
+
+                        </article>
+
+
+                        <!-- PRODUCTO 3 -->
+
+                        <article class="producto-card">
+
+                            <div class="producto-imagen">
+
+                                <img
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="producto-comprar"
+                            >
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+
+                                Comprar
+
+                            </button>
+
+                        </article>
+
+
+                        <!-- PRODUCTO 4 -->
+
+                        <article class="producto-card">
+
+                            <div class="producto-imagen">
+
+                                <img
+                                    src="../img/categorias/cabello.jpeg"
+                                    alt=""
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="producto-comprar"
+                            >
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+
+                                Comprar
 
                             </button>
 
@@ -420,207 +609,157 @@
         </section>
 
 
-
-        <!-- =================================================
-             FRASE FINAL
-        ================================================== -->
-
-        <section class="frase-final">
-
-            <div class="frase-final-contenido">
-
-                <span class="frase-final-etiqueta">
-                    NICOLLE STORE
-                </span>
-
-                <h2>
-                    Tu belleza, tu estilo,
-                    <em>tu esencia.</em>
-                </h2>
-
-                <span class="frase-final-linea"></span>
-
-                <p>
-                    Detalles que hablan de ti.
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             FOOTER
-        ================================================== -->
-
-        <footer class="footer">
-
-            <div class="footer-contenedor">
-
-
-                <!-- MARCA -->
-
-                <div class="footer-marca">
-
-                    <div class="footer-logo">
-                        Nicolle Store
-                    </div>
-
-                    <span class="footer-subtitulo">
-                        Beauty &amp; Style
-                    </span>
-
-                    <p>
-                        Belleza, accesorios y detalles
-                        para hacer de cada día algo especial.
-                    </p>
-
-                </div>
-
-
-
-                <!-- NAVEGACIÓN -->
-
-                <div class="footer-navegacion">
-
-                    <h3>
-                        Explora
-                    </h3>
-
-                    <a href="../index.html">
-                        Inicio
-                    </a>
-
-                    <a href="cabello.html">
-                        Cabello
-                    </a>
-
-                    <a href="piel.html">
-                        Piel
-                    </a>
-
-                    <a href="maquillaje.html">
-                        Maquillaje
-                    </a>
-
-                    <a href="accesorios.html">
-                        Accesorios
-                    </a>
-
-                    <a href="joyeria.html">
-                        Joyería
-                    </a>
-
-                    <a href="bolsos.html">
-                        Bolsos
-                    </a>
-
-                </div>
-
-
-
-                <!-- REDES -->
-
-                <div class="footer-redes">
-
-                    <h3>
-                        Síguenos
-                    </h3>
-
-                    <p>
-                        Encuéntranos en nuestras redes sociales.
-                    </p>
-
-                    <div class="footer-redes-iconos">
-
-                        <a
-                            href="#"
-                            aria-label="Instagram"
-                            title="Instagram"
-                        >
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="Facebook"
-                            title="Facebook"
-                        >
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="TikTok"
-                            title="TikTok"
-                        >
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="WhatsApp"
-                            title="WhatsApp"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- PARTE INFERIOR -->
-
-            <div class="footer-bottom">
-
-                <p>
-                    © 2026 Nicolle Store. Todos los derechos reservados.
-                </p>
-
-                <span>
-                    Hecho con amor para ti.
-                </span>
-
-            </div>
-
-        </footer>
-
-
     </main>
 
 
 
-    <!-- =================================================
-         ALTURA DEL MENÚ
-    ================================================== -->
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-contenido">
+
+            <div class="footer-marca">
+
+                <h2>
+                    Nicolle Store
+                </h2>
+
+                <p>
+                    Beauty & Style
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="../index.html">
+                    Inicio
+                </a>
+
+                <a href="cabello.html">
+                    Cabello
+                </a>
+
+                <a href="piel.html">
+                    Piel
+                </a>
+
+                <a href="maquillaje.html">
+                    Maquillaje
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Nicolle Store. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script>
 
-        const menuFrame =
+        /* =================================================
+           VIDEO — SONIDO
+        ================================================== */
+
+        const cabelloHeroVideo =
             document.getElementById(
-                "menuFrame"
+                'cabelloHeroVideo'
+            );
+
+        const cabelloHeroSonido =
+            document.getElementById(
+                'cabelloHeroSonido'
             );
 
 
-        window.addEventListener(
-            "message",
-            function(event) {
+        if (
+            cabelloHeroVideo &&
+            cabelloHeroSonido
+        ) {
 
-                if (!event.data) {
+            cabelloHeroSonido.addEventListener(
+                'click',
+                function () {
+
+                    cabelloHeroVideo.muted =
+                        !cabelloHeroVideo.muted;
+
+
+                    if (
+                        cabelloHeroVideo.muted
+                    ) {
+
+                        cabelloHeroSonido.innerHTML =
+                            '<i class="fa-solid fa-volume-xmark"></i>';
+
+                        cabelloHeroSonido.setAttribute(
+                            'aria-label',
+                            'Activar sonido'
+                        );
+
+                    } else {
+
+                        cabelloHeroSonido.innerHTML =
+                            '<i class="fa-solid fa-volume-high"></i>';
+
+                        cabelloHeroSonido.setAttribute(
+                            'aria-label',
+                            'Silenciar video'
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           ALTURA DEL MENÚ IFRAME
+        ================================================== */
+
+        window.addEventListener(
+            'message',
+            function (event) {
+
+                if (
+                    !event.data ||
+                    event.data.tipo !==
+                    'nicolle-menu-altura'
+                ) {
+
                     return;
+
                 }
 
 
-                if (
-                    event.data.tipo !==
-                    "nicolle-menu-altura"
-                ) {
+                const menuFrame =
+                    document.getElementById(
+                        'menuFrame'
+                    );
+
+
+                if (!menuFrame) {
 
                     return;
 
@@ -628,66 +767,25 @@
 
 
                 const altura =
-                    Number(
-                        event.data.altura
+                    parseInt(
+                        event.data.altura,
+                        10
                     );
 
 
                 if (
-                    !Number.isFinite(
-                        altura
-                    )
+                    !isNaN(altura)
                 ) {
 
-                    return;
+                    menuFrame.style.height =
+                        altura + 'px';
 
                 }
-
-
-                menuFrame.style.height =
-                    altura + "px";
 
             }
         );
 
 
-         /* =====================================================
-       HERO VIDEO — SONIDO
-    ====================================================== */
-
-    const cabelloHeroVideo = document.getElementById('cabelloHeroVideo');
-    const cabelloHeroSonido = document.getElementById('cabelloHeroSonido');
-
-    if (cabelloHeroVideo && cabelloHeroSonido) {
-
-        cabelloHeroSonido.addEventListener('click', function () {
-
-            cabelloHeroVideo.muted = !cabelloHeroVideo.muted;
-
-            if (cabelloHeroVideo.muted) {
-
-                cabelloHeroSonido.innerHTML =
-                    '<i class="fa-solid fa-volume-xmark"></i>';
-
-                cabelloHeroSonido.setAttribute(
-                    'aria-label',
-                    'Activar sonido'
-                );
-
-            } else {
-
-                cabelloHeroSonido.innerHTML =
-                    '<i class="fa-solid fa-volume-high"></i>';
-
-                cabelloHeroSonido.setAttribute(
-                    'aria-label',
-                    'Silenciar video'
-                );
-            }
-
-        });
-
-    }
     </script>
 
 
