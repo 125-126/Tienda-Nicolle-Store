@@ -33,7 +33,9 @@
 ========================================================= */
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
 
@@ -109,59 +111,45 @@ body {
 
 
 /* =========================================================
-   VIDEO
+   VIDEO HERO
+   SIN BORDES Y SIN SCALE
 ========================================================= */
 
 .cabello-hero-video {
 
     position: absolute;
 
-    inset: 0;
+    top: 0;
+
+    left: 0;
 
     width: 100%;
 
     height: 100%;
 
+    display: block;
+
     /*
-       IMPORTANTE:
-
-       cover llena completamente el hero,
-       pero puede recortar bastante el video.
-
-       Ahora usamos un pequeño zoom inverso
-       mediante transform para mostrar más
-       contenido del video.
+       El video llena completamente
+       el espacio del hero.
     */
 
     object-fit: cover;
 
+    /*
+       Centro del video.
+       Esto mantiene el encuadre natural.
+    */
+
     object-position: center center;
 
-    transform:
-        scale(0.92);
+    /*
+       IMPORTANTE:
+       No usamos transform: scale().
+       Así evitamos los márgenes negros.
+    */
 
-    transform-origin: center center;
-
-}
-
-
-/*
-   Evita que el fondo quede visible
-   alrededor del video.
-*/
-
-.cabello-hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: -30px;
-
-    background:
-        inherit;
-
-    z-index: 0;
+    transform: none;
 
 }
 
@@ -181,9 +169,26 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(36, 31, 32, 0.64) 0%,
-            rgba(36, 31, 32, 0.34) 45%,
-            rgba(36, 31, 32, 0.10) 100%
+            rgba(
+                36,
+                31,
+                32,
+                0.64
+            ) 0%,
+
+            rgba(
+                36,
+                31,
+                32,
+                0.34
+            ) 45%,
+
+            rgba(
+                36,
+                31,
+                32,
+                0.10
+            ) 100%
         );
 
     pointer-events: none;
@@ -253,7 +258,7 @@ body {
 
 
 /* =========================================================
-   TITULO HERO
+   TÍTULO HERO
 ========================================================= */
 
 .cabello-hero-contenido h1 {
@@ -284,7 +289,12 @@ body {
 
     text-shadow:
         0 3px 15px
-        rgba(0, 0, 0, 0.18);
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
 
 }
 
@@ -641,7 +651,13 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
 
     gap: 20px;
 
@@ -754,9 +770,10 @@ body {
 
 .producto-comprar {
 
-    width: calc(
-        100% - 24px
-    );
+    width:
+        calc(
+            100% - 24px
+        );
 
     min-height: 42px;
 
@@ -1080,10 +1097,20 @@ body {
     }
 
 
+    /*
+       Sin scale.
+       El video permanece pegado
+       completamente al hero.
+    */
+
     .cabello-hero-video {
 
-        transform:
-            scale(0.90);
+        object-fit: cover;
+
+        object-position:
+            center center;
+
+        transform: none;
 
     }
 
@@ -1091,7 +1118,9 @@ body {
     .cabello-hero-contenido {
 
         width:
-            calc(100% - 50px);
+            calc(
+                100% - 50px
+            );
 
     }
 
@@ -1105,7 +1134,8 @@ body {
 
     .cabello-footer-links {
 
-        gap: 18px 22px;
+        gap:
+            18px 22px;
 
     }
 
@@ -1118,7 +1148,10 @@ body {
 
 @media (max-width: 700px) {
 
-    /* HERO */
+
+    /* =====================================================
+       HERO
+    ====================================================== */
 
     .cabello-hero {
 
@@ -1132,20 +1165,29 @@ body {
 
 
     /*
-       En móvil reducimos todavía más el zoom
-       para que se vea una mayor parte del video.
+       SIN SCALE.
+       No aparecen márgenes negros.
     */
 
     .cabello-hero-video {
 
-        transform:
-            scale(0.82);
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
 
         object-position:
             center center;
 
+        transform: none;
+
     }
 
+
+    /* =====================================================
+       OVERLAY MÓVIL
+    ====================================================== */
 
     .cabello-hero-overlay {
 
@@ -1158,12 +1200,14 @@ body {
                     32,
                     0.65
                 ) 0%,
+
                 rgba(
                     36,
                     31,
                     32,
                     0.34
                 ) 65%,
+
                 rgba(
                     36,
                     31,
@@ -1175,16 +1219,26 @@ body {
     }
 
 
+    /* =====================================================
+       CONTENIDO
+    ====================================================== */
+
     .cabello-hero-contenido {
 
         width:
-            calc(100% - 40px);
+            calc(
+                100% - 40px
+            );
 
         padding:
             25px 0;
 
     }
 
+
+    /* =====================================================
+       ETIQUETA
+    ====================================================== */
 
     .cabello-etiqueta {
 
@@ -1196,6 +1250,10 @@ body {
 
     }
 
+
+    /* =====================================================
+       TÍTULO
+    ====================================================== */
 
     .cabello-hero-contenido h1 {
 
@@ -1217,6 +1275,10 @@ body {
     }
 
 
+    /* =====================================================
+       LÍNEA
+    ====================================================== */
+
     .cabello-linea {
 
         width: 48px;
@@ -1229,6 +1291,10 @@ body {
     }
 
 
+    /* =====================================================
+       DESCRIPCIÓN
+    ====================================================== */
+
     .cabello-hero-contenido p {
 
         max-width: 270px;
@@ -1239,6 +1305,10 @@ body {
 
     }
 
+
+    /* =====================================================
+       BOTÓN SONIDO
+    ====================================================== */
 
     .cabello-hero-sonido {
 
@@ -1260,8 +1330,9 @@ body {
     }
 
 
-
-    /* PRODUCTOS */
+    /* =====================================================
+       PRODUCTOS
+    ====================================================== */
 
     .cabello-productos {
 
@@ -1271,6 +1342,10 @@ body {
 
     }
 
+
+    /* =====================================================
+       ENCABEZADO
+    ====================================================== */
 
     .cabello-productos-header {
 
@@ -1306,7 +1381,9 @@ body {
     }
 
 
-    /* CATEGORÍAS */
+    /* =====================================================
+       CATEGORÍAS
+    ====================================================== */
 
     .producto-categoria {
 
@@ -1338,19 +1415,29 @@ body {
     }
 
 
-    /* GRID */
+    /* =====================================================
+       GRID
+    ====================================================== */
 
     .productos-grid {
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
 
         gap: 10px;
 
     }
 
 
-    /* TARJETAS */
+    /* =====================================================
+       TARJETAS
+    ====================================================== */
 
     .producto-card {
 
@@ -1366,10 +1453,16 @@ body {
     }
 
 
+    /* =====================================================
+       BOTÓN
+    ====================================================== */
+
     .producto-comprar {
 
         width:
-            calc(100% - 14px);
+            calc(
+                100% - 14px
+            );
 
         min-height: 36px;
 
@@ -1396,8 +1489,9 @@ body {
     }
 
 
-
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ====================================================== */
 
     .cabello-footer-contenido {
 
@@ -1469,6 +1563,11 @@ body {
 
 @media (max-width: 480px) {
 
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
     .cabello-hero {
 
         height: 300px;
@@ -1482,16 +1581,30 @@ body {
 
     .cabello-hero-video {
 
-        transform:
-            scale(0.78);
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position:
+            center center;
+
+        transform: none;
 
     }
 
 
+    /* =====================================================
+       CONTENIDO
+    ====================================================== */
+
     .cabello-hero-contenido {
 
         width:
-            calc(100% - 30px);
+            calc(
+                100% - 30px
+            );
 
     }
 
@@ -1513,6 +1626,10 @@ body {
 
     }
 
+
+    /* =====================================================
+       PRODUCTOS
+    ====================================================== */
 
     .cabello-productos {
 
@@ -1537,6 +1654,10 @@ body {
     }
 
 
+    /* =====================================================
+       CATEGORÍAS
+    ====================================================== */
+
     .categoria-titulo {
 
         gap: 7px;
@@ -1558,6 +1679,10 @@ body {
     }
 
 
+    /* =====================================================
+       GRID
+    ====================================================== */
+
     .productos-grid {
 
         gap: 8px;
@@ -1565,10 +1690,16 @@ body {
     }
 
 
+    /* =====================================================
+       BOTÓN
+    ====================================================== */
+
     .producto-comprar {
 
         width:
-            calc(100% - 10px);
+            calc(
+                100% - 10px
+            );
 
         margin: 5px;
 
@@ -1578,6 +1709,10 @@ body {
 
     }
 
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
 
     .cabello-footer-contenido {
 
@@ -1624,6 +1759,11 @@ body {
 
 @media (max-width: 360px) {
 
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
     .cabello-hero {
 
         height: 285px;
@@ -1637,11 +1777,23 @@ body {
 
     .cabello-hero-video {
 
-        transform:
-            scale(0.74);
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position:
+            center center;
+
+        transform: none;
 
     }
 
+
+    /* =====================================================
+       TÍTULO
+    ====================================================== */
 
     .cabello-hero-contenido h1 {
 
@@ -1650,12 +1802,20 @@ body {
     }
 
 
+    /* =====================================================
+       DESCRIPCIÓN
+    ====================================================== */
+
     .cabello-hero-contenido p {
 
         font-size: 8px;
 
     }
 
+
+    /* =====================================================
+       SONIDO
+    ====================================================== */
 
     .cabello-hero-sonido {
 
@@ -1669,6 +1829,10 @@ body {
 
     }
 
+
+    /* =====================================================
+       CATEGORÍA
+    ====================================================== */
 
     .categoria-titulo h3 {
 
