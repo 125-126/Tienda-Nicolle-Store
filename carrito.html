@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Carrito | Nicolle Store</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/principal.css">
+
+    <!-- Estilos del carrito -->
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MENÚ
+    ====================================================== -->
+
+    <div class="menu-container">
+
+        <iframe
+            id="menuFrame"
+            src="componentes/menu.html"
+            title="Menú principal de Nicolle Store"
+            scrolling="no"
+            frameborder="0">
+        </iframe>
+
+    </div>
+
+
+    <!-- =====================================================
+         ENCABEZADO DEL CARRITO
+    ====================================================== -->
+
+    <section class="carrito-hero">
+
+        <div class="carrito-hero-contenido">
+
+            <span class="carrito-marca">
+                NICOLLE STORE
+            </span>
+
+            <h1>
+                Mi <em>carrito.</em>
+            </h1>
+
+            <div class="carrito-linea"></div>
+
+            <p>
+                Revisa tus productos favoritos antes de finalizar tu compra.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENIDO DEL CARRITO
+    ====================================================== -->
+
+    <main class="carrito-contenedor">
+
+        <!-- TÍTULO -->
+
+        <div class="carrito-titulo">
+
+            <h2>
+                Tus productos
+            </h2>
+
+            <p>
+                Aquí aparecerán los productos que hayas agregado.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             CARRITO
+        ================================================== -->
+
+        <section class="carrito-contenido">
+
+            <!-- PRODUCTOS -->
+
+            <div class="carrito-productos" id="carritoProductos">
+
+                <!--
+                    JavaScript colocará aquí los productos
+                    agregados al carrito.
+                -->
+
+                <div class="carrito-vacio" id="carritoVacio">
+
+                    <div class="carrito-vacio-icono">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
+                    <h3>
+                        Tu carrito está vacío
+                    </h3>
+
+                    <p>
+                        Aún no has agregado ningún producto.
+                    </p>
+
+                    <a href="index.html" class="btn-seguir-comprando">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Seguir comprando
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESUMEN
+            ================================================== -->
+
+            <aside class="carrito-resumen">
+
+                <div class="resumen-cabecera">
+
+                    <h2>
+                        Resumen de compra
+                    </h2>
+
+                </div>
+
+
+                <div class="resumen-detalle">
+
+                    <div class="resumen-fila">
+
+                        <span>
+                            Productos
+                        </span>
+
+                        <span id="cantidadProductos">
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div class="resumen-fila">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <span id="subtotalCarrito">
+                            $0.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="resumen-fila">
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <span id="envioCarrito">
+                            Por calcular
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="resumen-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="totalCarrito">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn-finalizar"
+                    id="btnFinalizarCompra">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Finalizar compra
+
+                </button>
+
+
+                <a
+                    href="index.html"
+                    class="btn-continuar">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Seguir comprando
+
+                </a>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-contenido">
+
+            <div class="footer-marca">
+
+                <h2>
+                    Nicolle Store
+                </h2>
+
+                <p>
+                    Beauty & Style
+                </p>
+
+                <span>
+                    Belleza, estilo y detalles para ti.
+                </span>
+
+            </div>
+
+
+            <div class="footer-enlaces">
+
+                <h3>
+                    Explora
+                </h3>
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="paginas/cabello.html">
+                    Cabello
+                </a>
+
+                <a href="paginas/piel.html">
+                    Piel
+                </a>
+
+                <a href="paginas/maquillaje.html">
+                    Maquillaje
+                </a>
+
+                <a href="paginas/accesorios.html">
+                    Accesorios
+                </a>
+
+                <a href="paginas/joyeria.html">
+                    Joyería
+                </a>
+
+                <a href="paginas/bolsos.html">
+                    Bolsos
+                </a>
+
+            </div>
+
+
+            <div class="footer-carrito">
+
+                <h3>
+                    Tu compra
+                </h3>
+
+                <a href="carrito.html">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Mi carrito
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Nicolle Store. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DEL MENÚ
+    ====================================================== -->
+
+    <script>
+
+        window.addEventListener("message", function(event) {
+
+            if (!event.data) return;
+
+            if (event.data.tipo === "nicolle-menu-altura") {
+
+                const menuFrame = document.getElementById("menuFrame");
+
+                if (menuFrame) {
+
+                    menuFrame.style.height =
+                        event.data.altura + "px";
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DEL CARRITO
+    ====================================================== -->
+
+    <script src="js/carrito.js"></script>
+
+</body>
+</html>
