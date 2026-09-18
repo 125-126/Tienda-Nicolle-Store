@@ -4,41 +4,112 @@
 
 
 /* =========================================================
-   ENCABEZADO
+   HERO — CABELLO
 ========================================================= */
 
-.cabello-encabezado {
+.cabello-hero {
 
-    padding: 85px 25px 65px;
+    position: relative;
+
+    width: 100%;
+
+    height: 68vh;
+
+    min-height: 480px;
+
+    max-height: 720px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #51484a;
+
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.cabello-hero-video {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+}
+
+
+/* =========================================================
+   CAPA SOBRE EL VIDEO
+========================================================= */
+
+.cabello-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
 
     background:
         linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #fdf5f6 100%
+            to bottom,
+            rgba(0, 0, 0, 0.18),
+            rgba(0, 0, 0, 0.34)
         );
-
-    text-align: center;
 
 }
 
 
-.cabello-encabezado-contenido {
+/* =========================================================
+   CONTENIDO DEL HERO
+========================================================= */
 
-    max-width: 850px;
+.cabello-hero-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(850px, 90%);
 
     margin: 0 auto;
 
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #ffffff;
+
 }
 
+
+/* =========================================================
+   ETIQUETA
+========================================================= */
 
 .cabello-etiqueta {
 
     display: block;
 
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 
-    color: #62bcb5;
+    color: #ffffff;
 
     font-size: 11px;
 
@@ -46,44 +117,74 @@
 
     letter-spacing: 4px;
 
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.25);
+
 }
 
 
-.cabello-encabezado h1 {
+/* =========================================================
+   TITULO
+========================================================= */
+
+.cabello-hero-contenido h1 {
 
     margin: 0;
 
-    color: #51484a;
+    color: #ffffff;
 
     font-family:
         "Cormorant Garamond",
         serif;
 
-    font-size: clamp(42px, 6vw, 72px);
+    font-size: clamp(
+        44px,
+        6vw,
+        76px
+    );
 
     font-weight: 500;
 
-    line-height: 1.05;
+    line-height: 1.02;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.20);
 
 }
 
 
-.cabello-encabezado h1 em {
+/* =========================================================
+   TEXTO CURSIVO
+========================================================= */
+
+.cabello-hero-contenido h1 em {
 
     display: block;
 
-    color: #d79da6;
+    margin-top: 5px;
+
+    color: #f2c5cc;
 
     font-family:
         "Great Vibes",
         cursive;
 
-    font-size: 1.05em;
+    font-size: 1.08em;
 
     font-weight: 400;
 
+    font-style: normal;
+
 }
 
+
+/* =========================================================
+   LINEA DECORATIVA
+========================================================= */
 
 .cabello-linea {
 
@@ -93,73 +194,132 @@
 
     height: 2px;
 
-    margin: 25px auto;
+    margin: 22px auto;
 
     border-radius: 20px;
 
-    background: #8fd8d2;
+    background: #ffffff;
 
 }
-
-
-.cabello-encabezado p {
-
-    max-width: 600px;
-
-    margin: 0 auto;
-
-    color: #8b7e80;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-}
-
 
 
 /* =========================================================
-   BANNER
+   DESCRIPCIÓN
 ========================================================= */
 
-.cabello-banner {
+.cabello-hero-contenido p {
 
-    width: 100%;
-
-    padding: 0 25px;
-
-}
-
-
-.cabello-banner-imagen {
-
-    width: 100%;
-
-    max-width: 1400px;
-
-    height: 400px;
+    max-width: 550px;
 
     margin: 0 auto;
 
-    overflow: hidden;
+    color: rgba(
+        255,
+        255,
+        255,
+        0.95
+    );
 
-    border-radius: 0 0 25px 25px;
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.25);
 
 }
 
 
-.cabello-banner-imagen img {
+/* =========================================================
+   BOTÓN DE SONIDO
+========================================================= */
 
-    width: 100%;
+.cabello-hero-sonido {
 
-    height: 100%;
+    position: absolute;
 
-    display: block;
+    right: 25px;
 
-    object-fit: cover;
+    bottom: 25px;
+
+    z-index: 5;
+
+    width: 46px;
+
+    height: 46px;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    backdrop-filter:
+        blur(6px);
+
+    -webkit-backdrop-filter:
+        blur(6px);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
 
 }
 
+
+.cabello-hero-sonido:hover {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.18
+        );
+
+    transform:
+        scale(1.06);
+
+}
+
+
+.cabello-hero-sonido:active {
+
+    transform:
+        scale(0.95);
+
+}
 
 
 /* =========================================================
@@ -167,6 +327,8 @@
 ========================================================= */
 
 .cabello-productos {
+
+    width: 100%;
 
     padding: 85px 25px;
 
@@ -186,7 +348,6 @@
 }
 
 
-
 /* =========================================================
    CATEGORÍA
 ========================================================= */
@@ -204,6 +365,10 @@
 
 }
 
+
+/* =========================================================
+   ENCABEZADO DE CATEGORÍA
+========================================================= */
 
 .categoria-productos-encabezado {
 
@@ -228,6 +393,8 @@
 
     letter-spacing: 3px;
 
+    text-transform: uppercase;
+
 }
 
 
@@ -241,14 +408,23 @@
         "Cormorant Garamond",
         serif;
 
-    font-size: clamp(32px, 4vw, 48px);
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            48px
+        );
 
     font-weight: 600;
+
+    line-height: 1.1;
 
 }
 
 
 .categoria-linea {
+
+    display: block;
 
     width: 45px !important;
 
@@ -259,7 +435,6 @@
     background: #e9bfc5;
 
 }
-
 
 
 /* =========================================================
@@ -273,16 +448,20 @@
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
     gap: 28px;
+
+    width: 100%;
 
     max-width: 850px;
 
     margin: 0 auto;
 
 }
-
 
 
 /* =========================================================
@@ -298,11 +477,8 @@
 }
 
 
-
 /* =========================================================
-   IMAGEN
-
-   SIN TEXTO
+   IMAGEN DEL PRODUCTO
 ========================================================= */
 
 .producto-imagen {
@@ -319,7 +495,12 @@
 
     box-shadow:
         0 10px 30px
-        rgba(110, 87, 91, 0.10);
+        rgba(
+            110,
+            87,
+            91,
+            0.10
+        );
 
 }
 
@@ -349,7 +530,6 @@
 }
 
 
-
 /* =========================================================
    BOTÓN COMPRAR
 ========================================================= */
@@ -364,7 +544,9 @@
 
     padding: 0 20px;
 
-    border: 1px solid #8fd8d2;
+    border:
+        1px solid
+        #8fd8d2;
 
     border-radius: 25px;
 
@@ -412,18 +594,21 @@
 
 .producto-comprar:hover {
 
-    background:
-        #8fd8d2;
+    background: #8fd8d2;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     transform:
         translateY(-2px);
 
     box-shadow:
         0 8px 20px
-        rgba(98, 188, 181, 0.20);
+        rgba(
+            98,
+            188,
+            181,
+            0.20
+        );
 
 }
 
@@ -436,37 +621,38 @@
 }
 
 
-
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
+    .cabello-hero {
 
-    .cabello-encabezado {
+        height: 58vh;
 
-        padding:
-            65px 20px 50px;
+        min-height: 430px;
 
-    }
-
-
-    .cabello-banner {
-
-        padding:
-            0 15px;
+        max-height: 600px;
 
     }
 
 
-    .cabello-banner-imagen {
+    .cabello-hero-contenido {
 
-        height:
-            280px;
+        width: 92%;
 
-        border-radius:
-            0 0 18px 18px;
+    }
+
+
+    .cabello-hero-contenido h1 {
+
+        font-size:
+            clamp(
+                42px,
+                7vw,
+                62px
+            );
 
     }
 
@@ -474,7 +660,154 @@
     .cabello-productos {
 
         padding:
-            65px 15px;
+            70px 20px;
+
+    }
+
+
+    .productos-grid {
+
+        max-width: 760px;
+
+        gap: 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .cabello-hero {
+
+        height: 330px;
+
+        min-height: 330px;
+
+        max-height: 330px;
+
+    }
+
+
+    .cabello-hero-video {
+
+        object-position:
+            center center;
+
+    }
+
+
+    .cabello-hero-overlay {
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.16),
+                rgba(0, 0, 0, 0.40)
+            );
+
+    }
+
+
+    .cabello-hero-contenido {
+
+        width: 94%;
+
+        padding:
+            20px 12px;
+
+    }
+
+
+    .cabello-etiqueta {
+
+        margin-bottom: 10px;
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+
+    .cabello-hero-contenido h1 {
+
+        font-size: 37px;
+
+        line-height: 1.03;
+
+        letter-spacing: -0.5px;
+
+    }
+
+
+    .cabello-hero-contenido h1 em {
+
+        margin-top: 2px;
+
+        font-size: 1.05em;
+
+    }
+
+
+    .cabello-linea {
+
+        width: 40px;
+
+        height: 1.5px;
+
+        margin:
+            14px auto;
+
+    }
+
+
+    .cabello-hero-contenido p {
+
+        max-width: 320px;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* -----------------------------------------------------
+       SONIDO
+    ----------------------------------------------------- */
+
+    .cabello-hero-sonido {
+
+        right: 14px;
+
+        bottom: 14px;
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 12px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PRODUCTOS
+    ----------------------------------------------------- */
+
+    .cabello-productos {
+
+        padding:
+            55px 14px;
 
     }
 
@@ -482,332 +815,346 @@
     .categoria-productos {
 
         margin-bottom:
-            65px;
+            60px;
 
     }
 
 
-    .productos-grid {
+    .categoria-productos-encabezado {
 
-        gap:
-            15px;
-
-    }
-
-
-    .producto-imagen {
-
-        border-radius:
-            14px;
+        margin-bottom:
+            25px;
 
     }
 
 
-    .producto-comprar {
+    .categoria-productos-encabezado span {
 
-        min-height:
-            44px;
+        margin-bottom: 6px;
 
-        margin-top:
-            10px;
+        font-size: 8px;
 
-        padding:
-            0 10px;
-
-        font-size:
-            10px;
-
-        gap:
-            6px;
-
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-
-    .cabello-encabezado h1 {
-
-        font-size:
-            40px;
-
-    }
-
-
-    .cabello-banner-imagen {
-
-        height:
-            230px;
+        letter-spacing: 2px;
 
     }
 
 
     .categoria-productos-encabezado h2 {
 
-        font-size:
-            34px;
+        font-size: 31px;
+
+    }
+
+
+    .categoria-linea {
+
+        width: 38px !important;
+
+        margin-top: 12px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       GRID 2 COLUMNAS
+    ----------------------------------------------------- */
+
+    .productos-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 12px;
+
+        max-width: 100%;
+
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGEN
+    ----------------------------------------------------- */
+
+    .producto-imagen {
+
+        aspect-ratio: 1 / 1;
+
+        border-radius: 13px;
+
+        box-shadow:
+            0 6px 18px
+            rgba(
+                110,
+                87,
+                91,
+                0.08
+            );
+
+    }
+
+
+    /* -----------------------------------------------------
+       BOTÓN
+    ----------------------------------------------------- */
+
+    .producto-comprar {
+
+        min-height: 40px;
+
+        margin-top: 8px;
+
+        padding:
+            0 6px;
+
+        border-radius: 20px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.5px;
+
+        gap: 5px;
+
+    }
+
+
+    .producto-comprar i {
+
+        font-size: 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* -----------------------------------------------------
+       HERO MÁS COMPACTO
+    ----------------------------------------------------- */
+
+    .cabello-hero {
+
+        height: 300px;
+
+        min-height: 300px;
+
+        max-height: 300px;
+
+    }
+
+
+    .cabello-hero-contenido {
+
+        width: 96%;
+
+        padding:
+            15px 8px;
+
+    }
+
+
+    .cabello-etiqueta {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .cabello-hero-contenido h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .cabello-hero-contenido h1 em {
+
+        font-size: 1.02em;
+
+    }
+
+
+    .cabello-linea {
+
+        width: 35px;
+
+        margin:
+            11px auto;
+
+    }
+
+
+    .cabello-hero-contenido p {
+
+        max-width: 280px;
+
+        font-size: 10px;
+
+        line-height: 1.45;
+
+    }
+
+
+    .cabello-hero-sonido {
+
+        right: 12px;
+
+        bottom: 12px;
+
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 11px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PRODUCTOS
+    ----------------------------------------------------- */
+
+    .cabello-productos {
+
+        padding:
+            48px 12px;
+
+    }
+
+
+    .categoria-productos {
+
+        margin-bottom:
+            55px;
+
+    }
+
+
+    .categoria-productos-encabezado {
+
+        margin-bottom:
+            22px;
+
+    }
+
+
+    .categoria-productos-encabezado h2 {
+
+        font-size: 28px;
 
     }
 
 
     .productos-grid {
 
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:
-            10px;
+        gap: 9px;
 
     }
 
 
     .producto-imagen {
 
-        border-radius:
-            12px;
+        border-radius: 11px;
 
     }
 
 
     .producto-comprar {
 
-        min-height:
-            40px;
+        min-height: 38px;
 
-        border-radius:
-            20px;
+        margin-top: 7px;
 
-        font-size:
-            9px;
+        border-radius: 19px;
 
-        letter-spacing:
-            0.5px;
+        font-size: 8px;
+
+        letter-spacing: 0.4px;
+
+        gap: 4px;
+
+    }
+
+
+    .producto-comprar i {
+
+        font-size: 9px;
 
     }
 
 }
 
 
-
 /* =========================================================
-   HERO — CABELLO
+   CELULARES MUY PEQUEÑOS
 ========================================================= */
 
-.cabello-hero {
-    position: relative;
-    width: 100%;
-    height: 75vh;
-    min-height: 520px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #111;
-}
-
-
-/* VIDEO */
-
-.cabello-hero-video {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-}
-
-
-/* CAPA OSCURA */
-
-.cabello-hero-overlay {
-    position: absolute;
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.32);
-
-    z-index: 1;
-}
-
-
-/* CONTENIDO */
-
-.cabello-hero-contenido {
-    position: relative;
-    z-index: 2;
-
-    width: min(900px, 90%);
-
-    text-align: center;
-    color: #fff;
-
-    padding: 40px 20px;
-}
-
-
-/* ETIQUETA */
-
-.cabello-etiqueta {
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    font-size: 0.8rem;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    color: #fff;
-}
-
-
-/* TITULO */
-
-.cabello-hero-contenido h1 {
-    margin: 0;
-
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
-
-    line-height: 1.05;
-
-    font-weight: 700;
-
-    letter-spacing: -2px;
-}
-
-
-/* PARTE CURSIVA */
-
-.cabello-hero-contenido h1 em {
-    display: block;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-weight: 400;
-
-    font-style: italic;
-
-    margin-top: 8px;
-}
-
-
-/* LINEA */
-
-.cabello-linea {
-    display: block;
-
-    width: 70px;
-    height: 2px;
-
-    margin: 28px auto;
-
-    background: #fff;
-}
-
-
-/* DESCRIPCION */
-
-.cabello-hero-contenido p {
-    max-width: 600px;
-
-    margin: 0 auto;
-
-    font-size: 1.05rem;
-
-    line-height: 1.7;
-
-    color: rgba(255, 255, 255, 0.92);
-}
-
-
-/* =========================================================
-   BOTON SONIDO
-========================================================= */
-
-.cabello-hero-sonido {
-    position: absolute;
-
-    z-index: 3;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 48px;
-    height: 48px;
-
-    border: 1px solid rgba(255, 255, 255, 0.7);
-
-    border-radius: 50%;
-
-    background: rgba(0, 0, 0, 0.35);
-
-    color: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    font-size: 1rem;
-
-    backdrop-filter: blur(5px);
-
-    transition:
-        background 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-.cabello-hero-sonido:hover {
-    background: rgba(255, 255, 255, 0.18);
-
-    transform: scale(1.08);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 768px) {
+@media (max-width: 360px) {
 
     .cabello-hero {
-        height: 70vh;
-        min-height: 480px;
+
+        height: 280px;
+
+        min-height: 280px;
+
+        max-height: 280px;
+
     }
 
-    .cabello-hero-video {
-        object-position: center;
-    }
-
-    .cabello-hero-contenido {
-        padding: 30px 15px;
-    }
-
-    .cabello-etiqueta {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-    }
 
     .cabello-hero-contenido h1 {
-        font-size: clamp(2.4rem, 10vw, 4rem);
-        letter-spacing: -1px;
+
+        font-size: 29px;
+
     }
+
 
     .cabello-hero-contenido p {
-        font-size: 0.95rem;
+
+        font-size: 9px;
+
     }
 
-    .cabello-hero-sonido {
-        right: 18px;
-        bottom: 18px;
 
-        width: 44px;
-        height: 44px;
+    .cabello-productos {
+
+        padding:
+            42px 10px;
+
     }
+
+
+    .productos-grid {
+
+        gap: 8px;
+
+    }
+
+
+    .producto-imagen {
+
+        border-radius: 9px;
+
+    }
+
+
+    .producto-comprar {
+
+        min-height: 36px;
+
+        font-size: 7.5px;
+
+    }
+
 }
