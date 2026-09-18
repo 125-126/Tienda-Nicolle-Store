@@ -1,23 +1,48 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
+
 <head>
+
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
 
     <title>Nicolle Store - Menú</title>
+
 
     <!-- =====================================================
          FUENTES
     ====================================================== -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
 
 
     <!-- =====================================================
-         ICONOS
+         FONT AWESOME
     ====================================================== -->
 
     <link
@@ -28,89 +53,131 @@
 
     <style>
 
-        /* =====================================================
+
+        /* ====================================================
            VARIABLES
-        ====================================================== */
+        ==================================================== */
 
         :root {
 
             --aqua: #8fd8d2;
+
             --aqua-dark: #62bcb5;
+
             --aqua-soft: #e8f8f6;
 
+
             --pink: #e9bfc5;
+
             --pink-dark: #d79da6;
+
             --pink-soft: #fdf0f2;
+
+
+            --cream: #fffafa;
 
             --white: #ffffff;
 
+
             --text: #51484a;
+
             --text-soft: #8b7e80;
+
 
             --border: #f0e1e3;
 
-            --shadow:
+
+            --shadow-soft:
                 0 8px 30px rgba(110, 87, 91, 0.08);
+
 
             --shadow-panel:
                 -12px 0 40px rgba(70, 50, 55, 0.12);
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            RESET
-        ====================================================== */
+        ==================================================== */
 
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
 
 
         html {
+
             width: 100%;
+
             min-height: 100%;
+
         }
 
 
         body {
+
             width: 100%;
-            min-height: 100vh;
+
+            min-height: 100%;
 
             margin: 0;
 
-            background: #fffafa;
+            padding: 0;
+
+            background: #ffffff;
 
             color: var(--text);
 
             font-family: "DM Sans", sans-serif;
+
         }
 
 
         body.locked {
+
             overflow: hidden;
+
         }
 
 
         button,
         input {
+
             font-family: inherit;
+
         }
 
 
         button {
+
             -webkit-tap-highlight-color: transparent;
+
         }
 
 
-        /* =====================================================
+        a {
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+
+        /* ====================================================
            HEADER
-        ====================================================== */
+        ==================================================== */
 
         .site-header {
 
             position: relative;
+
+            z-index: 1000;
 
             width: 100%;
 
@@ -118,9 +185,8 @@
 
             border-bottom: 1px solid var(--border);
 
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-soft);
 
-            z-index: 1000;
         }
 
 
@@ -128,21 +194,26 @@
 
             width: 100%;
 
+            max-width: 1500px;
+
             min-height: 96px;
 
-            padding: 10px 38px;
+            margin: 0 auto;
+
+            padding: 10px 42px;
 
             display: flex;
 
             align-items: center;
 
             gap: 28px;
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            LOGO
-        ====================================================== */
+        ==================================================== */
 
         .brand {
 
@@ -155,6 +226,7 @@
             align-items: flex-start;
 
             text-decoration: none;
+
         }
 
 
@@ -164,13 +236,12 @@
 
             font-family: "Great Vibes", cursive;
 
-            font-size: 44px;
-
-            font-weight: 400;
+            font-size: 43px;
 
             line-height: 0.95;
 
             white-space: nowrap;
+
         }
 
 
@@ -191,12 +262,13 @@
             letter-spacing: 4px;
 
             text-transform: uppercase;
+
         }
 
 
-        /* =====================================================
-           MENÚ DESKTOP
-        ====================================================== */
+        /* ====================================================
+           NAVEGACIÓN ESCRITORIO
+        ==================================================== */
 
         .desktop-nav {
 
@@ -208,7 +280,8 @@
 
             justify-content: center;
 
-            gap: 2px;
+            gap: 3px;
+
         }
 
 
@@ -229,8 +302,9 @@
             white-space: nowrap;
 
             transition:
-                color .25s ease,
-                transform .25s ease;
+                color 0.25s ease,
+                transform 0.25s ease;
+
         }
 
 
@@ -241,13 +315,14 @@
             position: absolute;
 
             left: 11px;
+
             right: 11px;
 
             bottom: 2px;
 
             height: 2px;
 
-            border-radius: 20px;
+            border-radius: 10px;
 
             background: var(--aqua);
 
@@ -255,7 +330,8 @@
 
             transform-origin: center;
 
-            transition: transform .25s ease;
+            transition: transform 0.25s ease;
+
         }
 
 
@@ -264,13 +340,14 @@
             color: var(--aqua-dark);
 
             transform: translateY(-1px);
+
         }
 
 
-        .nav-link:hover::after,
-        .nav-link.active::after {
+        .nav-link:hover::after {
 
             transform: scaleX(1);
+
         }
 
 
@@ -279,22 +356,31 @@
             color: var(--aqua-dark);
 
             font-weight: 600;
+
         }
 
 
-        /* =====================================================
-           BOTONES DEL HEADER
-        ====================================================== */
+        .nav-link.active::after {
+
+            transform: scaleX(1);
+
+        }
+
+
+        /* ====================================================
+           ACCIONES DEL HEADER
+        ==================================================== */
 
         .header-actions {
-
-            flex-shrink: 0;
 
             display: flex;
 
             align-items: center;
 
-            gap: 4px;
+            gap: 5px;
+
+            flex-shrink: 0;
+
         }
 
 
@@ -303,6 +389,7 @@
             position: relative;
 
             width: 43px;
+
             height: 43px;
 
             border: none;
@@ -313,20 +400,21 @@
 
             color: var(--text);
 
+            font-size: 17px;
+
+            cursor: pointer;
+
             display: flex;
 
             align-items: center;
 
             justify-content: center;
 
-            font-size: 17px;
-
-            cursor: pointer;
-
             transition:
-                background .25s ease,
-                color .25s ease,
-                transform .25s ease;
+                background 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+
         }
 
 
@@ -337,36 +425,34 @@
             color: var(--aqua-dark);
 
             transform: translateY(-1px);
+
         }
 
 
         .header-button:active {
 
-            transform: scale(.94);
+            transform: scale(0.94);
+
         }
 
 
-        /* =====================================================
-           CONTADORES
-        ====================================================== */
+        /* ====================================================
+           BADGES
+        ==================================================== */
 
         .action-badge {
 
             position: absolute;
 
-            top: 2px;
-            right: 0;
+            top: 1px;
+
+            right: -1px;
 
             min-width: 17px;
+
             height: 17px;
 
             padding: 0 4px;
-
-            border-radius: 50%;
-
-            background: var(--pink-dark);
-
-            color: white;
 
             display: flex;
 
@@ -374,26 +460,34 @@
 
             justify-content: center;
 
+            border-radius: 50%;
+
+            background: var(--pink-dark);
+
+            color: white;
+
             font-size: 9px;
 
             font-weight: 700;
 
             line-height: 1;
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            HAMBURGUESA
-        ====================================================== */
+        ==================================================== */
 
         .mobile-menu-button {
 
             display: none;
 
-            width: 43px;
-            height: 43px;
+            position: relative;
 
-            padding: 0;
+            width: 43px;
+
+            height: 43px;
 
             border: none;
 
@@ -410,6 +504,9 @@
             flex-direction: column;
 
             gap: 5px;
+
+            flex-shrink: 0;
+
         }
 
 
@@ -417,41 +514,49 @@
 
             display: block;
 
-            width: 19px;
+            width: 20px;
 
             height: 2px;
 
-            border-radius: 20px;
+            border-radius: 10px;
 
             background: var(--aqua-dark);
 
             transition:
-                transform .3s ease,
-                opacity .3s ease;
+                transform 0.3s ease,
+                opacity 0.3s ease;
+
         }
 
 
         .mobile-menu-button.open span:nth-child(1) {
 
-            transform: translateY(7px) rotate(45deg);
+            transform:
+                translateY(7px)
+                rotate(45deg);
+
         }
 
 
         .mobile-menu-button.open span:nth-child(2) {
 
             opacity: 0;
+
         }
 
 
         .mobile-menu-button.open span:nth-child(3) {
 
-            transform: translateY(-7px) rotate(-45deg);
+            transform:
+                translateY(-7px)
+                rotate(-45deg);
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            MENÚ MÓVIL
-        ====================================================== */
+        ==================================================== */
 
         .mobile-menu {
 
@@ -459,48 +564,22 @@
 
             width: 100%;
 
-            background: white;
+            background: #ffffff;
 
             border-top: 1px solid var(--border);
 
             box-shadow:
-                0 18px 35px rgba(80, 60, 64, .12);
+                0 18px 35px rgba(80, 60, 64, 0.12);
+
+            overflow: hidden;
+
         }
 
-
-        .mobile-menu.open {
-
-            display: block;
-
-            animation: mobileMenuOpen .28s ease;
-        }
-
-
-        @keyframes mobileMenuOpen {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateY(-8px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateY(0);
-            }
-        }
-
-
-        /* =====================================================
-           LINKS MÓVILES
-        ====================================================== */
 
         .mobile-nav {
 
             width: 100%;
+
         }
 
 
@@ -508,9 +587,10 @@
 
             width: 100%;
 
-            min-height: 55px;
+            min-height: 54px;
 
-            padding: 0 23px;
+            padding:
+                0 22px;
 
             display: flex;
 
@@ -528,10 +608,13 @@
 
             font-weight: 500;
 
+            background: #ffffff;
+
             transition:
-                background .2s ease,
-                color .2s ease,
-                padding-left .2s ease;
+                background 0.2s ease,
+                color 0.2s ease,
+                padding-left 0.2s ease;
+
         }
 
 
@@ -540,45 +623,51 @@
             color: var(--pink-dark);
 
             font-size: 11px;
+
         }
 
 
         .mobile-nav-link:hover,
+        .mobile-nav-link:active,
         .mobile-nav-link.active {
 
             background: var(--aqua-soft);
 
             color: var(--aqua-dark);
 
-            padding-left: 30px;
+            padding-left: 29px;
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            ACCIONES MÓVILES
-        ====================================================== */
+        ==================================================== */
 
-        .mobile-actions {
+        .mobile-menu-actions {
 
-            padding: 14px 20px 20px;
+            padding: 14px 18px 18px;
 
             display: grid;
 
             grid-template-columns: 1fr 1fr;
 
             gap: 10px;
+
+            background: #ffffff;
+
         }
 
 
-        .mobile-action {
+        .mobile-menu-actions button {
 
-            min-height: 49px;
+            min-height: 48px;
 
             border: 1px solid var(--border);
 
             border-radius: 14px;
 
-            background: white;
+            background: #ffffff;
 
             color: var(--text);
 
@@ -594,27 +683,30 @@
 
             font-size: 12px;
 
-            transition: .2s ease;
+            transition: 0.2s ease;
+
         }
 
 
-        .mobile-action:hover {
+        .mobile-menu-actions button:hover {
 
             background: var(--aqua-soft);
 
             border-color: var(--aqua);
 
             color: var(--aqua-dark);
+
         }
 
 
-        .mobile-action i {
+        .mobile-menu-actions button i {
 
             color: var(--pink-dark);
+
         }
 
 
-        .mobile-action-number {
+        .mobile-menu-actions strong {
 
             min-width: 20px;
 
@@ -636,85 +728,97 @@
 
             font-size: 10px;
 
-            font-weight: 700;
         }
 
 
-        /* =====================================================
+        /* ====================================================
            BUSCADOR
-        ====================================================== */
+        ==================================================== */
 
         .search-panel {
 
             position: fixed;
 
+            z-index: 4000;
+
             top: 0;
+
             left: 0;
 
             width: 100%;
 
             padding: 18px 24px;
 
-            background: rgba(255,255,255,.98);
+            background: rgba(255, 255, 255, 0.99);
 
             border-bottom: 1px solid var(--border);
 
             box-shadow:
-                0 15px 35px rgba(80,60,64,.12);
-
-            z-index: 5000;
+                0 15px 35px rgba(80, 60, 64, 0.12);
 
             transform: translateY(-110%);
 
-            transition: transform .3s ease;
+            transition: transform 0.3s ease;
+
         }
 
 
         .search-panel.open {
 
             transform: translateY(0);
+
         }
 
 
-        .search-inner {
+        .search-panel-inner {
 
             width: 100%;
 
             max-width: 1000px;
 
             margin: 0 auto;
+
         }
 
 
-        .search-box {
+        .search-input-wrapper {
+
+            width: 100%;
 
             min-height: 52px;
-
-            padding: 0 17px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 30px;
-
-            background: white;
 
             display: flex;
 
             align-items: center;
 
-            gap: 12px;
+            gap: 13px;
+
+            padding: 0 18px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 5px 20px rgba(100, 75, 80, 0.06);
+
         }
 
 
-        .search-box > i {
+        .search-input-wrapper > i {
 
             color: var(--aqua-dark);
+
         }
 
 
-        .search-box input {
+        .search-input-wrapper input {
 
             flex: 1;
+
+            min-width: 0;
 
             height: 48px;
 
@@ -727,18 +831,21 @@
             color: var(--text);
 
             font-size: 14px;
+
         }
 
 
-        .search-box input::placeholder {
+        .search-input-wrapper input::placeholder {
 
             color: #aaa;
+
         }
 
 
-        .close-search {
+        .search-input-wrapper button {
 
             width: 32px;
+
             height: 32px;
 
             border: none;
@@ -750,87 +857,93 @@
             color: var(--pink-dark);
 
             cursor: pointer;
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            OVERLAY
-        ====================================================== */
+        ==================================================== */
 
-        .panel-overlay {
+        .side-panel-overlay {
 
             position: fixed;
 
+            z-index: 5000;
+
             inset: 0;
 
-            z-index: 4000;
-
-            background: rgba(60,45,48,.28);
+            background: rgba(60, 45, 48, 0.28);
 
             opacity: 0;
 
             visibility: hidden;
 
             transition:
-                opacity .3s ease,
-                visibility .3s ease;
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+
         }
 
 
-        .panel-overlay.open {
+        .side-panel-overlay.open {
 
             opacity: 1;
 
             visibility: visible;
+
         }
 
 
-        /* =====================================================
-           PANEL LATERAL
-        ====================================================== */
+        /* ====================================================
+           PANELES LATERALES
+        ==================================================== */
 
         .side-panel {
 
             position: fixed;
 
+            z-index: 5100;
+
             top: 0;
+
             right: 0;
 
             width: min(430px, 92vw);
 
             height: 100vh;
 
-            z-index: 4500;
-
-            background: white;
+            background: #ffffff;
 
             box-shadow: var(--shadow-panel);
 
             transform: translateX(110%);
 
-            transition: transform .35s ease;
+            transition: transform 0.35s ease;
 
             display: flex;
 
             flex-direction: column;
+
         }
 
 
         .side-panel.open {
 
             transform: translateX(0);
+
         }
 
 
-        /* =====================================================
-           PANEL HEADER
-        ====================================================== */
+        /* ====================================================
+           CABECERA DEL PANEL
+        ==================================================== */
 
-        .panel-header {
+        .side-panel-header {
 
             min-height: 105px;
 
-            padding: 24px 25px 20px;
+            padding: 25px 25px 20px;
 
             display: flex;
 
@@ -843,9 +956,10 @@
             background:
                 linear-gradient(
                     135deg,
-                    #fff 0%,
+                    #ffffff 0%,
                     #fdf8f9 100%
                 );
+
         }
 
 
@@ -864,10 +978,11 @@
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
         }
 
 
-        .panel-header h2 {
+        .side-panel-header h2 {
 
             color: var(--text);
 
@@ -876,12 +991,14 @@
             font-size: 30px;
 
             font-weight: 600;
+
         }
 
 
         .panel-close {
 
             width: 38px;
+
             height: 38px;
 
             border: none;
@@ -900,7 +1017,8 @@
 
             justify-content: center;
 
-            transition: .2s ease;
+            transition: 0.2s ease;
+
         }
 
 
@@ -911,12 +1029,13 @@
             color: white;
 
             transform: rotate(90deg);
+
         }
 
 
-        /* =====================================================
-           PANEL CONTENT
-        ====================================================== */
+        /* ====================================================
+           CONTENIDO DEL PANEL
+        ==================================================== */
 
         .panel-content {
 
@@ -925,6 +1044,7 @@
             padding: 30px 24px;
 
             overflow-y: auto;
+
         }
 
 
@@ -941,12 +1061,14 @@
             justify-content: center;
 
             text-align: center;
+
         }
 
 
         .empty-icon {
 
             width: 75px;
+
             height: 75px;
 
             margin-bottom: 20px;
@@ -964,6 +1086,7 @@
             justify-content: center;
 
             font-size: 25px;
+
         }
 
 
@@ -978,6 +1101,7 @@
             font-size: 25px;
 
             font-weight: 600;
+
         }
 
 
@@ -990,12 +1114,13 @@
             font-size: 13px;
 
             line-height: 1.7;
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            TABLET
-        ====================================================== */
+        ==================================================== */
 
         @media (max-width: 1150px) {
 
@@ -1006,18 +1131,21 @@
                 padding-right: 25px;
 
                 gap: 15px;
+
             }
 
 
             .brand-name {
 
-                font-size: 39px;
+                font-size: 38px;
+
             }
 
 
             .desktop-nav {
 
                 gap: 0;
+
             }
 
 
@@ -1028,6 +1156,7 @@
                 padding-right: 7px;
 
                 font-size: 13px;
+
             }
 
 
@@ -1036,42 +1165,85 @@
                 left: 7px;
 
                 right: 7px;
+
             }
+
         }
 
 
-        /* =====================================================
-           MENÚ MÓVIL
-        ====================================================== */
+        /* ====================================================
+           TABLET PEQUEÑA / CELULAR
+        ==================================================== */
 
         @media (max-width: 950px) {
+
+            .desktop-nav {
+
+                display: none;
+
+            }
+
 
             .header-inner {
 
                 min-height: 88px;
 
-                padding: 9px 20px;
-
                 justify-content: space-between;
+
+                padding:
+                    9px 20px;
+
             }
 
 
-            .desktop-nav {
+            .header-actions {
 
-                display: none;
+                gap: 3px;
+
             }
 
 
             .mobile-menu-button {
 
                 display: flex;
+
             }
+
+
+            .mobile-menu {
+
+                display: block;
+
+                max-height: 0;
+
+                opacity: 0;
+
+                visibility: hidden;
+
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.25s ease,
+                    visibility 0.25s ease;
+
+            }
+
+
+            .mobile-menu.open {
+
+                max-height: 700px;
+
+                opacity: 1;
+
+                visibility: visible;
+
+            }
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            CELULAR
-        ====================================================== */
+        ==================================================== */
 
         @media (max-width: 600px) {
 
@@ -1079,15 +1251,18 @@
 
                 min-height: 74px;
 
-                padding: 7px 14px;
+                padding:
+                    7px 12px;
 
-                gap: 8px;
+                gap: 5px;
+
             }
 
 
             .brand-name {
 
-                font-size: 32px;
+                font-size: 31px;
+
             }
 
 
@@ -1095,27 +1270,30 @@
 
                 margin-top: 4px;
 
-                padding-left: 5px;
+                padding-left: 4px;
 
                 font-size: 8px;
 
                 letter-spacing: 3px;
+
             }
 
 
             .header-actions {
 
                 gap: 0;
+
             }
 
 
             .header-button {
 
-                width: 38px;
+                width: 37px;
 
-                height: 38px;
+                height: 37px;
 
                 font-size: 15px;
+
             }
 
 
@@ -1124,55 +1302,60 @@
                 width: 40px;
 
                 height: 40px;
+
             }
 
 
             .mobile-nav-link {
 
-                min-height: 53px;
+                min-height: 52px;
 
-                padding-left: 20px;
+                padding-left: 19px;
 
-                padding-right: 20px;
+                padding-right: 19px;
+
             }
 
 
-            .mobile-actions {
+            .mobile-menu-actions {
 
-                padding: 12px 14px 18px;
+                padding:
+                    12px 14px 18px;
+
             }
 
 
-            .mobile-action {
+            .mobile-menu-actions button {
 
-                min-height: 46px;
+                min-height: 45px;
+
+                padding:
+                    0 7px;
 
                 font-size: 11px;
-            }
 
-
-            .search-panel {
-
-                padding: 14px;
             }
 
 
             .side-panel {
 
                 width: 92vw;
+
             }
+
         }
 
 
-        /* =====================================================
+        /* ====================================================
            CELULAR PEQUEÑO
-        ====================================================== */
+        ==================================================== */
 
         @media (max-width: 390px) {
 
             .brand-name {
 
-                font-size: 29px;
+                font-size: 28px;
+
             }
 
 
@@ -1181,6 +1364,7 @@
                 font-size: 7px;
 
                 letter-spacing: 2px;
+
             }
 
 
@@ -1189,6 +1373,7 @@
                 width: 35px;
 
                 height: 35px;
+
             }
 
 
@@ -1197,10 +1382,15 @@
                 width: 38px;
 
                 height: 38px;
+
             }
+
         }
 
+
     </style>
+
+
 </head>
 
 
@@ -1213,75 +1403,110 @@
 
     <header class="site-header">
 
+
         <div class="header-inner">
 
 
-            <!-- LOGO -->
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
 
-            <a href="../index.html" class="brand">
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="Nicolle Store"
+            >
 
                 <span class="brand-name">
                     Nicolle Store
                 </span>
 
                 <span class="brand-subtitle">
-                    Beauty & Style
+                    Beauty &amp; Style
                 </span>
 
             </a>
 
 
             <!-- =================================================
-                 MENÚ DESKTOP
+                 NAVEGACIÓN DESKTOP
             ================================================== -->
 
-            <nav class="desktop-nav">
+            <nav
+                class="desktop-nav"
+                aria-label="Navegación principal"
+            >
 
-                <a href="../index.html"
-                   class="nav-link active">
+
+                <a
+                    href="../index.html"
+                    class="nav-link active"
+                >
                     Inicio
                 </a>
 
-                <a href="#"
-                   class="nav-link">
+
+                <a
+                    href="#categorias"
+                    class="nav-link"
+                >
                     Categorías
                 </a>
 
-                <a href="#"
-                   class="nav-link">
+
+                <a
+                    href="#cabello"
+                    class="nav-link"
+                >
                     Cabello
                 </a>
 
-                <a href="#"
-                   class="nav-link">
+
+                <a
+                    href="#piel"
+                    class="nav-link"
+                >
                     Piel
                 </a>
 
-                <a href="#"
-                   class="nav-link">
+
+                <a
+                    href="#maquillaje"
+                    class="nav-link"
+                >
                     Maquillaje
                 </a>
 
-                <a href="#"
-                   class="nav-link">
+
+                <a
+                    href="#accesorios"
+                    class="nav-link"
+                >
                     Accesorios
                 </a>
 
-                <a href="#"
-                   class="nav-link">
+
+                <a
+                    href="#joyeria"
+                    class="nav-link"
+                >
                     Joyería
                 </a>
 
-                <a href="#"
-                   class="nav-link">
+
+                <a
+                    href="#bolsos"
+                    class="nav-link"
+                >
                     Bolsos
                 </a>
+
 
             </nav>
 
 
             <!-- =================================================
-                 BOTONES
+                 ACCIONES
             ================================================== -->
 
             <div class="header-actions">
@@ -1293,7 +1518,8 @@
                     type="button"
                     class="header-button"
                     id="searchButton"
-                    aria-label="Buscar">
+                    aria-label="Buscar"
+                >
 
                     <i class="fa-solid fa-magnifying-glass"></i>
 
@@ -1305,17 +1531,16 @@
                 <button
                     type="button"
                     class="header-button"
-                    id="favoriteButton"
-                    aria-label="Favoritos">
+                    id="favoritesButton"
+                    aria-label="Favoritos"
+                >
 
-                    <i
-                        class="fa-regular fa-heart"
-                        id="favoriteIcon">
-                    </i>
+                    <i class="fa-regular fa-heart"></i>
 
                     <span
                         class="action-badge"
-                        id="favoriteCount">
+                        id="favoritesBadge"
+                    >
                         0
                     </span>
 
@@ -1328,13 +1553,15 @@
                     type="button"
                     class="header-button"
                     id="cartButton"
-                    aria-label="Carrito">
+                    aria-label="Carrito"
+                >
 
                     <i class="fa-solid fa-bag-shopping"></i>
 
                     <span
                         class="action-badge"
-                        id="cartCount">
+                        id="cartBadge"
+                    >
                         0
                     </span>
 
@@ -1348,15 +1575,20 @@
                     class="mobile-menu-button"
                     id="mobileMenuButton"
                     aria-label="Abrir menú"
-                    aria-expanded="false">
+                    aria-expanded="false"
+                >
 
                     <span></span>
+
                     <span></span>
+
                     <span></span>
 
                 </button>
 
+
             </div>
+
 
         </div>
 
@@ -1367,13 +1599,20 @@
 
         <div
             class="mobile-menu"
-            id="mobileMenu">
+            id="mobileMenu"
+        >
 
-            <nav class="mobile-nav">
+
+            <nav
+                class="mobile-nav"
+                aria-label="Navegación móvil"
+            >
 
 
-                <a href="../index.html"
-                   class="mobile-nav-link active">
+                <a
+                    href="../index.html"
+                    class="mobile-nav-link active"
+                >
 
                     <span>Inicio</span>
 
@@ -1382,8 +1621,10 @@
                 </a>
 
 
-                <a href="#"
-                   class="mobile-nav-link">
+                <a
+                    href="#categorias"
+                    class="mobile-nav-link"
+                >
 
                     <span>Categorías</span>
 
@@ -1392,8 +1633,10 @@
                 </a>
 
 
-                <a href="#"
-                   class="mobile-nav-link">
+                <a
+                    href="#cabello"
+                    class="mobile-nav-link"
+                >
 
                     <span>Cabello</span>
 
@@ -1402,8 +1645,10 @@
                 </a>
 
 
-                <a href="#"
-                   class="mobile-nav-link">
+                <a
+                    href="#piel"
+                    class="mobile-nav-link"
+                >
 
                     <span>Piel</span>
 
@@ -1412,8 +1657,10 @@
                 </a>
 
 
-                <a href="#"
-                   class="mobile-nav-link">
+                <a
+                    href="#maquillaje"
+                    class="mobile-nav-link"
+                >
 
                     <span>Maquillaje</span>
 
@@ -1422,8 +1669,10 @@
                 </a>
 
 
-                <a href="#"
-                   class="mobile-nav-link">
+                <a
+                    href="#accesorios"
+                    class="mobile-nav-link"
+                >
 
                     <span>Accesorios</span>
 
@@ -1432,8 +1681,10 @@
                 </a>
 
 
-                <a href="#"
-                   class="mobile-nav-link">
+                <a
+                    href="#joyeria"
+                    class="mobile-nav-link"
+                >
 
                     <span>Joyería</span>
 
@@ -1442,8 +1693,10 @@
                 </a>
 
 
-                <a href="#"
-                   class="mobile-nav-link">
+                <a
+                    href="#bolsos"
+                    class="mobile-nav-link"
+                >
 
                     <span>Bolsos</span>
 
@@ -1451,20 +1704,21 @@
 
                 </a>
 
+
             </nav>
 
 
             <!-- =================================================
-                 ACCIONES DEL MENÚ MÓVIL
+                 ACCIONES MÓVILES
             ================================================== -->
 
-            <div class="mobile-actions">
+            <div class="mobile-menu-actions">
 
 
                 <button
                     type="button"
-                    class="mobile-action"
-                    id="mobileFavoriteButton">
+                    id="mobileFavoritesButton"
+                >
 
                     <i class="fa-regular fa-heart"></i>
 
@@ -1472,9 +1726,7 @@
                         Favoritos
                     </span>
 
-                    <strong
-                        class="mobile-action-number"
-                        id="mobileFavoriteCount">
+                    <strong id="mobileFavoritesBadge">
                         0
                     </strong>
 
@@ -1483,8 +1735,8 @@
 
                 <button
                     type="button"
-                    class="mobile-action"
-                    id="mobileCartButton">
+                    id="mobileCartButton"
+                >
 
                     <i class="fa-solid fa-bag-shopping"></i>
 
@@ -1492,17 +1744,18 @@
                         Carrito
                     </span>
 
-                    <strong
-                        class="mobile-action-number"
-                        id="mobileCartCount">
+                    <strong id="mobileCartBadge">
                         0
                     </strong>
 
                 </button>
 
+
             </div>
 
+
         </div>
+
 
     </header>
 
@@ -1513,31 +1766,39 @@
 
     <div
         class="search-panel"
-        id="searchPanel">
+        id="searchPanel"
+    >
 
-        <div class="search-inner">
+        <div class="search-panel-inner">
 
-            <div class="search-box">
+
+            <div class="search-input-wrapper">
+
 
                 <i class="fa-solid fa-magnifying-glass"></i>
 
+
                 <input
-                    type="text"
+                    type="search"
                     id="searchInput"
                     placeholder="¿Qué estás buscando?"
-                    autocomplete="off">
+                    autocomplete="off"
+                >
+
 
                 <button
                     type="button"
-                    class="close-search"
-                    id="closeSearch"
-                    aria-label="Cerrar búsqueda">
+                    id="closeSearchButton"
+                    aria-label="Cerrar búsqueda"
+                >
 
                     <i class="fa-solid fa-xmark"></i>
 
                 </button>
 
+
             </div>
+
 
         </div>
 
@@ -1545,13 +1806,13 @@
 
 
     <!-- =====================================================
-         OVERLAY FAVORITOS
+         OVERLAY
     ====================================================== -->
 
     <div
-        class="panel-overlay"
-        id="favoriteOverlay">
-    </div>
+        class="side-panel-overlay"
+        id="sidePanelOverlay"
+    ></div>
 
 
     <!-- =====================================================
@@ -1560,9 +1821,13 @@
 
     <aside
         class="side-panel"
-        id="favoritePanel">
+        id="favoritesPanel"
+        aria-label="Favoritos"
+    >
 
-        <div class="panel-header">
+
+        <div class="side-panel-header">
+
 
             <div>
 
@@ -1580,18 +1845,23 @@
             <button
                 type="button"
                 class="panel-close"
-                id="closeFavorite">
+                id="closeFavoritesButton"
+                aria-label="Cerrar favoritos"
+            >
 
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
+
 
         </div>
 
 
         <div class="panel-content">
 
+
             <div class="empty-panel">
+
 
                 <div class="empty-icon">
 
@@ -1599,30 +1869,26 @@
 
                 </div>
 
+
                 <h3>
                     Aún no tienes favoritos
                 </h3>
 
+
                 <p>
-                    Aquí aparecerán los productos
-                    que marques con ❤️.
+                    Cuando encuentres productos que te encanten,
+                    podrás guardarlos aquí para encontrarlos
+                    fácilmente.
                 </p>
+
 
             </div>
 
+
         </div>
 
+
     </aside>
-
-
-    <!-- =====================================================
-         OVERLAY CARRITO
-    ====================================================== -->
-
-    <div
-        class="panel-overlay"
-        id="cartOverlay">
-    </div>
 
 
     <!-- =====================================================
@@ -1631,9 +1897,13 @@
 
     <aside
         class="side-panel"
-        id="cartPanel">
+        id="cartPanel"
+        aria-label="Carrito"
+    >
 
-        <div class="panel-header">
+
+        <div class="side-panel-header">
+
 
             <div>
 
@@ -1651,18 +1921,23 @@
             <button
                 type="button"
                 class="panel-close"
-                id="closeCart">
+                id="closeCartButton"
+                aria-label="Cerrar carrito"
+            >
 
                 <i class="fa-solid fa-xmark"></i>
 
             </button>
+
 
         </div>
 
 
         <div class="panel-content">
 
+
             <div class="empty-panel">
+
 
                 <div class="empty-icon">
 
@@ -1670,18 +1945,23 @@
 
                 </div>
 
+
                 <h3>
                     Tu carrito está vacío
                 </h3>
 
+
                 <p>
-                    Aquí aparecerán los productos
-                    que agregues a tu carrito.
+                    Los productos que agregues a tu carrito
+                    aparecerán aquí.
                 </p>
+
 
             </div>
 
+
         </div>
+
 
     </aside>
 
@@ -1692,513 +1972,503 @@
 
     <script>
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
 
+        /* ====================================================
+           ELEMENTOS
+        ==================================================== */
 
-                /* =================================================
-                   ELEMENTOS
-                ================================================== */
+        const mobileMenuButton =
+            document.getElementById("mobileMenuButton");
 
-                const body =
-                    document.body;
 
+        const mobileMenu =
+            document.getElementById("mobileMenu");
 
-                const mobileMenuButton =
-                    document.getElementById(
-                        "mobileMenuButton"
-                    );
 
+        const searchButton =
+            document.getElementById("searchButton");
 
-                const mobileMenu =
-                    document.getElementById(
-                        "mobileMenu"
-                    );
 
+        const searchPanel =
+            document.getElementById("searchPanel");
 
-                const searchButton =
-                    document.getElementById(
-                        "searchButton"
-                    );
 
+        const searchInput =
+            document.getElementById("searchInput");
 
-                const searchPanel =
-                    document.getElementById(
-                        "searchPanel"
-                    );
 
+        const closeSearchButton =
+            document.getElementById("closeSearchButton");
 
-                const searchInput =
-                    document.getElementById(
-                        "searchInput"
-                    );
 
+        const favoritesButton =
+            document.getElementById("favoritesButton");
 
-                const closeSearch =
-                    document.getElementById(
-                        "closeSearch"
-                    );
 
+        const mobileFavoritesButton =
+            document.getElementById("mobileFavoritesButton");
 
-                const favoriteButton =
-                    document.getElementById(
-                        "favoriteButton"
-                    );
 
+        const favoritesPanel =
+            document.getElementById("favoritesPanel");
 
-                const favoriteIcon =
-                    document.getElementById(
-                        "favoriteIcon"
-                    );
 
+        const closeFavoritesButton =
+            document.getElementById("closeFavoritesButton");
 
-                const favoriteCount =
-                    document.getElementById(
-                        "favoriteCount"
-                    );
 
+        const cartButton =
+            document.getElementById("cartButton");
 
-                const mobileFavoriteButton =
-                    document.getElementById(
-                        "mobileFavoriteButton"
-                    );
 
+        const mobileCartButton =
+            document.getElementById("mobileCartButton");
 
-                const mobileFavoriteCount =
-                    document.getElementById(
-                        "mobileFavoriteCount"
-                    );
 
+        const cartPanel =
+            document.getElementById("cartPanel");
 
-                const favoritePanel =
-                    document.getElementById(
-                        "favoritePanel"
-                    );
 
+        const closeCartButton =
+            document.getElementById("closeCartButton");
 
-                const favoriteOverlay =
-                    document.getElementById(
-                        "favoriteOverlay"
-                    );
 
+        const sidePanelOverlay =
+            document.getElementById("sidePanelOverlay");
 
-                const closeFavorite =
-                    document.getElementById(
-                        "closeFavorite"
-                    );
 
+        const favoritesBadge =
+            document.getElementById("favoritesBadge");
 
-                const cartButton =
-                    document.getElementById(
-                        "cartButton"
-                    );
 
+        const mobileFavoritesBadge =
+            document.getElementById("mobileFavoritesBadge");
 
-                const cartCount =
-                    document.getElementById(
-                        "cartCount"
-                    );
 
+        const cartBadge =
+            document.getElementById("cartBadge");
 
-                const mobileCartButton =
-                    document.getElementById(
-                        "mobileCartButton"
-                    );
 
+        const mobileCartBadge =
+            document.getElementById("mobileCartBadge");
 
-                const mobileCartCount =
-                    document.getElementById(
-                        "mobileCartCount"
-                    );
 
+        /* ====================================================
+           CONTADORES
+        ==================================================== */
 
-                const cartPanel =
-                    document.getElementById(
-                        "cartPanel"
-                    );
+        let favoritesCount = 0;
 
+        let cartCount = 0;
 
-                const cartOverlay =
-                    document.getElementById(
-                        "cartOverlay"
-                    );
 
+        /* ====================================================
+           ACTUALIZAR ALTURA DEL IFRAME
+        ==================================================== */
 
-                const closeCart =
-                    document.getElementById(
-                        "closeCart"
-                    );
+        function actualizarAlturaIframe() {
 
+            const altura =
+                document.documentElement.scrollHeight;
 
-                /* =================================================
-                   ESTADO
-                ================================================== */
 
-                let favorites = 0;
-
-                let cartItems = 0;
-
-
-                /* =================================================
-                   MENÚ HAMBURGUESA
-                ================================================== */
-
-                mobileMenuButton.addEventListener(
-                    "click",
-                    function () {
-
-                        const opened =
-                            mobileMenu.classList.toggle(
-                                "open"
-                            );
-
-
-                        mobileMenuButton.classList.toggle(
-                            "open",
-                            opened
-                        );
-
-
-                        mobileMenuButton.setAttribute(
-                            "aria-expanded",
-                            opened
-                                ? "true"
-                                : "false"
-                        );
-
-
-                        if (opened) {
-
-                            body.classList.add(
-                                "locked"
-                            );
-
-                        } else {
-
-                            body.classList.remove(
-                                "locked"
-                            );
-
-                        }
-
-                    }
+            if (
+                window.parent &&
+                window.parent !== window
+            ) {
+
+                window.parent.postMessage(
+                    {
+                        tipo: "nicolle-menu-altura",
+                        altura: altura
+                    },
+                    "*"
                 );
-
-
-                /* =================================================
-                   CERRAR MENÚ AL ELEGIR OPCIÓN
-                ================================================== */
-
-                const mobileLinks =
-                    document.querySelectorAll(
-                        ".mobile-nav-link"
-                    );
-
-
-                mobileLinks.forEach(
-                    function (link) {
-
-                        link.addEventListener(
-                            "click",
-                            function () {
-
-                                closeMobileMenu();
-
-                            }
-                        );
-
-                    }
-                );
-
-
-                function closeMobileMenu() {
-
-                    mobileMenu.classList.remove(
-                        "open"
-                    );
-
-
-                    mobileMenuButton.classList.remove(
-                        "open"
-                    );
-
-
-                    mobileMenuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-
-                    body.classList.remove(
-                        "locked"
-                    );
-
-                }
-
-
-                /* =================================================
-                   BUSCADOR
-                ================================================== */
-
-                searchButton.addEventListener(
-                    "click",
-                    function () {
-
-                        closeMobileMenu();
-
-                        searchPanel.classList.add(
-                            "open"
-                        );
-
-
-                        setTimeout(
-                            function () {
-
-                                searchInput.focus();
-
-                            },
-                            150
-                        );
-
-                    }
-                );
-
-
-                closeSearch.addEventListener(
-                    "click",
-                    function () {
-
-                        closeSearchPanel();
-
-                    }
-                );
-
-
-                function closeSearchPanel() {
-
-                    searchPanel.classList.remove(
-                        "open"
-                    );
-
-
-                    searchInput.value = "";
-
-                }
-
-
-                /* =================================================
-                   FAVORITOS
-                ================================================== */
-
-                favoriteButton.addEventListener(
-                    "click",
-                    function () {
-
-                        openFavoritePanel();
-
-                    }
-                );
-
-
-                mobileFavoriteButton.addEventListener(
-                    "click",
-                    function () {
-
-                        closeMobileMenu();
-
-                        openFavoritePanel();
-
-                    }
-                );
-
-
-                function openFavoritePanel() {
-
-                    closeCartPanel();
-
-                    closeSearchPanel();
-
-                    favoritePanel.classList.add(
-                        "open"
-                    );
-
-
-                    favoriteOverlay.classList.add(
-                        "open"
-                    );
-
-                }
-
-
-                function closeFavoritePanel() {
-
-                    favoritePanel.classList.remove(
-                        "open"
-                    );
-
-
-                    favoriteOverlay.classList.remove(
-                        "open"
-                    );
-
-                }
-
-
-                closeFavorite.addEventListener(
-                    "click",
-                    function () {
-
-                        closeFavoritePanel();
-
-                    }
-                );
-
-
-                favoriteOverlay.addEventListener(
-                    "click",
-                    function () {
-
-                        closeFavoritePanel();
-
-                    }
-                );
-
-
-                /* =================================================
-                   CARRITO
-                ================================================== */
-
-                cartButton.addEventListener(
-                    "click",
-                    function () {
-
-                        openCartPanel();
-
-                    }
-                );
-
-
-                mobileCartButton.addEventListener(
-                    "click",
-                    function () {
-
-                        closeMobileMenu();
-
-                        openCartPanel();
-
-                    }
-                );
-
-
-                function openCartPanel() {
-
-                    closeFavoritePanel();
-
-                    closeSearchPanel();
-
-                    cartPanel.classList.add(
-                        "open"
-                    );
-
-
-                    cartOverlay.classList.add(
-                        "open"
-                    );
-
-                }
-
-
-                function closeCartPanel() {
-
-                    cartPanel.classList.remove(
-                        "open"
-                    );
-
-
-                    cartOverlay.classList.remove(
-                        "open"
-                    );
-
-                }
-
-
-                closeCart.addEventListener(
-                    "click",
-                    function () {
-
-                        closeCartPanel();
-
-                    }
-                );
-
-
-                cartOverlay.addEventListener(
-                    "click",
-                    function () {
-
-                        closeCartPanel();
-
-                    }
-                );
-
-
-                /* =================================================
-                   ESC
-                ================================================== */
-
-                document.addEventListener(
-                    "keydown",
-                    function (event) {
-
-                        if (event.key === "Escape") {
-
-                            closeMobileMenu();
-
-                            closeSearchPanel();
-
-                            closeFavoritePanel();
-
-                            closeCartPanel();
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   CONTADORES
-                ================================================== */
-
-                function updateCounters() {
-
-                    favoriteCount.textContent =
-                        favorites;
-
-
-                    mobileFavoriteCount.textContent =
-                        favorites;
-
-
-                    cartCount.textContent =
-                        cartItems;
-
-
-                    mobileCartCount.textContent =
-                        cartItems;
-
-                }
-
-
-                updateCounters();
-
 
             }
 
+        }
+
+
+        /* ====================================================
+           ABRIR / CERRAR MENÚ MÓVIL
+        ==================================================== */
+
+        function abrirMenuMovil() {
+
+            mobileMenu.classList.add("open");
+
+            mobileMenuButton.classList.add("open");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            mobileMenuButton.setAttribute(
+                "aria-label",
+                "Cerrar menú"
+            );
+
+
+            document.body.classList.add("locked");
+
+
+            setTimeout(function() {
+
+                actualizarAlturaIframe();
+
+            }, 50);
+
+        }
+
+
+        function cerrarMenuMovil() {
+
+            mobileMenu.classList.remove("open");
+
+            mobileMenuButton.classList.remove("open");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenuButton.setAttribute(
+                "aria-label",
+                "Abrir menú"
+            );
+
+
+            document.body.classList.remove("locked");
+
+
+            setTimeout(function() {
+
+                actualizarAlturaIframe();
+
+            }, 450);
+
+        }
+
+
+        mobileMenuButton.addEventListener(
+            "click",
+            function() {
+
+                if (
+                    mobileMenu.classList.contains("open")
+                ) {
+
+                    cerrarMenuMovil();
+
+                } else {
+
+                    abrirMenuMovil();
+
+                }
+
+            }
         );
+
+
+        /* ====================================================
+           CERRAR MENÚ AL SELECCIONAR OPCIÓN
+        ==================================================== */
+
+        const mobileLinks =
+            document.querySelectorAll(
+                ".mobile-nav-link"
+            );
+
+
+        mobileLinks.forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    cerrarMenuMovil();
+
+                }
+            );
+
+        });
+
+
+        /* ====================================================
+           BUSCADOR
+        ==================================================== */
+
+        function abrirBusqueda() {
+
+            searchPanel.classList.add("open");
+
+            setTimeout(function() {
+
+                searchInput.focus();
+
+            }, 250);
+
+        }
+
+
+        function cerrarBusqueda() {
+
+            searchPanel.classList.remove("open");
+
+            searchInput.value = "";
+
+        }
+
+
+        searchButton.addEventListener(
+            "click",
+            function() {
+
+                abrirBusqueda();
+
+            }
+        );
+
+
+        closeSearchButton.addEventListener(
+            "click",
+            function() {
+
+                cerrarBusqueda();
+
+            }
+        );
+
+
+        /* ====================================================
+           FAVORITOS
+        ==================================================== */
+
+        function abrirFavoritos() {
+
+            cerrarMenuMovil();
+
+            cartPanel.classList.remove("open");
+
+            favoritesPanel.classList.add("open");
+
+            sidePanelOverlay.classList.add("open");
+
+            document.body.classList.add("locked");
+
+        }
+
+
+        function cerrarFavoritos() {
+
+            favoritesPanel.classList.remove("open");
+
+            sidePanelOverlay.classList.remove("open");
+
+            document.body.classList.remove("locked");
+
+        }
+
+
+        favoritesButton.addEventListener(
+            "click",
+            function() {
+
+                abrirFavoritos();
+
+            }
+        );
+
+
+        mobileFavoritesButton.addEventListener(
+            "click",
+            function() {
+
+                abrirFavoritos();
+
+            }
+        );
+
+
+        closeFavoritesButton.addEventListener(
+            "click",
+            function() {
+
+                cerrarFavoritos();
+
+            }
+        );
+
+
+        /* ====================================================
+           CARRITO
+        ==================================================== */
+
+        function abrirCarrito() {
+
+            cerrarMenuMovil();
+
+            favoritesPanel.classList.remove("open");
+
+            cartPanel.classList.add("open");
+
+            sidePanelOverlay.classList.add("open");
+
+            document.body.classList.add("locked");
+
+        }
+
+
+        function cerrarCarrito() {
+
+            cartPanel.classList.remove("open");
+
+            sidePanelOverlay.classList.remove("open");
+
+            document.body.classList.remove("locked");
+
+        }
+
+
+        cartButton.addEventListener(
+            "click",
+            function() {
+
+                abrirCarrito();
+
+            }
+        );
+
+
+        mobileCartButton.addEventListener(
+            "click",
+            function() {
+
+                abrirCarrito();
+
+            }
+        );
+
+
+        closeCartButton.addEventListener(
+            "click",
+            function() {
+
+                cerrarCarrito();
+
+            }
+        );
+
+
+        /* ====================================================
+           OVERLAY
+        ==================================================== */
+
+        sidePanelOverlay.addEventListener(
+            "click",
+            function() {
+
+                cerrarFavoritos();
+
+                cerrarCarrito();
+
+            }
+        );
+
+
+        /* ====================================================
+           ESCAPE
+        ==================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    cerrarBusqueda();
+
+                    cerrarFavoritos();
+
+                    cerrarCarrito();
+
+                    cerrarMenuMovil();
+
+                }
+
+            }
+        );
+
+
+        /* ====================================================
+           CONTADORES
+        ==================================================== */
+
+        function actualizarContadores() {
+
+            favoritesBadge.textContent =
+                favoritesCount;
+
+
+            mobileFavoritesBadge.textContent =
+                favoritesCount;
+
+
+            cartBadge.textContent =
+                cartCount;
+
+
+            mobileCartBadge.textContent =
+                cartCount;
+
+        }
+
+
+        actualizarContadores();
+
+
+        /* ====================================================
+           RESIZE
+        ==================================================== */
+
+        window.addEventListener(
+            "resize",
+            function() {
+
+                actualizarAlturaIframe();
+
+            }
+        );
+
+
+        /* ====================================================
+           CARGA INICIAL
+        ==================================================== */
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                setTimeout(
+                    actualizarAlturaIframe,
+                    100
+                );
+
+            }
+        );
+
+
+        setTimeout(
+            actualizarAlturaIframe,
+            200
+        );
+
 
     </script>
 
+
 </body>
+
 </html>
