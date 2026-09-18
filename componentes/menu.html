@@ -1536,8 +1536,6 @@
             >
 
 
-                <!-- INICIO -->
-
                 <a
                     href="../index.html"
                     target="_parent"
@@ -1546,8 +1544,6 @@
                     Inicio
                 </a>
 
-
-                <!-- CABELLO -->
 
                 <a
                     href="../paginas/cabello.html"
@@ -1558,8 +1554,6 @@
                 </a>
 
 
-                <!-- PIEL -->
-
                 <a
                     href="../paginas/piel.html"
                     target="_parent"
@@ -1568,8 +1562,6 @@
                     Piel
                 </a>
 
-
-                <!-- MAQUILLAJE -->
 
                 <a
                     href="../paginas/maquillaje.html"
@@ -1580,8 +1572,6 @@
                 </a>
 
 
-                <!-- ACCESORIOS -->
-
                 <a
                     href="../paginas/accesorios.html"
                     target="_parent"
@@ -1591,8 +1581,6 @@
                 </a>
 
 
-                <!-- JOYERÍA -->
-
                 <a
                     href="../paginas/joyeria.html"
                     target="_parent"
@@ -1601,8 +1589,6 @@
                     Joyería
                 </a>
 
-
-                <!-- BOLSOS -->
 
                 <a
                     href="../paginas/bolsos.html"
@@ -1728,8 +1714,6 @@
             >
 
 
-                <!-- INICIO -->
-
                 <a
                     href="../index.html"
                     target="_parent"
@@ -1746,8 +1730,6 @@
 
                 </a>
 
-
-                <!-- CABELLO -->
 
                 <a
                     href="../paginas/cabello.html"
@@ -1766,8 +1748,6 @@
                 </a>
 
 
-                <!-- PIEL -->
-
                 <a
                     href="../paginas/piel.html"
                     target="_parent"
@@ -1784,8 +1764,6 @@
 
                 </a>
 
-
-                <!-- MAQUILLAJE -->
 
                 <a
                     href="../paginas/maquillaje.html"
@@ -1804,8 +1782,6 @@
                 </a>
 
 
-                <!-- ACCESORIOS -->
-
                 <a
                     href="../paginas/accesorios.html"
                     target="_parent"
@@ -1823,8 +1799,6 @@
                 </a>
 
 
-                <!-- JOYERÍA -->
-
                 <a
                     href="../paginas/joyeria.html"
                     target="_parent"
@@ -1841,8 +1815,6 @@
 
                 </a>
 
-
-                <!-- BOLSOS -->
 
                 <a
                     href="../paginas/bolsos.html"
@@ -2051,6 +2023,8 @@
 
     <!-- =====================================================
          PANEL CARRITO
+         Se mantiene como respaldo visual, pero el botón
+         principal llevará directamente a carrito.html.
     ====================================================== -->
 
     <aside
@@ -2104,12 +2078,13 @@
                 </div>
 
                 <h3>
-                    Tu carrito está vacío
+                    Tu carrito
                 </h3>
 
                 <p>
-                    Los productos que agregues a tu carrito
-                    aparecerán aquí.
+                    Serás dirigido a la página del carrito
+                    para revisar tus productos, cantidades
+                    y total.
                 </p>
 
             </div>
@@ -2124,6 +2099,14 @@
     ====================================================== -->
 
     <script>
+
+        /* ====================================================
+           CONSTANTES
+        ==================================================== */
+
+        const CLAVE_CARRITO =
+            "nicolleStoreCarrito";
+
 
         /* ====================================================
            ELEMENTOS
@@ -2249,7 +2232,122 @@
 
         let favoritesCount = 0;
 
-        let cartCount = 0;
+
+        /* ====================================================
+           OBTENER CARRITO
+        ==================================================== */
+
+        function obtenerCarrito() {
+
+            try {
+
+                const datos =
+                    localStorage.getItem(
+                        CLAVE_CARRITO
+                    );
+
+
+                if (!datos) {
+
+                    return [];
+
+                }
+
+
+                const carrito =
+                    JSON.parse(datos);
+
+
+                if (
+                    !Array.isArray(carrito)
+                ) {
+
+                    return [];
+
+                }
+
+
+                return carrito;
+
+            } catch (error) {
+
+                console.error(
+                    "Error al leer el carrito:",
+                    error
+                );
+
+                return [];
+
+            }
+
+        }
+
+
+        /* ====================================================
+           OBTENER CANTIDAD TOTAL
+        ==================================================== */
+
+        function obtenerCantidadCarrito() {
+
+            const carrito =
+                obtenerCarrito();
+
+
+            return carrito.reduce(
+                function(total, producto) {
+
+                    const cantidad =
+                        Number(
+                            producto.cantidad
+                        ) || 0;
+
+
+                    return total + cantidad;
+
+                },
+                0
+            );
+
+        }
+
+
+        /* ====================================================
+           ACTUALIZAR CONTADOR DEL CARRITO
+        ==================================================== */
+
+        function actualizarContadorCarrito() {
+
+            const cantidad =
+                obtenerCantidadCarrito();
+
+
+            cartBadge.textContent =
+                cantidad;
+
+
+            mobileCartBadge.textContent =
+                cantidad;
+
+        }
+
+
+        /* ====================================================
+           ACTUALIZAR TODOS LOS CONTADORES
+        ==================================================== */
+
+        function actualizarContadores() {
+
+            favoritesBadge.textContent =
+                favoritesCount;
+
+
+            mobileFavoritesBadge.textContent =
+                favoritesCount;
+
+
+            actualizarContadorCarrito();
+
+        }
 
 
         /* ====================================================
@@ -2548,30 +2646,71 @@
 
         /* ====================================================
            CARRITO
+           IMPORTANTE:
+           El botón del menú abre la página real del carrito.
         ==================================================== */
 
-        function abrirCarrito() {
+        function abrirPaginaCarrito() {
 
             cerrarMenuMovil();
 
-            favoritesPanel.classList.remove(
-                "open"
-            );
+            cerrarFavoritos();
 
-            cartPanel.classList.add(
-                "open"
-            );
+            cerrarBusqueda();
 
-            sidePanelOverlay.classList.add(
-                "open"
-            );
 
-            document.body.classList.add(
-                "locked"
-            );
+            /*
+             * menu.html está dentro de componentes/
+             *
+             * Por eso la ruta correcta es:
+             *
+             * ../carrito.html
+             *
+             * target parent evita que carrito.html se abra
+             * dentro del iframe.
+             */
+
+            if (
+                window.parent &&
+                window.parent !== window
+            ) {
+
+                window.parent.location.href =
+                    "../carrito.html";
+
+            } else {
+
+                window.location.href =
+                    "../carrito.html";
+
+            }
 
         }
 
+
+        cartButton.addEventListener(
+            "click",
+            function() {
+
+                abrirPaginaCarrito();
+
+            }
+        );
+
+
+        mobileCartButton.addEventListener(
+            "click",
+            function() {
+
+                abrirPaginaCarrito();
+
+            }
+        );
+
+
+        /* ====================================================
+           CERRAR PANEL CARRITO
+        ==================================================== */
 
         function cerrarCarrito() {
 
@@ -2588,26 +2727,6 @@
             );
 
         }
-
-
-        cartButton.addEventListener(
-            "click",
-            function() {
-
-                abrirCarrito();
-
-            }
-        );
-
-
-        mobileCartButton.addEventListener(
-            "click",
-            function() {
-
-                abrirCarrito();
-
-            }
-        );
 
 
         closeCartButton.addEventListener(
@@ -2663,30 +2782,42 @@
 
 
         /* ====================================================
-           CONTADORES
+           STORAGE
+           Actualiza el contador si otra pestaña modifica
+           el carrito.
         ==================================================== */
 
-        function actualizarContadores() {
+        window.addEventListener(
+            "storage",
+            function(event) {
 
-            favoritesBadge.textContent =
-                favoritesCount;
+                if (
+                    event.key ===
+                    CLAVE_CARRITO
+                ) {
 
+                    actualizarContadorCarrito();
 
-            mobileFavoritesBadge.textContent =
-                favoritesCount;
+                }
 
-
-            cartBadge.textContent =
-                cartCount;
-
-
-            mobileCartBadge.textContent =
-                cartCount;
-
-        }
+            }
+        );
 
 
-        actualizarContadores();
+        /* ====================================================
+           ACTUALIZACIÓN PERIÓDICA
+           
+           Como menu.html está dentro de un iframe, el evento
+           storage no se dispara en este mismo documento cuando
+           el carrito cambia en la página padre.
+
+           Por eso hacemos una pequeña comprobación periódica.
+        ==================================================== */
+
+        setInterval(
+            actualizarContadorCarrito,
+            500
+        );
 
 
         /* ====================================================
@@ -2707,9 +2838,15 @@
            CARGA INICIAL
         ==================================================== */
 
+        actualizarContadores();
+
+
         window.addEventListener(
             "load",
             function() {
+
+                actualizarContadores();
+
 
                 setTimeout(
                     actualizarAlturaIframe,
@@ -2724,6 +2861,7 @@
             actualizarAlturaIframe,
             200
         );
+
 
     </script>
 
