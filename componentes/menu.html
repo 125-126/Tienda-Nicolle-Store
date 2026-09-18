@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nicolle Store</title>
+    <title>Nicolle Store - Menú</title>
 
     <!-- =====================================================
          FUENTES
-         ===================================================== -->
+    ====================================================== -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+    <!-- =====================================================
+         ICONOS
+    ====================================================== -->
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
         rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
 
@@ -23,189 +30,185 @@
 
         /* =====================================================
            VARIABLES
-           ===================================================== */
+        ====================================================== */
 
         :root {
 
-            /* Fondo */
-            --menu-bg: #ffffff;
-            --menu-bg-soft: #f9ffff;
-
-            /* Aqua */
             --aqua: #8fd8d2;
-            --aqua-dark: #5fb9b1;
-            --aqua-soft: #e5f7f5;
+            --aqua-dark: #62bcb5;
+            --aqua-soft: #e8f8f6;
 
-            /* Rosado tierno */
             --pink: #e9bfc5;
             --pink-dark: #d79da6;
             --pink-soft: #fdf0f2;
 
-            /* Texto */
-            --text: #3a3433;
-            --text-soft: #756d6b;
-
-            /* Bordes */
-            --border: rgba(95, 185, 177, 0.18);
-
-            /* Blanco */
             --white: #ffffff;
 
-            /* Fuentes */
-            --font-logo: "Great Vibes", cursive;
-            --font-title: "Cormorant Garamond", Georgia, serif;
-            --font-body: "DM Sans", Arial, sans-serif;
+            --text: #51484a;
+            --text-soft: #8b7e80;
 
-            --transition: 0.3s ease;
+            --border: #f0e1e3;
+
+            --shadow:
+                0 8px 30px rgba(110, 87, 91, 0.08);
+
+            --shadow-panel:
+                -12px 0 40px rgba(70, 50, 55, 0.12);
         }
 
 
         /* =====================================================
            RESET
-           ===================================================== */
+        ====================================================== */
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
 
         html {
-            scroll-behavior: smooth;
+            width: 100%;
+            min-height: 100%;
         }
+
 
         body {
-            background: var(--menu-bg);
+            width: 100%;
+            min-height: 100vh;
+
+            margin: 0;
+
+            background: #fffafa;
+
             color: var(--text);
-            font-family: var(--font-body);
+
+            font-family: "DM Sans", sans-serif;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+
+        body.locked {
+            overflow: hidden;
+        }
+
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+
+        button {
+            -webkit-tap-highlight-color: transparent;
         }
 
 
         /* =====================================================
            HEADER
-           ===================================================== */
+        ====================================================== */
 
         .site-header {
+
             position: relative;
-            z-index: 1000;
 
             width: 100%;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #ffffff 0%,
-                    #fbffff 50%,
-                    #fffafb 100%
-                );
+            background: rgba(255, 255, 255, 0.98);
 
             border-bottom: 1px solid var(--border);
 
-            box-shadow:
-                0 4px 20px rgba(95, 185, 177, 0.06);
+            box-shadow: var(--shadow);
+
+            z-index: 1000;
         }
 
 
-        /* =====================================================
-           NAVBAR
-           ===================================================== */
-
-        .navbar {
+        .header-inner {
 
             width: 100%;
-            max-width: 1320px;
 
-            min-height: 88px;
+            min-height: 96px;
 
-            margin: 0 auto;
-
-            padding: 0 32px;
+            padding: 10px 38px;
 
             display: flex;
-            align-items: center;
-            justify-content: space-between;
 
-            gap: 30px;
+            align-items: center;
+
+            gap: 28px;
         }
 
 
         /* =====================================================
            LOGO
-           ===================================================== */
+        ====================================================== */
 
         .brand {
 
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
             flex-shrink: 0;
 
-            line-height: 1;
+            display: flex;
 
-            transition:
-                transform var(--transition);
-        }
+            flex-direction: column;
 
-        .brand:hover {
-            transform: translateY(-1px);
+            align-items: flex-start;
+
+            text-decoration: none;
         }
 
 
         .brand-name {
 
-            font-family: var(--font-logo);
-
-            font-size: 3rem;
-            font-weight: 400;
-
-            line-height: 0.9;
-
             color: var(--aqua-dark);
 
-            white-space: nowrap;
+            font-family: "Great Vibes", cursive;
 
-            text-shadow:
-                0 2px 12px rgba(95, 185, 177, 0.12);
+            font-size: 44px;
+
+            font-weight: 400;
+
+            line-height: 0.95;
+
+            white-space: nowrap;
         }
 
 
         .brand-subtitle {
 
-            margin-top: 8px;
-            margin-left: 5px;
+            margin-top: 7px;
 
-            font-family: var(--font-body);
-
-            font-size: 0.55rem;
-            font-weight: 700;
-
-            letter-spacing: 0.32em;
-
-            text-transform: uppercase;
+            padding-left: 8px;
 
             color: var(--pink-dark);
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
         }
 
 
         /* =====================================================
-           NAVEGACIÓN
-           ===================================================== */
+           MENÚ DESKTOP
+        ====================================================== */
 
-        .main-nav {
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 4px;
+        .desktop-nav {
 
             flex: 1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 2px;
         }
 
 
@@ -213,29 +216,21 @@
 
             position: relative;
 
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            padding: 10px 11px;
 
-            min-height: 44px;
+            color: var(--text);
 
-            padding: 0 15px;
+            font-size: 14px;
 
-            border-radius: 30px;
+            font-weight: 500;
 
-            font-family: var(--font-body);
+            text-decoration: none;
 
-            font-size: 0.78rem;
-            font-weight: 600;
-
-            letter-spacing: 0.015em;
-
-            color: var(--text-soft);
+            white-space: nowrap;
 
             transition:
-                color var(--transition),
-                background var(--transition),
-                transform var(--transition);
+                color .25s ease,
+                transform .25s ease;
         }
 
 
@@ -245,28 +240,22 @@
 
             position: absolute;
 
-            left: 18px;
-            right: 18px;
+            left: 11px;
+            right: 11px;
 
-            bottom: 5px;
+            bottom: 2px;
 
             height: 2px;
 
-            border-radius: 100px;
+            border-radius: 20px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--aqua),
-                    var(--pink)
-                );
+            background: var(--aqua);
 
             transform: scaleX(0);
 
             transform-origin: center;
 
-            transition:
-                transform var(--transition);
+            transition: transform .25s ease;
         }
 
 
@@ -274,13 +263,13 @@
 
             color: var(--aqua-dark);
 
-            background: var(--aqua-soft);
-
             transform: translateY(-1px);
         }
 
 
-        .nav-link:hover::after {
+        .nav-link:hover::after,
+        .nav-link.active::after {
+
             transform: scaleX(1);
         }
 
@@ -289,90 +278,77 @@
 
             color: var(--aqua-dark);
 
-            background: var(--aqua-soft);
-        }
-
-
-        .nav-link.active::after {
-            transform: scaleX(1);
+            font-weight: 600;
         }
 
 
         /* =====================================================
-           ACCIONES
-           ===================================================== */
+           BOTONES DEL HEADER
+        ====================================================== */
 
-        .nav-actions {
-
-            display: flex;
-            align-items: center;
-
-            gap: 7px;
+        .header-actions {
 
             flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 4px;
         }
 
 
-        .nav-action {
+        .header-button {
 
             position: relative;
 
             width: 43px;
             height: 43px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 1px solid transparent;
+            border: none;
 
             border-radius: 50%;
 
+            background: transparent;
+
             color: var(--text);
 
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 17px;
+
+            cursor: pointer;
+
             transition:
-                background var(--transition),
-                border-color var(--transition),
-                color var(--transition),
-                transform var(--transition);
+                background .25s ease,
+                color .25s ease,
+                transform .25s ease;
         }
 
 
-        .nav-action:hover {
+        .header-button:hover {
 
-            background: var(--pink-soft);
+            background: var(--aqua-soft);
 
-            border-color: rgba(215, 157, 166, 0.25);
+            color: var(--aqua-dark);
 
-            color: var(--pink-dark);
-
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
 
-        /* =====================================================
-           ICONOS
-           ===================================================== */
+        .header-button:active {
 
-        .nav-action svg {
-
-            width: 19px;
-            height: 19px;
-
-            stroke: currentColor;
-
-            fill: none;
-
-            stroke-width: 1.7;
-
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            transform: scale(.94);
         }
 
 
         /* =====================================================
-           BADGE CARRITO
-           ===================================================== */
+           CONTADORES
+        ====================================================== */
 
         .action-badge {
 
@@ -386,328 +362,841 @@
 
             padding: 0 4px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
             border-radius: 50%;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--pink),
-                    var(--pink-dark)
-                );
+            background: var(--pink-dark);
 
-            color: var(--white);
+            color: white;
 
-            font-family: var(--font-body);
+            display: flex;
 
-            font-size: 0.57rem;
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 9px;
+
             font-weight: 700;
 
             line-height: 1;
-
-            box-shadow:
-                0 2px 7px rgba(215, 157, 166, 0.25);
         }
 
 
         /* =====================================================
-           BOTÓN MENÚ MÓVIL
-           ===================================================== */
+           HAMBURGUESA
+        ====================================================== */
 
-        .mobile-toggle {
+        .mobile-menu-button {
 
             display: none;
 
             width: 43px;
             height: 43px;
 
-            border: 1px solid rgba(95, 185, 177, 0.18);
+            padding: 0;
+
+            border: none;
 
             border-radius: 50%;
 
-            background: transparent;
+            background: var(--aqua-soft);
 
             cursor: pointer;
 
-            color: var(--aqua-dark);
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 5px;
+        }
+
+
+        .mobile-menu-button span {
+
+            display: block;
+
+            width: 19px;
+
+            height: 2px;
+
+            border-radius: 20px;
+
+            background: var(--aqua-dark);
 
             transition:
-                background var(--transition),
-                transform var(--transition);
+                transform .3s ease,
+                opacity .3s ease;
         }
 
 
-        .mobile-toggle:hover {
+        .mobile-menu-button.open span:nth-child(1) {
 
-            background: var(--aqua-soft);
-
-            transform: translateY(-1px);
+            transform: translateY(7px) rotate(45deg);
         }
 
 
-        .mobile-toggle svg {
+        .mobile-menu-button.open span:nth-child(2) {
 
-            width: 21px;
-            height: 21px;
+            opacity: 0;
+        }
 
-            stroke: currentColor;
 
-            fill: none;
+        .mobile-menu-button.open span:nth-child(3) {
 
-            stroke-width: 1.7;
-
-            stroke-linecap: round;
+            transform: translateY(-7px) rotate(-45deg);
         }
 
 
         /* =====================================================
            MENÚ MÓVIL
-           ===================================================== */
+        ====================================================== */
 
         .mobile-menu {
 
             display: none;
 
+            width: 100%;
+
+            background: white;
+
             border-top: 1px solid var(--border);
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #ffffff,
-                    #fbffff
-                );
+            box-shadow:
+                0 18px 35px rgba(80, 60, 64, .12);
         }
 
 
         .mobile-menu.open {
+
             display: block;
+
+            animation: mobileMenuOpen .28s ease;
         }
 
 
-        .mobile-menu-inner {
+        @keyframes mobileMenuOpen {
 
-            padding: 10px 24px 25px;
+            from {
+
+                opacity: 0;
+
+                transform: translateY(-8px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
         }
 
 
-        .mobile-link {
+        /* =====================================================
+           LINKS MÓVILES
+        ====================================================== */
+
+        .mobile-nav {
+
+            width: 100%;
+        }
+
+
+        .mobile-nav-link {
+
+            width: 100%;
+
+            min-height: 55px;
+
+            padding: 0 23px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
-
-            min-height: 53px;
-
-            border-bottom: 1px solid var(--border);
-
-            font-family: var(--font-body);
-
-            font-size: 0.9rem;
-            font-weight: 600;
 
             color: var(--text);
 
+            text-decoration: none;
+
+            border-bottom: 1px solid #f5e9eb;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
             transition:
-                color var(--transition),
-                padding var(--transition);
+                background .2s ease,
+                color .2s ease,
+                padding-left .2s ease;
         }
 
 
-        .mobile-link:hover {
+        .mobile-nav-link i {
 
-            padding-left: 7px;
+            color: var(--pink-dark);
+
+            font-size: 11px;
+        }
+
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+
+            background: var(--aqua-soft);
+
+            color: var(--aqua-dark);
+
+            padding-left: 30px;
+        }
+
+
+        /* =====================================================
+           ACCIONES MÓVILES
+        ====================================================== */
+
+        .mobile-actions {
+
+            padding: 14px 20px 20px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+        }
+
+
+        .mobile-action {
+
+            min-height: 49px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            background: white;
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            font-size: 12px;
+
+            transition: .2s ease;
+        }
+
+
+        .mobile-action:hover {
+
+            background: var(--aqua-soft);
+
+            border-color: var(--aqua);
 
             color: var(--aqua-dark);
         }
 
 
-        .mobile-link span {
+        .mobile-action i {
 
             color: var(--pink-dark);
-
-            font-size: 1.15rem;
-
-            transition:
-                transform var(--transition);
         }
 
 
-        .mobile-link:hover span {
-            transform: translateX(5px);
+        .mobile-action-number {
+
+            min-width: 20px;
+
+            height: 20px;
+
+            padding: 0 5px;
+
+            border-radius: 50%;
+
+            background: var(--pink-soft);
+
+            color: var(--pink-dark);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           BUSCADOR
+        ====================================================== */
+
+        .search-panel {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 18px 24px;
+
+            background: rgba(255,255,255,.98);
+
+            border-bottom: 1px solid var(--border);
+
+            box-shadow:
+                0 15px 35px rgba(80,60,64,.12);
+
+            z-index: 5000;
+
+            transform: translateY(-110%);
+
+            transition: transform .3s ease;
+        }
+
+
+        .search-panel.open {
+
+            transform: translateY(0);
+        }
+
+
+        .search-inner {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+        }
+
+
+        .search-box {
+
+            min-height: 52px;
+
+            padding: 0 17px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            background: white;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .search-box > i {
+
+            color: var(--aqua-dark);
+        }
+
+
+        .search-box input {
+
+            flex: 1;
+
+            height: 48px;
+
+            border: none;
+
+            outline: none;
+
+            background: transparent;
+
+            color: var(--text);
+
+            font-size: 14px;
+        }
+
+
+        .search-box input::placeholder {
+
+            color: #aaa;
+        }
+
+
+        .close-search {
+
+            width: 32px;
+            height: 32px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: var(--pink-soft);
+
+            color: var(--pink-dark);
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           OVERLAY
+        ====================================================== */
+
+        .panel-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 4000;
+
+            background: rgba(60,45,48,.28);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity .3s ease,
+                visibility .3s ease;
+        }
+
+
+        .panel-overlay.open {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        /* =====================================================
+           PANEL LATERAL
+        ====================================================== */
+
+        .side-panel {
+
+            position: fixed;
+
+            top: 0;
+            right: 0;
+
+            width: min(430px, 92vw);
+
+            height: 100vh;
+
+            z-index: 4500;
+
+            background: white;
+
+            box-shadow: var(--shadow-panel);
+
+            transform: translateX(110%);
+
+            transition: transform .35s ease;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .side-panel.open {
+
+            transform: translateX(0);
+        }
+
+
+        /* =====================================================
+           PANEL HEADER
+        ====================================================== */
+
+        .panel-header {
+
+            min-height: 105px;
+
+            padding: 24px 25px 20px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff 0%,
+                    #fdf8f9 100%
+                );
+        }
+
+
+        .panel-small-title {
+
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: var(--aqua-dark);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .panel-header h2 {
+
+            color: var(--text);
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 30px;
+
+            font-weight: 600;
+        }
+
+
+        .panel-close {
+
+            width: 38px;
+            height: 38px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: var(--pink-soft);
+
+            color: var(--pink-dark);
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: .2s ease;
+        }
+
+
+        .panel-close:hover {
+
+            background: var(--pink);
+
+            color: white;
+
+            transform: rotate(90deg);
+        }
+
+
+        /* =====================================================
+           PANEL CONTENT
+        ====================================================== */
+
+        .panel-content {
+
+            flex: 1;
+
+            padding: 30px 24px;
+
+            overflow-y: auto;
+        }
+
+
+        .empty-panel {
+
+            min-height: 60vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .empty-icon {
+
+            width: 75px;
+            height: 75px;
+
+            margin-bottom: 20px;
+
+            border-radius: 50%;
+
+            background: var(--aqua-soft);
+
+            color: var(--aqua-dark);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+        }
+
+
+        .empty-panel h3 {
+
+            margin-bottom: 8px;
+
+            color: var(--text);
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            font-weight: 600;
+        }
+
+
+        .empty-panel p {
+
+            max-width: 280px;
+
+            color: var(--text-soft);
+
+            font-size: 13px;
+
+            line-height: 1.7;
         }
 
 
         /* =====================================================
            TABLET
-           ===================================================== */
+        ====================================================== */
 
-        @media (max-width: 1120px) {
+        @media (max-width: 1150px) {
 
-            .navbar {
-                padding: 0 24px;
-            }
+            .header-inner {
 
-            .main-nav {
-                gap: 0;
-            }
+                padding-left: 25px;
 
-            .nav-link {
-                padding: 0 10px;
-                font-size: 0.73rem;
-            }
+                padding-right: 25px;
 
-            .nav-link::after {
-                left: 12px;
-                right: 12px;
-            }
-
-            .brand-name {
-                font-size: 2.7rem;
-            }
-
-            .nav-actions {
-                gap: 2px;
-            }
-        }
-
-
-        /* =====================================================
-           TABLET PEQUEÑA
-           ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .navbar {
                 gap: 15px;
             }
 
+
             .brand-name {
-                font-size: 2.45rem;
+
+                font-size: 39px;
             }
 
-            .brand-subtitle {
-                font-size: 0.5rem;
+
+            .desktop-nav {
+
+                gap: 0;
             }
+
 
             .nav-link {
-                padding: 0 7px;
-                font-size: 0.68rem;
+
+                padding-left: 7px;
+
+                padding-right: 7px;
+
+                font-size: 13px;
             }
 
-            .nav-action {
-                width: 40px;
-                height: 40px;
+
+            .nav-link::after {
+
+                left: 7px;
+
+                right: 7px;
             }
         }
 
 
         /* =====================================================
-           MÓVIL
-           ===================================================== */
+           MENÚ MÓVIL
+        ====================================================== */
 
-        @media (max-width: 760px) {
+        @media (max-width: 950px) {
 
-            .navbar {
+            .header-inner {
+
+                min-height: 88px;
+
+                padding: 9px 20px;
+
+                justify-content: space-between;
+            }
+
+
+            .desktop-nav {
+
+                display: none;
+            }
+
+
+            .mobile-menu-button {
+
+                display: flex;
+            }
+        }
+
+
+        /* =====================================================
+           CELULAR
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            .header-inner {
 
                 min-height: 74px;
 
-                padding: 0 18px;
+                padding: 7px 14px;
 
-                gap: 10px;
+                gap: 8px;
             }
 
 
             .brand-name {
-                font-size: 2.35rem;
+
+                font-size: 32px;
             }
 
 
             .brand-subtitle {
 
-                margin-top: 6px;
+                margin-top: 4px;
 
-                font-size: 0.48rem;
+                padding-left: 5px;
 
-                letter-spacing: 0.23em;
+                font-size: 8px;
+
+                letter-spacing: 3px;
             }
 
 
-            .main-nav {
-                display: none;
+            .header-actions {
+
+                gap: 0;
             }
 
 
-            .nav-actions {
+            .header-button {
 
-                margin-left: auto;
+                width: 38px;
 
-                gap: 3px;
+                height: 38px;
+
+                font-size: 15px;
             }
 
 
-            .nav-action {
+            .mobile-menu-button {
 
-                width: 39px;
-                height: 39px;
+                width: 40px;
+
+                height: 40px;
             }
 
 
-            .nav-action.search-action {
-                display: none;
+            .mobile-nav-link {
+
+                min-height: 53px;
+
+                padding-left: 20px;
+
+                padding-right: 20px;
             }
 
 
-            .mobile-toggle {
+            .mobile-actions {
 
-                display: flex;
+                padding: 12px 14px 18px;
+            }
 
-                align-items: center;
-                justify-content: center;
+
+            .mobile-action {
+
+                min-height: 46px;
+
+                font-size: 11px;
+            }
+
+
+            .search-panel {
+
+                padding: 14px;
+            }
+
+
+            .side-panel {
+
+                width: 92vw;
             }
         }
 
 
         /* =====================================================
-           MÓVIL PEQUEÑO
-           ===================================================== */
+           CELULAR PEQUEÑO
+        ====================================================== */
 
-        @media (max-width: 420px) {
-
-            .navbar {
-                padding: 0 14px;
-            }
-
+        @media (max-width: 390px) {
 
             .brand-name {
-                font-size: 2rem;
+
+                font-size: 29px;
             }
 
 
             .brand-subtitle {
-                font-size: 0.44rem;
+
+                font-size: 7px;
+
+                letter-spacing: 2px;
             }
 
 
-            .nav-action {
+            .header-button {
 
-                width: 36px;
-                height: 36px;
+                width: 35px;
+
+                height: 35px;
             }
 
 
-            .mobile-toggle {
+            .mobile-menu-button {
 
-                width: 36px;
-                height: 36px;
-            }
+                width: 38px;
 
-
-            .mobile-menu-inner {
-                padding-left: 18px;
-                padding-right: 18px;
+                height: 38px;
             }
         }
 
@@ -720,21 +1209,16 @@
 
     <!-- =====================================================
          HEADER
-         ===================================================== -->
+    ====================================================== -->
 
     <header class="site-header">
 
-        <div class="navbar">
+        <div class="header-inner">
 
 
-            <!-- =================================================
-                 LOGO
-                 ================================================= -->
+            <!-- LOGO -->
 
-            <a
-                href="../index.html"
-                class="brand"
-            >
+            <a href="../index.html" class="brand">
 
                 <span class="brand-name">
                     Nicolle Store
@@ -748,74 +1232,48 @@
 
 
             <!-- =================================================
-                 NAVEGACIÓN
-                 ================================================= -->
+                 MENÚ DESKTOP
+            ================================================== -->
 
-            <nav
-                class="main-nav"
-                aria-label="Navegación principal"
-            >
+            <nav class="desktop-nav">
 
-                <a
-                    href="../index.html"
-                    class="nav-link active"
-                >
+                <a href="../index.html"
+                   class="nav-link active">
                     Inicio
                 </a>
 
-
-                <a
-                    href="../index.html#categorias"
-                    class="nav-link"
-                >
+                <a href="#"
+                   class="nav-link">
                     Categorías
                 </a>
 
-
-                <a
-                    href="../paginas/cabello.html"
-                    class="nav-link"
-                >
+                <a href="#"
+                   class="nav-link">
                     Cabello
                 </a>
 
-
-                <a
-                    href="../paginas/piel.html"
-                    class="nav-link"
-                >
+                <a href="#"
+                   class="nav-link">
                     Piel
                 </a>
 
-
-                <a
-                    href="../paginas/maquillaje.html"
-                    class="nav-link"
-                >
+                <a href="#"
+                   class="nav-link">
                     Maquillaje
                 </a>
 
-
-                <a
-                    href="../paginas/accesorios.html"
-                    class="nav-link"
-                >
+                <a href="#"
+                   class="nav-link">
                     Accesorios
                 </a>
 
-
-                <a
-                    href="../paginas/joyeria.html"
-                    class="nav-link"
-                >
+                <a href="#"
+                   class="nav-link">
                     Joyería
                 </a>
 
-
-                <a
-                    href="../paginas/bolsos.html"
-                    class="nav-link"
-                >
+                <a href="#"
+                   class="nav-link">
                     Bolsos
                 </a>
 
@@ -823,109 +1281,78 @@
 
 
             <!-- =================================================
-                 ACCIONES
-                 ================================================= -->
+                 BOTONES
+            ================================================== -->
 
-            <div class="nav-actions">
+            <div class="header-actions">
 
 
-                <!-- BÚSQUEDA -->
+                <!-- BUSCAR -->
 
-                <a
-                    href="#"
-                    class="nav-action search-action"
-                    aria-label="Buscar"
-                >
+                <button
+                    type="button"
+                    class="header-button"
+                    id="searchButton"
+                    aria-label="Buscar">
 
-                    <svg viewBox="0 0 24 24">
+                    <i class="fa-solid fa-magnifying-glass"></i>
 
-                        <circle
-                            cx="11"
-                            cy="11"
-                            r="6.5">
-                        </circle>
-
-                        <path d="M16 16l5 5"></path>
-
-                    </svg>
-
-                </a>
+                </button>
 
 
                 <!-- FAVORITOS -->
 
-                <a
-                    href="#"
-                    class="nav-action"
-                    aria-label="Favoritos"
-                >
+                <button
+                    type="button"
+                    class="header-button"
+                    id="favoriteButton"
+                    aria-label="Favoritos">
 
-                    <svg viewBox="0 0 24 24">
+                    <i
+                        class="fa-regular fa-heart"
+                        id="favoriteIcon">
+                    </i>
 
-                        <path
-                            d="M20.8 8.7c0 5-8.8 10.3-8.8 10.3S3.2 13.7 3.2 8.7A4.7 4.7 0 0 1 8 4c1.5 0 2.9.7 4 1.8A5.3 5.3 0 0 1 16 4a4.7 4.7 0 0 1 4.8 4.7Z">
-                        </path>
+                    <span
+                        class="action-badge"
+                        id="favoriteCount">
+                        0
+                    </span>
 
-                    </svg>
-
-                </a>
+                </button>
 
 
                 <!-- CARRITO -->
 
-                <a
-                    href="#"
-                    class="nav-action"
-                    aria-label="Carrito"
-                >
+                <button
+                    type="button"
+                    class="header-button"
+                    id="cartButton"
+                    aria-label="Carrito">
 
-                    <svg viewBox="0 0 24 24">
+                    <i class="fa-solid fa-bag-shopping"></i>
 
-                        <path
-                            d="M4 5h2l1.5 10h10L20 8H7">
-                        </path>
-
-                        <circle
-                            cx="10"
-                            cy="19"
-                            r="1.2">
-                        </circle>
-
-                        <circle
-                            cx="17"
-                            cy="19"
-                            r="1.2">
-                        </circle>
-
-                    </svg>
-
-
-                    <span class="action-badge">
+                    <span
+                        class="action-badge"
+                        id="cartCount">
                         0
                     </span>
 
-                </a>
+                </button>
 
 
-                <!-- MENÚ MÓVIL -->
+                <!-- HAMBURGUESA -->
 
                 <button
                     type="button"
-                    class="mobile-toggle"
-                    id="mobileToggle"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
                     aria-label="Abrir menú"
-                    aria-expanded="false"
-                >
+                    aria-expanded="false">
 
-                    <svg viewBox="0 0 24 24">
-
-                        <path d="M4 7h16"></path>
-
-                        <path d="M4 12h16"></path>
-
-                        <path d="M4 17h16"></path>
-
-                    </svg>
+                    <span></span>
+                    <span></span>
+                    <span></span>
 
                 </button>
 
@@ -936,86 +1363,142 @@
 
         <!-- =====================================================
              MENÚ MÓVIL
-             ===================================================== -->
+        ====================================================== -->
 
         <div
             class="mobile-menu"
-            id="mobileMenu"
-        >
+            id="mobileMenu">
 
-            <div class="mobile-menu-inner">
+            <nav class="mobile-nav">
 
 
-                <a
-                    href="../index.html"
-                    class="mobile-link"
-                >
-                    Inicio
-                    <span>→</span>
+                <a href="../index.html"
+                   class="mobile-nav-link active">
+
+                    <span>Inicio</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
 
 
-                <a
-                    href="../index.html#categorias"
-                    class="mobile-link"
-                >
-                    Categorías
-                    <span>→</span>
+                <a href="#"
+                   class="mobile-nav-link">
+
+                    <span>Categorías</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
 
 
-                <a
-                    href="../paginas/cabello.html"
-                    class="mobile-link"
-                >
-                    Cabello
-                    <span>→</span>
+                <a href="#"
+                   class="mobile-nav-link">
+
+                    <span>Cabello</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
 
 
-                <a
-                    href="../paginas/piel.html"
-                    class="mobile-link"
-                >
-                    Piel
-                    <span>→</span>
+                <a href="#"
+                   class="mobile-nav-link">
+
+                    <span>Piel</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
 
 
-                <a
-                    href="../paginas/maquillaje.html"
-                    class="mobile-link"
-                >
-                    Maquillaje
-                    <span>→</span>
+                <a href="#"
+                   class="mobile-nav-link">
+
+                    <span>Maquillaje</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
 
 
-                <a
-                    href="../paginas/accesorios.html"
-                    class="mobile-link"
-                >
-                    Accesorios
-                    <span>→</span>
+                <a href="#"
+                   class="mobile-nav-link">
+
+                    <span>Accesorios</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
 
 
-                <a
-                    href="../paginas/joyeria.html"
-                    class="mobile-link"
-                >
-                    Joyería
-                    <span>→</span>
+                <a href="#"
+                   class="mobile-nav-link">
+
+                    <span>Joyería</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
 
 
-                <a
-                    href="../paginas/bolsos.html"
-                    class="mobile-link"
-                >
-                    Bolsos
-                    <span>→</span>
+                <a href="#"
+                   class="mobile-nav-link">
+
+                    <span>Bolsos</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
                 </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 ACCIONES DEL MENÚ MÓVIL
+            ================================================== -->
+
+            <div class="mobile-actions">
+
+
+                <button
+                    type="button"
+                    class="mobile-action"
+                    id="mobileFavoriteButton">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span>
+                        Favoritos
+                    </span>
+
+                    <strong
+                        class="mobile-action-number"
+                        id="mobileFavoriteCount">
+                        0
+                    </strong>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="mobile-action"
+                    id="mobileCartButton">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span>
+                        Carrito
+                    </span>
+
+                    <strong
+                        class="mobile-action-number"
+                        id="mobileCartCount">
+                        0
+                    </strong>
+
+                </button>
 
             </div>
 
@@ -1025,62 +1508,695 @@
 
 
     <!-- =====================================================
+         BUSCADOR
+    ====================================================== -->
+
+    <div
+        class="search-panel"
+        id="searchPanel">
+
+        <div class="search-inner">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="¿Qué estás buscando?"
+                    autocomplete="off">
+
+                <button
+                    type="button"
+                    class="close-search"
+                    id="closeSearch"
+                    aria-label="Cerrar búsqueda">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         OVERLAY FAVORITOS
+    ====================================================== -->
+
+    <div
+        class="panel-overlay"
+        id="favoriteOverlay">
+    </div>
+
+
+    <!-- =====================================================
+         PANEL FAVORITOS
+    ====================================================== -->
+
+    <aside
+        class="side-panel"
+        id="favoritePanel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-small-title">
+                    Nicolle Store
+                </span>
+
+                <h2>
+                    Mis favoritos
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="panel-close"
+                id="closeFavorite">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="panel-content">
+
+            <div class="empty-panel">
+
+                <div class="empty-icon">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </div>
+
+                <h3>
+                    Aún no tienes favoritos
+                </h3>
+
+                <p>
+                    Aquí aparecerán los productos
+                    que marques con ❤️.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         OVERLAY CARRITO
+    ====================================================== -->
+
+    <div
+        class="panel-overlay"
+        id="cartOverlay">
+    </div>
+
+
+    <!-- =====================================================
+         PANEL CARRITO
+    ====================================================== -->
+
+    <aside
+        class="side-panel"
+        id="cartPanel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-small-title">
+                    Nicolle Store
+                </span>
+
+                <h2>
+                    Mi carrito
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="panel-close"
+                id="closeCart">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="panel-content">
+
+            <div class="empty-panel">
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                </div>
+
+                <h3>
+                    Tu carrito está vacío
+                </h3>
+
+                <p>
+                    Aquí aparecerán los productos
+                    que agregues a tu carrito.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
          JAVASCRIPT
-         ===================================================== -->
+    ====================================================== -->
 
     <script>
 
-        const mobileToggle =
-            document.getElementById("mobileToggle");
-
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-
-        mobileToggle.addEventListener(
-            "click",
+        document.addEventListener(
+            "DOMContentLoaded",
             function () {
 
-                const isOpen =
-                    mobileMenu.classList.toggle("open");
+
+                /* =================================================
+                   ELEMENTOS
+                ================================================== */
+
+                const body =
+                    document.body;
 
 
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen
-                );
-
-            }
-        );
+                const mobileMenuButton =
+                    document.getElementById(
+                        "mobileMenuButton"
+                    );
 
 
-        /*
-         * Cerrar menú al seleccionar una opción
-         */
+                const mobileMenu =
+                    document.getElementById(
+                        "mobileMenu"
+                    );
 
-        document
-            .querySelectorAll(".mobile-link")
-            .forEach(
-                function (link) {
 
-                    link.addEventListener(
-                        "click",
-                        function () {
+                const searchButton =
+                    document.getElementById(
+                        "searchButton"
+                    );
 
-                            mobileMenu.classList.remove(
+
+                const searchPanel =
+                    document.getElementById(
+                        "searchPanel"
+                    );
+
+
+                const searchInput =
+                    document.getElementById(
+                        "searchInput"
+                    );
+
+
+                const closeSearch =
+                    document.getElementById(
+                        "closeSearch"
+                    );
+
+
+                const favoriteButton =
+                    document.getElementById(
+                        "favoriteButton"
+                    );
+
+
+                const favoriteIcon =
+                    document.getElementById(
+                        "favoriteIcon"
+                    );
+
+
+                const favoriteCount =
+                    document.getElementById(
+                        "favoriteCount"
+                    );
+
+
+                const mobileFavoriteButton =
+                    document.getElementById(
+                        "mobileFavoriteButton"
+                    );
+
+
+                const mobileFavoriteCount =
+                    document.getElementById(
+                        "mobileFavoriteCount"
+                    );
+
+
+                const favoritePanel =
+                    document.getElementById(
+                        "favoritePanel"
+                    );
+
+
+                const favoriteOverlay =
+                    document.getElementById(
+                        "favoriteOverlay"
+                    );
+
+
+                const closeFavorite =
+                    document.getElementById(
+                        "closeFavorite"
+                    );
+
+
+                const cartButton =
+                    document.getElementById(
+                        "cartButton"
+                    );
+
+
+                const cartCount =
+                    document.getElementById(
+                        "cartCount"
+                    );
+
+
+                const mobileCartButton =
+                    document.getElementById(
+                        "mobileCartButton"
+                    );
+
+
+                const mobileCartCount =
+                    document.getElementById(
+                        "mobileCartCount"
+                    );
+
+
+                const cartPanel =
+                    document.getElementById(
+                        "cartPanel"
+                    );
+
+
+                const cartOverlay =
+                    document.getElementById(
+                        "cartOverlay"
+                    );
+
+
+                const closeCart =
+                    document.getElementById(
+                        "closeCart"
+                    );
+
+
+                /* =================================================
+                   ESTADO
+                ================================================== */
+
+                let favorites = 0;
+
+                let cartItems = 0;
+
+
+                /* =================================================
+                   MENÚ HAMBURGUESA
+                ================================================== */
+
+                mobileMenuButton.addEventListener(
+                    "click",
+                    function () {
+
+                        const opened =
+                            mobileMenu.classList.toggle(
                                 "open"
                             );
 
-                            mobileToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
+
+                        mobileMenuButton.classList.toggle(
+                            "open",
+                            opened
+                        );
+
+
+                        mobileMenuButton.setAttribute(
+                            "aria-expanded",
+                            opened
+                                ? "true"
+                                : "false"
+                        );
+
+
+                        if (opened) {
+
+                            body.classList.add(
+                                "locked"
+                            );
+
+                        } else {
+
+                            body.classList.remove(
+                                "locked"
                             );
 
                         }
+
+                    }
+                );
+
+
+                /* =================================================
+                   CERRAR MENÚ AL ELEGIR OPCIÓN
+                ================================================== */
+
+                const mobileLinks =
+                    document.querySelectorAll(
+                        ".mobile-nav-link"
+                    );
+
+
+                mobileLinks.forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            function () {
+
+                                closeMobileMenu();
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                function closeMobileMenu() {
+
+                    mobileMenu.classList.remove(
+                        "open"
+                    );
+
+
+                    mobileMenuButton.classList.remove(
+                        "open"
+                    );
+
+
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    body.classList.remove(
+                        "locked"
                     );
 
                 }
-            );
+
+
+                /* =================================================
+                   BUSCADOR
+                ================================================== */
+
+                searchButton.addEventListener(
+                    "click",
+                    function () {
+
+                        closeMobileMenu();
+
+                        searchPanel.classList.add(
+                            "open"
+                        );
+
+
+                        setTimeout(
+                            function () {
+
+                                searchInput.focus();
+
+                            },
+                            150
+                        );
+
+                    }
+                );
+
+
+                closeSearch.addEventListener(
+                    "click",
+                    function () {
+
+                        closeSearchPanel();
+
+                    }
+                );
+
+
+                function closeSearchPanel() {
+
+                    searchPanel.classList.remove(
+                        "open"
+                    );
+
+
+                    searchInput.value = "";
+
+                }
+
+
+                /* =================================================
+                   FAVORITOS
+                ================================================== */
+
+                favoriteButton.addEventListener(
+                    "click",
+                    function () {
+
+                        openFavoritePanel();
+
+                    }
+                );
+
+
+                mobileFavoriteButton.addEventListener(
+                    "click",
+                    function () {
+
+                        closeMobileMenu();
+
+                        openFavoritePanel();
+
+                    }
+                );
+
+
+                function openFavoritePanel() {
+
+                    closeCartPanel();
+
+                    closeSearchPanel();
+
+                    favoritePanel.classList.add(
+                        "open"
+                    );
+
+
+                    favoriteOverlay.classList.add(
+                        "open"
+                    );
+
+                }
+
+
+                function closeFavoritePanel() {
+
+                    favoritePanel.classList.remove(
+                        "open"
+                    );
+
+
+                    favoriteOverlay.classList.remove(
+                        "open"
+                    );
+
+                }
+
+
+                closeFavorite.addEventListener(
+                    "click",
+                    function () {
+
+                        closeFavoritePanel();
+
+                    }
+                );
+
+
+                favoriteOverlay.addEventListener(
+                    "click",
+                    function () {
+
+                        closeFavoritePanel();
+
+                    }
+                );
+
+
+                /* =================================================
+                   CARRITO
+                ================================================== */
+
+                cartButton.addEventListener(
+                    "click",
+                    function () {
+
+                        openCartPanel();
+
+                    }
+                );
+
+
+                mobileCartButton.addEventListener(
+                    "click",
+                    function () {
+
+                        closeMobileMenu();
+
+                        openCartPanel();
+
+                    }
+                );
+
+
+                function openCartPanel() {
+
+                    closeFavoritePanel();
+
+                    closeSearchPanel();
+
+                    cartPanel.classList.add(
+                        "open"
+                    );
+
+
+                    cartOverlay.classList.add(
+                        "open"
+                    );
+
+                }
+
+
+                function closeCartPanel() {
+
+                    cartPanel.classList.remove(
+                        "open"
+                    );
+
+
+                    cartOverlay.classList.remove(
+                        "open"
+                    );
+
+                }
+
+
+                closeCart.addEventListener(
+                    "click",
+                    function () {
+
+                        closeCartPanel();
+
+                    }
+                );
+
+
+                cartOverlay.addEventListener(
+                    "click",
+                    function () {
+
+                        closeCartPanel();
+
+                    }
+                );
+
+
+                /* =================================================
+                   ESC
+                ================================================== */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (event.key === "Escape") {
+
+                            closeMobileMenu();
+
+                            closeSearchPanel();
+
+                            closeFavoritePanel();
+
+                            closeCartPanel();
+
+                        }
+
+                    }
+                );
+
+
+                /* =================================================
+                   CONTADORES
+                ================================================== */
+
+                function updateCounters() {
+
+                    favoriteCount.textContent =
+                        favorites;
+
+
+                    mobileFavoriteCount.textContent =
+                        favorites;
+
+
+                    cartCount.textContent =
+                        cartItems;
+
+
+                    mobileCartCount.textContent =
+                        cartItems;
+
+                }
+
+
+                updateCounters();
+
+
+            }
+
+        );
 
     </script>
 
