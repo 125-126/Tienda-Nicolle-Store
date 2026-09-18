@@ -393,3 +393,180 @@ CELULAR
 
 
 
+
+
+
+
+/* ============================================================
+   PRESENTACIÓN / FRASE DE MARCA
+============================================================ */
+
+.marca-presentacion {
+    position: relative;
+    width: 100%;
+    padding: 95px 25px 100px;
+    background: #fffafa;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   DETALLE DECORATIVO SUPERIOR
+============================================================ */
+
+.marca-presentacion::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 70px;
+    height: 3px;
+    background: #8fd8d2;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+
+/* ============================================================
+   CONTENIDO
+============================================================ */
+
+.marca-presentacion-contenido {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   ETIQUETA
+============================================================ */
+
+.marca-presentacion-etiqueta {
+    display: block;
+    margin-bottom: 18px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #62bcb5;
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+.marca-presentacion h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 500;
+    line-height: 1;
+    color: #51484a;
+}
+
+
+/* ============================================================
+   LÍNEA DECORATIVA
+============================================================ */
+
+.marca-presentacion-linea {
+    display: block;
+    width: 45px;
+    height: 1px;
+    margin: 25px auto 22px;
+
+    background: #d79da6;
+}
+
+
+/* ============================================================
+   DESCRIPCIÓN
+============================================================ */
+
+.marca-presentacion p {
+    max-width: 600px;
+    margin: 0 auto;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    color: #746b6d;
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 950px) {
+
+    .marca-presentacion {
+        padding: 80px 25px 85px;
+    }
+
+    .marca-presentacion h2 {
+        font-size: 54px;
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .marca-presentacion {
+        padding: 68px 22px 72px;
+    }
+
+    .marca-presentacion-etiqueta {
+        margin-bottom: 15px;
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .marca-presentacion h2 {
+        font-size: 44px;
+        line-height: 1.05;
+    }
+
+    .marca-presentacion-linea {
+        margin: 21px auto 19px;
+    }
+
+    .marca-presentacion p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR PEQUEÑO
+============================================================ */
+
+@media (max-width: 390px) {
+
+    .marca-presentacion {
+        padding: 60px 20px 65px;
+    }
+
+    .marca-presentacion h2 {
+        font-size: 40px;
+    }
+
+}
+
+
+
