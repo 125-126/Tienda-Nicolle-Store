@@ -4036,4 +4036,689 @@ ol {
     }
 
 }
+/* ============================================================
+   NICOLLE STORE
+   CATEGORÍAS PREMIUM — DISEÑO RENOVADO
+   ============================================================ */
 
+
+/* ============================================================
+   1. ENCABEZADO DE CATEGORÍAS
+   ============================================================ */
+
+.categories {
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 48px;
+}
+
+.section-heading-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.section-heading-main h2 {
+    max-width: 520px;
+    margin: 0;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(42px, 4.5vw, 64px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+}
+
+.section-heading-main h2 em {
+    display: block;
+    color: var(--wine);
+    font-style: italic;
+}
+
+.section-heading-description {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    width: min(100%, 370px);
+    padding-bottom: 4px;
+}
+
+.heading-line {
+    width: 34px;
+    height: 1px;
+    flex-shrink: 0;
+    margin-top: 9px;
+    background: var(--rose);
+}
+
+.section-heading-description p {
+    max-width: 315px;
+    margin: 0;
+    color: var(--text-light);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+
+/* ============================================================
+   2. CUADRÍCULA
+   ============================================================ */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* ============================================================
+   3. TARJETA PRINCIPAL
+   ============================================================ */
+
+.category-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 470px;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid rgba(125, 53, 75, 0.10);
+    border-radius: 8px;
+    box-shadow:
+        0 8px 30px rgba(79, 43, 48, 0.055);
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+.category-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    transition: border-color 0.4s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(125, 53, 75, 0.18);
+    box-shadow:
+        0 22px 48px rgba(79, 43, 48, 0.14);
+}
+
+.category-card:hover::before {
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* ============================================================
+   4. IMAGEN
+   ============================================================ */
+
+.category-image {
+    position: relative;
+    height: 355px;
+    overflow: hidden;
+    background: var(--cream-dark);
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition:
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.6s ease;
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.08);
+    filter: saturate(1.04);
+}
+
+
+/* Capa sutil sobre la imagen */
+
+.category-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(31, 26, 27, 0.02) 35%,
+            rgba(31, 26, 27, 0.20) 100%
+        );
+    opacity: 0.45;
+    transition: opacity 0.5s ease;
+}
+
+.category-card:hover .category-image::after {
+    opacity: 0.8;
+}
+
+
+/* ============================================================
+   5. ETIQUETA SUPERIOR
+   ============================================================ */
+
+.category-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.category-image-number {
+    position: absolute;
+    right: 17px;
+    top: 15px;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ============================================================
+   6. INFORMACIÓN DE LA TARJETA
+   ============================================================ */
+
+.category-info {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 115px;
+    padding: 21px 20px 20px;
+    background: var(--white);
+}
+
+.category-text {
+    min-width: 0;
+}
+
+.category-label {
+    display: block;
+    margin-bottom: 7px;
+    overflow: hidden;
+    color: var(--rose);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.category-text h3 {
+    margin: 0 0 7px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    transition: color 0.35s ease;
+}
+
+.category-card:hover .category-text h3 {
+    color: var(--wine);
+}
+
+.category-text p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+
+/* ============================================================
+   7. FLECHA
+   ============================================================ */
+
+.category-arrow {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    border: 1px solid rgba(125, 53, 75, 0.18);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--brown);
+    font-size: 11px;
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.category-card:hover .category-arrow {
+    border-color: var(--wine);
+    background: var(--wine);
+    color: var(--white);
+    transform: translate(3px, -3px);
+}
+
+
+/* ============================================================
+   8. COLORES PERSONALIZADOS POR CATEGORÍA
+   ============================================================ */
+
+.category-hair .category-badge {
+    background: rgba(109, 75, 67, 0.45);
+}
+
+.category-skin .category-badge {
+    background: rgba(201, 163, 106, 0.40);
+}
+
+.category-makeup .category-badge {
+    background: rgba(125, 53, 75, 0.42);
+}
+
+.category-accessories .category-badge {
+    background: rgba(169, 79, 103, 0.42);
+}
+
+.category-jewelry .category-badge {
+    background: rgba(201, 163, 106, 0.48);
+}
+
+.category-bags .category-badge {
+    background: rgba(64, 54, 56, 0.42);
+}
+
+
+/* ============================================================
+   9. PIE DE SECCIÓN
+   ============================================================ */
+
+.categories-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 38px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(125, 53, 75, 0.12);
+}
+
+.categories-footer p {
+    margin: 0;
+    color: var(--text-light);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.categories-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--wine);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.categories-link i {
+    transition: transform 0.3s ease;
+}
+
+.categories-link:hover {
+    color: var(--berry);
+}
+
+.categories-link:hover i {
+    transform: translateX(5px);
+}
+
+
+/* ============================================================
+   10. TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .categories-heading {
+        gap: 30px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .category-card {
+        min-height: 430px;
+    }
+
+    .category-image {
+        height: 310px;
+    }
+
+    .category-text h3 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* ============================================================
+   11. TABLET PEQUEÑA
+   ============================================================ */
+
+@media (max-width: 850px) {
+
+    .categories-heading {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 32px;
+    }
+
+    .section-heading-description {
+        width: 100%;
+    }
+
+    .section-heading-description p {
+        max-width: 430px;
+    }
+
+    .category-grid {
+        gap: 14px;
+    }
+
+    .category-card {
+        min-height: 390px;
+    }
+
+    .category-image {
+        height: 275px;
+    }
+
+    .category-info {
+        min-height: 112px;
+        padding: 17px 15px;
+    }
+
+    .category-text h3 {
+        font-size: 25px;
+    }
+
+    .category-arrow {
+        width: 34px;
+        height: 34px;
+    }
+
+}
+
+
+/* ============================================================
+   12. CELULAR
+   ============================================================ */
+
+@media (max-width: 650px) {
+
+    .categories-heading {
+        gap: 14px;
+        margin-bottom: 27px;
+    }
+
+    .section-heading-main h2 {
+        max-width: 340px;
+        font-size: clamp(34px, 9vw, 43px);
+        line-height: 0.98;
+    }
+
+    .section-heading-description {
+        gap: 12px;
+    }
+
+    .heading-line {
+        width: 24px;
+        margin-top: 7px;
+    }
+
+    .section-heading-description p {
+        max-width: 315px;
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .category-card {
+        min-height: 0;
+        height: auto;
+        border-radius: 6px;
+        box-shadow:
+            0 5px 18px rgba(79, 43, 48, 0.07);
+    }
+
+    .category-image {
+        height: 175px;
+    }
+
+    .category-badge {
+        top: 9px;
+        left: 9px;
+        padding: 5px 6px;
+        font-size: 6px;
+        letter-spacing: 0.10em;
+    }
+
+    .category-image-number {
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+    }
+
+    .category-info {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 7px;
+        min-height: 91px;
+        padding: 12px 10px;
+    }
+
+    .category-label {
+        margin-bottom: 5px;
+        font-size: 6px;
+        letter-spacing: 0.08em;
+    }
+
+    .category-text h3 {
+        margin-bottom: 5px;
+        font-size: clamp(19px, 5vw, 24px);
+        line-height: 0.95;
+    }
+
+    .category-text p {
+        font-size: 8px;
+        line-height: 1.35;
+    }
+
+    .category-arrow {
+        width: 27px;
+        height: 27px;
+        font-size: 8px;
+    }
+
+    .categories-footer {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 27px;
+        padding-top: 20px;
+    }
+
+    .categories-footer p {
+        font-size: 18px;
+    }
+
+    .categories-link {
+        font-size: 8px;
+    }
+
+}
+
+
+/* ============================================================
+   13. CELULARES PEQUEÑOS
+   ============================================================ */
+
+@media (max-width: 400px) {
+
+    .category-grid {
+        gap: 8px;
+    }
+
+    .category-image {
+        height: 150px;
+    }
+
+    .category-badge {
+        top: 7px;
+        left: 7px;
+        padding: 4px 5px;
+        font-size: 5px;
+    }
+
+    .category-image-number {
+        top: 8px;
+        right: 8px;
+        font-size: 16px;
+    }
+
+    .category-info {
+        min-height: 84px;
+        padding: 10px 8px;
+        gap: 5px;
+    }
+
+    .category-label {
+        margin-bottom: 4px;
+        font-size: 5px;
+    }
+
+    .category-text h3 {
+        font-size: 17px;
+    }
+
+    .category-text p {
+        font-size: 7px;
+    }
+
+    .category-arrow {
+        width: 23px;
+        height: 23px;
+        font-size: 7px;
+    }
+
+    .categories-footer p {
+        font-size: 16px;
+    }
+
+}
+
+
+/* ============================================================
+   14. DISPOSITIVOS TÁCTILES
+   ============================================================ */
+
+@media (hover: none) {
+
+    .category-card:hover {
+        transform: none;
+        box-shadow:
+            0 5px 18px rgba(79, 43, 48, 0.07);
+    }
+
+    .category-card:hover .category-image img {
+        transform: none;
+        filter: none;
+    }
+
+    .category-card:active {
+        transform: scale(0.985);
+    }
+
+}
+
+
+/* ============================================================
+   15. ACCESIBILIDAD — FOCUS
+   ============================================================ */
+
+.category-card:focus-visible,
+.categories-link:focus-visible {
+    outline: 2px solid var(--wine);
+    outline-offset: 5px;
+}
+
+
+/* ============================================================
+   16. REDUCCIÓN DE MOVIMIENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .category-card,
+    .category-image img,
+    .category-arrow,
+    .category-text h3,
+    .categories-link i {
+        transition: none;
+    }
+
+}
