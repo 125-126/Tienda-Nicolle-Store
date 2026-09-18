@@ -13,11 +13,7 @@
 
     width: 100%;
 
-    height: 68vh;
-
-    min-height: 480px;
-
-    max-height: 720px;
+    height: 620px;
 
     overflow: hidden;
 
@@ -43,6 +39,7 @@
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     display: block;
@@ -55,7 +52,7 @@
 
 
 /* =========================================================
-   CAPA SOBRE EL VIDEO
+   CAPA OSCURA
 ========================================================= */
 
 .cabello-hero-overlay {
@@ -69,15 +66,15 @@
     background:
         linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.18),
-            rgba(0, 0, 0, 0.34)
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.38)
         );
 
 }
 
 
 /* =========================================================
-   CONTENIDO DEL HERO
+   CONTENIDO HERO
 ========================================================= */
 
 .cabello-hero-contenido {
@@ -86,11 +83,13 @@
 
     z-index: 2;
 
-    width: min(850px, 90%);
+    width: 90%;
+
+    max-width: 850px;
 
     margin: 0 auto;
 
-    padding: 30px 20px;
+    padding: 20px;
 
     text-align: center;
 
@@ -107,9 +106,13 @@
 
     display: block;
 
-    margin-bottom: 16px;
+    margin-bottom: 15px;
 
     color: #ffffff;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
 
     font-size: 11px;
 
@@ -120,7 +123,7 @@
     text-transform: uppercase;
 
     text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.25);
+        0 2px 8px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -139,20 +142,21 @@
         "Cormorant Garamond",
         serif;
 
-    font-size: clamp(
-        44px,
-        6vw,
-        76px
-    );
+    font-size:
+        clamp(
+            46px,
+            6vw,
+            76px
+        );
 
     font-weight: 500;
 
-    line-height: 1.02;
+    line-height: 1;
 
     letter-spacing: -1px;
 
     text-shadow:
-        0 3px 15px rgba(0, 0, 0, 0.20);
+        0 3px 15px rgba(0, 0, 0, 0.25);
 
 }
 
@@ -183,7 +187,7 @@
 
 
 /* =========================================================
-   LINEA DECORATIVA
+   LINEA
 ========================================================= */
 
 .cabello-linea {
@@ -209,16 +213,17 @@
 
 .cabello-hero-contenido p {
 
-    max-width: 550px;
+    max-width: 540px;
 
     margin: 0 auto;
 
-    color: rgba(
-        255,
-        255,
-        255,
-        0.95
-    );
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.94
+        );
 
     font-family:
         "DM Sans",
@@ -229,13 +234,13 @@
     line-height: 1.7;
 
     text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.25);
+        0 2px 8px rgba(0, 0, 0, 0.3);
 
 }
 
 
 /* =========================================================
-   BOTÓN DE SONIDO
+   BOTÓN SONIDO
 ========================================================= */
 
 .cabello-hero-sonido {
@@ -323,7 +328,7 @@
 
 
 /* =========================================================
-   SECCIÓN PRODUCTOS
+   PRODUCTOS
 ========================================================= */
 
 .cabello-productos {
@@ -349,7 +354,7 @@
 
 
 /* =========================================================
-   CATEGORÍA
+   CATEGORÍAS
 ========================================================= */
 
 .categoria-productos {
@@ -367,7 +372,7 @@
 
 
 /* =========================================================
-   ENCABEZADO DE CATEGORÍA
+   ENCABEZADO CATEGORÍA
 ========================================================= */
 
 .categoria-productos-encabezado {
@@ -386,6 +391,10 @@
     margin-bottom: 8px;
 
     color: #62bcb5;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
 
     font-size: 10px;
 
@@ -438,8 +447,7 @@
 
 
 /* =========================================================
-   GRID DE PRODUCTOS
-
+   GRID
    2 PRODUCTOS POR FILA
 ========================================================= */
 
@@ -478,7 +486,7 @@
 
 
 /* =========================================================
-   IMAGEN DEL PRODUCTO
+   IMAGEN
 ========================================================= */
 
 .producto-imagen {
@@ -629,30 +637,14 @@
 
     .cabello-hero {
 
-        height: 58vh;
-
-        min-height: 430px;
-
-        max-height: 600px;
-
-    }
-
-
-    .cabello-hero-contenido {
-
-        width: 92%;
+        height: 500px;
 
     }
 
 
     .cabello-hero-contenido h1 {
 
-        font-size:
-            clamp(
-                42px,
-                7vw,
-                62px
-            );
+        font-size: 58px;
 
     }
 
@@ -710,8 +702,8 @@
         background:
             linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, 0.16),
-                rgba(0, 0, 0, 0.40)
+                rgba(0, 0, 0, 0.12),
+                rgba(0, 0, 0, 0.42)
             );
 
     }
@@ -722,16 +714,16 @@
         width: 94%;
 
         padding:
-            20px 12px;
+            15px 10px;
 
     }
 
 
     .cabello-etiqueta {
 
-        margin-bottom: 10px;
+        margin-bottom: 8px;
 
-        font-size: 9px;
+        font-size: 8px;
 
         letter-spacing: 2.5px;
 
@@ -740,11 +732,11 @@
 
     .cabello-hero-contenido h1 {
 
-        font-size: 37px;
+        font-size: 34px;
 
         line-height: 1.03;
 
-        letter-spacing: -0.5px;
+        letter-spacing: 0;
 
     }
 
@@ -753,30 +745,30 @@
 
         margin-top: 2px;
 
-        font-size: 1.05em;
+        font-size: 1.04em;
 
     }
 
 
     .cabello-linea {
 
-        width: 40px;
+        width: 38px;
 
         height: 1.5px;
 
         margin:
-            14px auto;
+            12px auto;
 
     }
 
 
     .cabello-hero-contenido p {
 
-        max-width: 320px;
+        max-width: 290px;
 
-        font-size: 11px;
+        font-size: 10px;
 
-        line-height: 1.5;
+        line-height: 1.45;
 
     }
 
@@ -787,15 +779,15 @@
 
     .cabello-hero-sonido {
 
-        right: 14px;
+        right: 12px;
 
-        bottom: 14px;
+        bottom: 12px;
 
-        width: 38px;
+        width: 36px;
 
-        height: 38px;
+        height: 36px;
 
-        font-size: 12px;
+        font-size: 11px;
 
     }
 
@@ -807,7 +799,7 @@
     .cabello-productos {
 
         padding:
-            55px 14px;
+            52px 13px;
 
     }
 
@@ -823,7 +815,7 @@
     .categoria-productos-encabezado {
 
         margin-bottom:
-            25px;
+            24px;
 
     }
 
@@ -841,22 +833,22 @@
 
     .categoria-productos-encabezado h2 {
 
-        font-size: 31px;
+        font-size: 30px;
 
     }
 
 
     .categoria-linea {
 
-        width: 38px !important;
+        width: 36px !important;
 
-        margin-top: 12px;
+        margin-top: 11px;
 
     }
 
 
     /* -----------------------------------------------------
-       GRID 2 COLUMNAS
+       2 PRODUCTOS POR FILA
     ----------------------------------------------------- */
 
     .productos-grid {
@@ -867,7 +859,7 @@
                 minmax(0, 1fr)
             );
 
-        gap: 12px;
+        gap: 11px;
 
         max-width: 100%;
 
@@ -882,10 +874,10 @@
 
         aspect-ratio: 1 / 1;
 
-        border-radius: 13px;
+        border-radius: 12px;
 
         box-shadow:
-            0 6px 18px
+            0 6px 16px
             rgba(
                 110,
                 87,
@@ -902,18 +894,18 @@
 
     .producto-comprar {
 
-        min-height: 40px;
+        min-height: 39px;
 
         margin-top: 8px;
 
         padding:
-            0 6px;
+            0 5px;
 
         border-radius: 20px;
 
-        font-size: 9px;
+        font-size: 8.5px;
 
-        letter-spacing: 0.5px;
+        letter-spacing: 0.4px;
 
         gap: 5px;
 
@@ -922,7 +914,7 @@
 
     .producto-comprar i {
 
-        font-size: 10px;
+        font-size: 9px;
 
     }
 
@@ -934,10 +926,6 @@
 ========================================================= */
 
 @media (max-width: 480px) {
-
-    /* -----------------------------------------------------
-       HERO MÁS COMPACTO
-    ----------------------------------------------------- */
 
     .cabello-hero {
 
@@ -955,25 +943,25 @@
         width: 96%;
 
         padding:
-            15px 8px;
+            12px 7px;
 
     }
 
 
     .cabello-etiqueta {
 
-        font-size: 8px;
+        font-size: 7.5px;
 
         letter-spacing: 2px;
 
-        margin-bottom: 8px;
+        margin-bottom: 7px;
 
     }
 
 
     .cabello-hero-contenido h1 {
 
-        font-size: 32px;
+        font-size: 30px;
 
     }
 
@@ -987,36 +975,36 @@
 
     .cabello-linea {
 
-        width: 35px;
+        width: 34px;
 
         margin:
-            11px auto;
+            10px auto;
 
     }
 
 
     .cabello-hero-contenido p {
 
-        max-width: 280px;
+        max-width: 270px;
 
-        font-size: 10px;
+        font-size: 9px;
 
-        line-height: 1.45;
+        line-height: 1.4;
 
     }
 
 
     .cabello-hero-sonido {
 
-        right: 12px;
+        right: 10px;
 
-        bottom: 12px;
+        bottom: 10px;
 
-        width: 35px;
+        width: 34px;
 
-        height: 35px;
+        height: 34px;
 
-        font-size: 11px;
+        font-size: 10px;
 
     }
 
@@ -1028,7 +1016,7 @@
     .cabello-productos {
 
         padding:
-            48px 12px;
+            45px 11px;
 
     }
 
@@ -1036,7 +1024,7 @@
     .categoria-productos {
 
         margin-bottom:
-            55px;
+            52px;
 
     }
 
@@ -1044,14 +1032,14 @@
     .categoria-productos-encabezado {
 
         margin-bottom:
-            22px;
+            21px;
 
     }
 
 
     .categoria-productos-encabezado h2 {
 
-        font-size: 28px;
+        font-size: 27px;
 
     }
 
@@ -1065,14 +1053,14 @@
 
     .producto-imagen {
 
-        border-radius: 11px;
+        border-radius: 10px;
 
     }
 
 
     .producto-comprar {
 
-        min-height: 38px;
+        min-height: 37px;
 
         margin-top: 7px;
 
@@ -1080,7 +1068,7 @@
 
         font-size: 8px;
 
-        letter-spacing: 0.4px;
+        letter-spacing: 0.3px;
 
         gap: 4px;
 
@@ -1089,7 +1077,7 @@
 
     .producto-comprar i {
 
-        font-size: 9px;
+        font-size: 8px;
 
     }
 
@@ -1097,32 +1085,34 @@
 
 
 /* =========================================================
-   CELULARES MUY PEQUEÑOS
+   CELULAR MUY PEQUEÑO
 ========================================================= */
 
 @media (max-width: 360px) {
 
     .cabello-hero {
 
-        height: 280px;
+        height: 285px;
 
-        min-height: 280px;
+        min-height: 285px;
 
-        max-height: 280px;
+        max-height: 285px;
 
     }
 
 
     .cabello-hero-contenido h1 {
 
-        font-size: 29px;
+        font-size: 27px;
 
     }
 
 
     .cabello-hero-contenido p {
 
-        font-size: 9px;
+        max-width: 245px;
+
+        font-size: 8.5px;
 
     }
 
@@ -1130,28 +1120,28 @@
     .cabello-productos {
 
         padding:
-            42px 10px;
+            40px 9px;
 
     }
 
 
     .productos-grid {
 
-        gap: 8px;
+        gap: 7px;
 
     }
 
 
     .producto-imagen {
 
-        border-radius: 9px;
+        border-radius: 8px;
 
     }
 
 
     .producto-comprar {
 
-        min-height: 36px;
+        min-height: 35px;
 
         font-size: 7.5px;
 
