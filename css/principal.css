@@ -570,3 +570,334 @@ CELULAR
 
 
 
+
+
+
+
+
+/* ============================================================
+   CATEGORÍAS
+============================================================ */
+
+.categorias {
+    position: relative;
+    width: 100%;
+    padding: 95px 25px 110px;
+    background: #ffffff;
+}
+
+
+/* ============================================================
+   CONTENEDOR
+============================================================ */
+
+.categorias-contenedor {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   ENCABEZADO
+============================================================ */
+
+.categorias-encabezado {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+
+/* ============================================================
+   ETIQUETA
+============================================================ */
+
+.categorias-etiqueta {
+    display: block;
+    margin-bottom: 16px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #62bcb5;
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+.categorias-encabezado h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(42px, 5vw, 62px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: #51484a;
+}
+
+
+/* ============================================================
+   LÍNEA
+============================================================ */
+
+.categorias-linea {
+    display: block;
+    width: 45px;
+    height: 1px;
+    margin: 23px auto 20px;
+
+    background: #d79da6;
+}
+
+
+/* ============================================================
+   DESCRIPCIÓN
+============================================================ */
+
+.categorias-encabezado p {
+    max-width: 580px;
+    margin: 0 auto;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #746b6d;
+}
+
+
+/* ============================================================
+   GRID
+============================================================ */
+
+.categorias-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 100px;
+    row-gap: 65px;
+
+    justify-items: center;
+}
+
+
+/* ============================================================
+   ITEM
+============================================================ */
+
+.categoria-item {
+    width: 100%;
+    max-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   CÍRCULO
+============================================================ */
+
+.categoria-circulo {
+    position: relative;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #e8f8f6;
+
+    border: 5px solid #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(81, 72, 74, 0.10);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* ============================================================
+   IMAGEN
+============================================================ */
+
+.categoria-circulo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* ============================================================
+   HOVER DEL CÍRCULO
+============================================================ */
+
+.categoria-item:hover .categoria-circulo {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(81, 72, 74, 0.16);
+}
+
+
+.categoria-item:hover .categoria-circulo img {
+    transform: scale(1.07);
+}
+
+
+/* ============================================================
+   NOMBRE
+============================================================ */
+
+.categoria-item h3 {
+    margin: 20px 0 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 500;
+
+    color: #51484a;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.categoria-item:hover h3 {
+    color: #62bcb5;
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 950px) {
+
+    .categorias {
+        padding: 80px 25px 90px;
+    }
+
+    .categorias-encabezado {
+        margin-bottom: 55px;
+    }
+
+    .categorias-grid {
+        column-gap: 50px;
+        row-gap: 55px;
+    }
+
+    .categoria-circulo {
+        width: 205px;
+        height: 205px;
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .categorias {
+        padding: 70px 20px 80px;
+    }
+
+    .categorias-encabezado {
+        margin-bottom: 45px;
+    }
+
+    .categorias-encabezado h2 {
+        font-size: 44px;
+    }
+
+    .categorias-encabezado p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .categorias-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 20px;
+        row-gap: 42px;
+    }
+
+    .categoria-item {
+        max-width: 180px;
+    }
+
+    .categoria-circulo {
+        width: 145px;
+        height: 145px;
+
+        border-width: 4px;
+    }
+
+    .categoria-item h3 {
+        margin-top: 14px;
+        font-size: 23px;
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR PEQUEÑO
+============================================================ */
+
+@media (max-width: 390px) {
+
+    .categorias {
+        padding: 60px 15px 70px;
+    }
+
+    .categorias-grid {
+        column-gap: 12px;
+        row-gap: 38px;
+    }
+
+    .categoria-item {
+        max-width: 160px;
+    }
+
+    .categoria-circulo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .categoria-item h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+
