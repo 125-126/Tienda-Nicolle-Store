@@ -4,665 +4,676 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>Nicolle Store</title>
-
-
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+<title>Nicolle Store</title>
 
 
-    <!-- =====================================================
-         CSS PRINCIPAL
-    ====================================================== -->
+<!-- =====================================================
+     FONT AWESOME
+====================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="css/principal.css"
-    >
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+<!-- =====================================================
+     CSS PRINCIPAL
+====================================================== -->
+
+<link
+    rel="stylesheet"
+    href="css/principal.css"
+>
+```
 
 </head>
 
 <body>
 
+```
+<!-- =====================================================
+     MENÚ
+====================================================== -->
 
-    <!-- =====================================================
-         MENÚ
+<div class="menu-container">
 
-         IMPORTANTE:
-         EL MENÚ COMPLETO ESTÁ EN:
+    <iframe
+        id="menuFrame"
+        src="componentes/menu.html"
+        title="Menú principal de Nicolle Store"
+        scrolling="no"
+        frameborder="0">
+    </iframe>
 
-         componentes/menu.html
+</div>
 
-         AQUÍ NO COLOCAMOS EL CÓDIGO DEL MENÚ.
-    ====================================================== -->
 
-    <div class="menu-container">
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+====================================================== -->
 
-        <iframe
-            id="menuFrame"
-            src="componentes/menu.html"
-            title="Menú principal de Nicolle Store"
-            scrolling="no"
-            frameborder="0">
-        </iframe>
-
-    </div>
-
-
-    <!-- =====================================================
-         CONTENIDO PRINCIPAL
-    ====================================================== -->
-
-    <main id="contenido">
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <section class="hero">
-
-
-            <!-- =================================================
-                 VIDEO DEL HERO
-            ================================================== -->
-
-            <video
-                id="heroVideo"
-                class="hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-            >
-
-                <source
-                    src="video/hero.mp4"
-                    type="video/mp4"
-                >
-
-            </video>
-
-
-            <!-- =================================================
-                 BOTÓN DE AUDIO
-            ================================================== -->
-
-            <button
-                id="heroSoundButton"
-                class="hero-sound-button"
-                type="button"
-                aria-label="Activar sonido"
-                title="Activar sonido"
-            >
-
-                <i class="fa-solid fa-volume-xmark"></i>
-
-            </button>
-
-
-        </section>
-
-
-
-
-<!-- =================================================
-     PRESENTACIÓN / FRASE DE MARCA
-================================================== -->
-
-<section class="marca-presentacion">
-
-    <div class="marca-presentacion-contenido">
-
-        <span class="marca-presentacion-etiqueta">
-            NICOLLE STORE
-        </span>
-
-        <h2>
-            Descubre tu estilo
-        </h2>
-
-        <span class="marca-presentacion-linea"></span>
-
-        <p>
-            Belleza, accesorios y detalles pensados
-            para hacerte sentir especial.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-
-<!-- =================================================
-     CATEGORÍAS
-================================================== -->
-
-<section class="categorias">
-
-    <div class="categorias-contenedor">
-
-
-        <!-- =================================================
-             ENCABEZADO
-        ================================================== -->
-
-        <div class="categorias-encabezado">
-
-            <span class="categorias-etiqueta">
-                EXPLORA
-            </span>
-
-            <h2>
-                Nuestras categorías
-            </h2>
-
-            <span class="categorias-linea"></span>
-
-            <p>
-                Encuentra tus favoritos y descubre todo
-                lo que tenemos preparado para ti.
-            </p>
-
-        </div>
-
-
-        <!-- =================================================
-             GRID DE CATEGORÍAS
-        ================================================== -->
-
-        <div class="categorias-grid">
-
-
-            <!-- =================================================
-                 CABELLO
-            ================================================== -->
-
-            <a
-                href="componentes/menu.html#cabello"
-                class="categoria-item"
-            >
-
-                <div class="categoria-circulo">
-
-                    <img
-                        src="img/categorias/cabello.jpeg"
-                        alt="Cabello"
-                    >
-
-                </div>
-
-                <h3>
-                    Cabello
-                </h3>
-
-            </a>
-
-
-            <!-- =================================================
-                 PIEL
-            ================================================== -->
-
-            <a
-                href="componentes/menu.html#piel"
-                class="categoria-item"
-            >
-
-                <div class="categoria-circulo">
-
-                    <img
-                        src="img/categorias/piel.jpeg"
-                        alt="Piel"
-                    >
-
-                </div>
-
-                <h3>
-                    Piel
-                </h3>
-
-            </a>
-
-
-            <!-- =================================================
-                 MAQUILLAJE
-            ================================================== -->
-
-            <a
-                href="componentes/menu.html#maquillaje"
-                class="categoria-item"
-            >
-
-                <div class="categoria-circulo">
-
-                    <img
-                        src="img/categorias/maquillaje.png"
-                        alt="Maquillaje"
-                    >
-
-                </div>
-
-                <h3>
-                    Maquillaje
-                </h3>
-
-            </a>
-
-
-            <!-- =================================================
-                 ACCESORIOS
-            ================================================== -->
-
-            <a
-                href="componentes/menu.html#accesorios"
-                class="categoria-item"
-            >
-
-                <div class="categoria-circulo">
-
-                    <img
-                        src="img/categorias/pestanas.jpeg"
-                        alt="Accesorios"
-                    >
-
-                </div>
-
-                <h3>
-                    Accesorios
-                </h3>
-
-            </a>
-
-
-            <!-- =================================================
-                 JOYERÍA
-            ================================================== -->
-
-            <a
-                href="componentes/menu.html#joyeria"
-                class="categoria-item"
-            >
-
-                <div class="categoria-circulo">
-
-                    <img
-                        src="img/categorias/joyeria.jpeg"
-                        alt="Joyería"
-                    >
-
-                </div>
-
-                <h3>
-                    Joyería
-                </h3>
-
-            </a>
-
-
-            <!-- =================================================
-                 BOLSOS
-            ================================================== -->
-
-            <a
-                href="componentes/menu.html#bolsos"
-                class="categoria-item"
-            >
-
-                <div class="categoria-circulo">
-
-                    <img
-                        src="img/categorias/bolsos.jpeg"
-                        alt="Bolsos"
-                    >
-
-                </div>
-
-                <h3>
-                    Bolsos
-                </h3>
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-        
-
-<!-- =================================================
-     BANNER DE PRODUCTOS
-================================================== -->
-
-<section class="banner-productos">
-
-    <div class="banner-productos-imagen">
-
-        <img
-            src="img/categorias/portada.jpeg"
-            alt="Colección de productos de Nicolle Store"
-        >
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     FRASE FINAL DE MARCA
-================================================== -->
-
-<section class="frase-final">
-
-    <div class="frase-final-contenido">
-
-        <span class="frase-final-etiqueta">
-            NICOLLE STORE
-        </span>
-
-        <h2>
-            Tu belleza, tu estilo,
-            <em>tu esencia.</em>
-        </h2>
-
-        <span class="frase-final-linea"></span>
-
-        <p>
-            Detalles que hablan de ti.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =================================================
-     FOOTER
-================================================== -->
-
-<footer class="footer">
-
-    <div class="footer-contenedor">
-
-
-        <!-- =================================================
-             MARCA
-        ================================================== -->
-
-        <div class="footer-marca">
-
-            <div class="footer-logo">
-                Nicolle Store
-            </div>
-
-            <span class="footer-subtitulo">
-                Beauty &amp; Style
-            </span>
-
-            <p>
-                Belleza, accesorios y detalles
-                para hacer de cada día algo especial.
-            </p>
-
-        </div>
-
-
-        <!-- =================================================
-             NAVEGACIÓN
-        ================================================== -->
-
-        <div class="footer-navegacion">
-
-            <h3>
-                Explora
-            </h3>
-
-            <a href="#">
-                Inicio
-            </a>
-
-            <a href="#contenido">
-                Categorías
-            </a>
-
-            <a href="componentes/menu.html#cabello">
-                Cabello
-            </a>
-
-            <a href="componentes/menu.html#maquillaje">
-                Maquillaje
-            </a>
-
-        </div>
-
-
-        <!-- =================================================
-             SÍGUENOS
-        ================================================== -->
-
-        <div class="footer-redes">
-
-            <h3>
-                Síguenos
-            </h3>
-
-            <p>
-                Encuéntranos en nuestras redes sociales.
-            </p>
-
-            <div class="footer-redes-iconos">
-
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                    title="Instagram"
-                >
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Facebook"
-                    title="Facebook"
-                >
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="TikTok"
-                    title="TikTok"
-                >
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="WhatsApp"
-                    title="WhatsApp"
-                >
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-
-    </div>
+<main id="contenido">
 
 
     <!-- =================================================
-         PARTE INFERIOR
+         HERO
     ================================================== -->
 
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 Nicolle Store. Todos los derechos reservados.
-        </p>
-
-        <span>
-            Hecho con amor para ti.
-        </span>
-
-    </div>
-
-</footer>        
-
-    </main>
+    <section class="hero">
 
 
-    <!-- =====================================================
-         CONTROL DEL AUDIO DEL HERO
-    ====================================================== -->
+        <!-- =================================================
+             VIDEO DEL HERO
+        ================================================== -->
 
-    <script>
+        <video
+            id="heroVideo"
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+        >
 
-        const heroVideo =
-            document.getElementById("heroVideo");
+            <source
+                src="video/hero.mp4"
+                type="video/mp4"
+            >
 
-        const heroSoundButton =
-            document.getElementById("heroSoundButton");
-
-
-        heroSoundButton.addEventListener(
-            "click",
-            function() {
-
-
-                /*
-                 * Si el video está silenciado,
-                 * activamos el sonido.
-                 */
-
-                if (heroVideo.muted) {
-
-                    heroVideo.muted = false;
+        </video>
 
 
-                    heroSoundButton.innerHTML =
-                        '<i class="fa-solid fa-volume-high"></i>';
+        <!-- =================================================
+             BOTÓN DE AUDIO
+        ================================================== -->
+
+        <button
+            id="heroSoundButton"
+            class="hero-sound-button"
+            type="button"
+            aria-label="Activar sonido"
+            title="Activar sonido"
+        >
+
+            <i class="fa-solid fa-volume-xmark"></i>
+
+        </button>
 
 
-                    heroSoundButton.setAttribute(
-                        "aria-label",
-                        "Silenciar video"
-                    );
+    </section>
 
 
-                    heroSoundButton.setAttribute(
-                        "title",
-                        "Silenciar video"
-                    );
-
-                }
 
 
-                /*
-                 * Si el video tiene sonido,
-                 * lo silenciamos.
-                 */
+    <!-- =================================================
+         PRESENTACIÓN / FRASE DE MARCA
+    ================================================== -->
 
-                else {
+    <section class="marca-presentacion">
 
-                    heroVideo.muted = true;
+        <div class="marca-presentacion-contenido">
+
+            <span class="marca-presentacion-etiqueta">
+                NICOLLE STORE
+            </span>
+
+            <h2>
+                Descubre tu estilo
+            </h2>
+
+            <span class="marca-presentacion-linea"></span>
+
+            <p>
+                Belleza, accesorios y detalles pensados
+                para hacerte sentir especial.
+            </p>
+
+        </div>
+
+    </section>
 
 
-                    heroSoundButton.innerHTML =
-                        '<i class="fa-solid fa-volume-xmark"></i>';
 
 
-                    heroSoundButton.setAttribute(
-                        "aria-label",
-                        "Activar sonido"
-                    );
+    <!-- =================================================
+         CATEGORÍAS
+    ================================================== -->
+
+    <section class="categorias">
+
+        <div class="categorias-contenedor">
 
 
-                    heroSoundButton.setAttribute(
-                        "title",
-                        "Activar sonido"
-                    );
+            <!-- =================================================
+                 ENCABEZADO
+            ================================================== -->
 
-                }
+            <div class="categorias-encabezado">
+
+                <span class="categorias-etiqueta">
+                    EXPLORA
+                </span>
+
+                <h2>
+                    Nuestras categorías
+                </h2>
+
+                <span class="categorias-linea"></span>
+
+                <p>
+                    Encuentra tus favoritos y descubre todo
+                    lo que tenemos preparado para ti.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 GRID DE CATEGORÍAS
+            ================================================== -->
+
+            <div class="categorias-grid">
+
+
+                <!-- =================================================
+                     CABELLO
+                ================================================== -->
+
+                <a
+                    href="paginas/cabello.html"
+                    class="categoria-item"
+                >
+
+                    <div class="categoria-circulo">
+
+                        <img
+                            src="img/categorias/cabello.jpeg"
+                            alt="Cabello"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Cabello
+                    </h3>
+
+                </a>
+
+
+                <!-- =================================================
+                     PIEL
+                ================================================== -->
+
+                <a
+                    href="paginas/piel.html"
+                    class="categoria-item"
+                >
+
+                    <div class="categoria-circulo">
+
+                        <img
+                            src="img/categorias/piel.jpeg"
+                            alt="Piel"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Piel
+                    </h3>
+
+                </a>
+
+
+                <!-- =================================================
+                     MAQUILLAJE
+                ================================================== -->
+
+                <a
+                    href="paginas/maquillaje.html"
+                    class="categoria-item"
+                >
+
+                    <div class="categoria-circulo">
+
+                        <img
+                            src="img/categorias/maquillaje.png"
+                            alt="Maquillaje"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Maquillaje
+                    </h3>
+
+                </a>
+
+
+                <!-- =================================================
+                     ACCESORIOS
+                ================================================== -->
+
+                <a
+                    href="paginas/accesorios.html"
+                    class="categoria-item"
+                >
+
+                    <div class="categoria-circulo">
+
+                        <img
+                            src="img/categorias/accesorios.jpeg"
+                            alt="Accesorios"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Accesorios
+                    </h3>
+
+                </a>
+
+
+                <!-- =================================================
+                     JOYERÍA
+                ================================================== -->
+
+                <a
+                    href="paginas/joyeria.html"
+                    class="categoria-item"
+                >
+
+                    <div class="categoria-circulo">
+
+                        <img
+                            src="img/categorias/joyeria.jpeg"
+                            alt="Joyería"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Joyería
+                    </h3>
+
+                </a>
+
+
+                <!-- =================================================
+                     BOLSOS
+                ================================================== -->
+
+                <a
+                    href="paginas/bolsos.html"
+                    class="categoria-item"
+                >
+
+                    <div class="categoria-circulo">
+
+                        <img
+                            src="img/categorias/bolsos.jpeg"
+                            alt="Bolsos"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Bolsos
+                    </h3>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- =================================================
+         BANNER DE PRODUCTOS
+    ================================================== -->
+
+    <section class="banner-productos">
+
+        <div class="banner-productos-imagen">
+
+            <img
+                src="img/categorias/portada.jpeg"
+                alt="Colección de productos de Nicolle Store"
+            >
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- =================================================
+         FRASE FINAL DE MARCA
+    ================================================== -->
+
+    <section class="frase-final">
+
+        <div class="frase-final-contenido">
+
+            <span class="frase-final-etiqueta">
+                NICOLLE STORE
+            </span>
+
+            <h2>
+                Tu belleza, tu estilo,
+                <em>tu esencia.</em>
+            </h2>
+
+            <span class="frase-final-linea"></span>
+
+            <p>
+                Detalles que hablan de ti.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-contenedor">
+
+
+            <!-- =================================================
+                 MARCA
+            ================================================== -->
+
+            <div class="footer-marca">
+
+                <div class="footer-logo">
+                    Nicolle Store
+                </div>
+
+                <span class="footer-subtitulo">
+                    Beauty &amp; Style
+                </span>
+
+                <p>
+                    Belleza, accesorios y detalles
+                    para hacer de cada día algo especial.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <div class="footer-navegacion">
+
+                <h3>
+                    Explora
+                </h3>
+
+                <a href="#">
+                    Inicio
+                </a>
+
+                <a href="#contenido">
+                    Categorías
+                </a>
+
+                <a href="paginas/cabello.html">
+                    Cabello
+                </a>
+
+                <a href="paginas/piel.html">
+                    Piel
+                </a>
+
+                <a href="paginas/maquillaje.html">
+                    Maquillaje
+                </a>
+
+                <a href="paginas/accesorios.html">
+                    Accesorios
+                </a>
+
+                <a href="paginas/joyeria.html">
+                    Joyería
+                </a>
+
+                <a href="paginas/bolsos.html">
+                    Bolsos
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 SÍGUENOS
+            ================================================== -->
+
+            <div class="footer-redes">
+
+                <h3>
+                    Síguenos
+                </h3>
+
+                <p>
+                    Encuéntranos en nuestras redes sociales.
+                </p>
+
+                <div class="footer-redes-iconos">
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                        title="Instagram"
+                    >
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                        title="Facebook"
+                    >
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="TikTok"
+                        title="TikTok"
+                    >
+
+                        <i class="fa-brands fa-tiktok"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="WhatsApp"
+                        title="WhatsApp"
+                    >
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             PARTE INFERIOR
+        ================================================== -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Nicolle Store. Todos los derechos reservados.
+            </p>
+
+            <span>
+                Hecho con amor para ti.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</main>
+
+
+<!-- =====================================================
+     CONTROL DEL AUDIO DEL HERO
+====================================================== -->
+
+<script>
+
+    const heroVideo =
+        document.getElementById("heroVideo");
+
+    const heroSoundButton =
+        document.getElementById("heroSoundButton");
+
+
+    heroSoundButton.addEventListener(
+        "click",
+        function() {
+
+
+            if (heroVideo.muted) {
+
+                heroVideo.muted = false;
+
+
+                heroSoundButton.innerHTML =
+                    '<i class="fa-solid fa-volume-high"></i>';
+
+
+                heroSoundButton.setAttribute(
+                    "aria-label",
+                    "Silenciar video"
+                );
+
+
+                heroSoundButton.setAttribute(
+                    "title",
+                    "Silenciar video"
+                );
 
             }
 
-        );
+            else {
 
-    </script>
-
-
-    <!-- =====================================================
-         AJUSTE AUTOMÁTICO DEL IFRAME
-
-         Esto permite que el menú móvil se expanda
-         cuando presionamos la hamburguesa.
-    ====================================================== -->
-
-    <script>
-
-        const menuFrame =
-            document.getElementById("menuFrame");
+                heroVideo.muted = true;
 
 
-        window.addEventListener(
-            "message",
-            function(event) {
+                heroSoundButton.innerHTML =
+                    '<i class="fa-solid fa-volume-xmark"></i>';
 
 
-                if (!event.data) {
-                    return;
-                }
+                heroSoundButton.setAttribute(
+                    "aria-label",
+                    "Activar sonido"
+                );
 
 
-                if (
-                    event.data.tipo !==
-                    "nicolle-menu-altura"
-                ) {
-                    return;
-                }
-
-
-                const altura =
-                    Number(event.data.altura);
-
-
-                if (!Number.isFinite(altura)) {
-                    return;
-                }
-
-
-                menuFrame.style.height =
-                    altura + "px";
+                heroSoundButton.setAttribute(
+                    "title",
+                    "Activar sonido"
+                );
 
             }
 
-        );
+        }
 
-    </script>
+    );
+
+</script>
+
+
+<!-- =====================================================
+     AJUSTE AUTOMÁTICO DEL IFRAME
+====================================================== -->
+
+<script>
+
+    const menuFrame =
+        document.getElementById("menuFrame");
+
+
+    window.addEventListener(
+        "message",
+        function(event) {
+
+
+            if (!event.data) {
+                return;
+            }
+
+
+            if (
+                event.data.tipo !==
+                "nicolle-menu-altura"
+            ) {
+                return;
+            }
+
+
+            const altura =
+                Number(event.data.altura);
+
+
+            if (!Number.isFinite(altura)) {
+                return;
+            }
+
+
+            menuFrame.style.height =
+                altura + "px";
+
+        }
+
+    );
+
+</script>
 
 
 </body>
 
 </html>
-
