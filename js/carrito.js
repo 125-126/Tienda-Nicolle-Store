@@ -979,6 +979,10 @@ function configurarFinalizarCompra() {
                 obtenerCarrito();
 
 
+            /* -----------------------------------------
+               VALIDAR CARRITO
+            ----------------------------------------- */
+
             if (carrito.length === 0) {
 
                 mostrarMensajeAgregado(
@@ -990,30 +994,179 @@ function configurarFinalizarCompra() {
             }
 
 
-            let mensaje =
-                "Hola, quiero realizar una compra en Nicolle Store.\n\n";
+            /* -----------------------------------------
+               DATOS GENERALES
+            ----------------------------------------- */
+
+            const cantidadTotal =
+                obtenerCantidadTotal();
 
 
-            carrito.forEach(producto => {
-
-                const subtotal =
-                    Number(producto.precio) *
-                    Number(producto.cantidad);
-
-
-                mensaje +=
-                    `• ${producto.nombre} x${producto.cantidad} - ${formatearPrecio(subtotal)}\n`;
-
-            });
-
-
-            const total =
+            const subtotal =
                 obtenerSubtotal();
 
 
-            mensaje +=
-                `\nTotal: ${formatearPrecio(total)}`;
+            /* -----------------------------------------
+               CONSTRUIR MENSAJE
+            ----------------------------------------- */
 
+            let mensaje =
+                "✨ *NICOLLE STORE* ✨\n" +
+                "Beauty & Style 💕\n\n";
+
+
+            mensaje +=
+                "🛍️ *NUEVA SOLICITUD DE COMPRA*\n\n";
+
+
+            mensaje +=
+                "Hola, me gustaría realizar la siguiente compra:\n\n";
+
+
+            mensaje +=
+                "━━━━━━━━━━━━━━━━━━━━\n";
+
+
+            mensaje +=
+                "📦 *DETALLE DEL PEDIDO*\n";
+
+
+            mensaje +=
+                "━━━━━━━━━━━━━━━━━━━━\n\n";
+
+
+            /* -----------------------------------------
+               PRODUCTOS
+            ----------------------------------------- */
+
+            carrito.forEach(
+                function(producto, indice) {
+
+                    const precioUnitario =
+                        Number(producto.precio);
+
+
+                    const cantidad =
+                        Number(producto.cantidad);
+
+
+                    const subtotalProducto =
+                        precioUnitario * cantidad;
+
+
+                    mensaje +=
+                        `🛍️ *${producto.nombre}*\n`;
+
+
+                    if (producto.categoria) {
+
+                        mensaje +=
+                            `   Categoría: ${producto.categoria}\n`;
+
+                    }
+
+
+                    mensaje +=
+                        `   Cantidad: ${cantidad}\n`;
+
+
+                    mensaje +=
+                        `   Precio unitario: ${formatearPrecio(precioUnitario)}\n`;
+
+
+                    mensaje +=
+                        `   Subtotal: *${formatearPrecio(subtotalProducto)}*\n\n`;
+
+
+                    if (
+                        indice <
+                        carrito.length - 1
+                    ) {
+
+                        mensaje +=
+                            "────────────────────\n\n";
+
+                    }
+
+                }
+            );
+
+
+            /* -----------------------------------------
+               RESUMEN
+            ----------------------------------------- */
+
+            mensaje +=
+                "━━━━━━━━━━━━━━━━━━━━\n";
+
+
+            mensaje +=
+                "🧾 *RESUMEN DEL PEDIDO*\n";
+
+
+            mensaje +=
+                "━━━━━━━━━━━━━━━━━━━━\n\n";
+
+
+            mensaje +=
+                `📦 Productos: ${cantidadTotal}\n`;
+
+
+            mensaje +=
+                `💰 Subtotal: ${formatearPrecio(subtotal)}\n`;
+
+
+            mensaje +=
+                "🚚 Envío: Por calcular\n";
+
+
+            mensaje +=
+                `\n💳 *TOTAL: ${formatearPrecio(subtotal)}*\n\n`;
+
+
+            /* -----------------------------------------
+               MENSAJE FINAL
+            ----------------------------------------- */
+
+            mensaje +=
+                "━━━━━━━━━━━━━━━━━━━━\n";
+
+
+            mensaje +=
+                "📲 *DATOS DE ENTREGA*\n";
+
+
+            mensaje +=
+                "━━━━━━━━━━━━━━━━━━━━\n\n";
+
+
+            mensaje +=
+                "Por favor, indícame la información necesaria para coordinar mi pedido y entrega.\n\n";
+
+
+            mensaje +=
+                "📍 Dirección o zona:\n";
+
+
+            mensaje +=
+                "📞 Teléfono:\n";
+
+
+            mensaje +=
+                "👤 Nombre:\n\n";
+
+
+            mensaje +=
+                "💗 Gracias por elegir *Nicolle Store*.\n";
+
+
+            mensaje +=
+                "Esperamos atenderte muy pronto. ✨";
+
+
+            /* -----------------------------------------
+               CREAR URL DE WHATSAPP
+            ----------------------------------------- */
 
             const url =
                 "https://wa.me/" +
@@ -1021,6 +1174,10 @@ function configurarFinalizarCompra() {
                 "?text=" +
                 encodeURIComponent(mensaje);
 
+
+            /* -----------------------------------------
+               ABRIR WHATSAPP
+            ----------------------------------------- */
 
             window.open(
                 url,
