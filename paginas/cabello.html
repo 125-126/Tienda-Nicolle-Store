@@ -650,6 +650,44 @@
             }
         );
 
+
+         /* =====================================================
+       HERO VIDEO — SONIDO
+    ====================================================== */
+
+    const cabelloHeroVideo = document.getElementById('cabelloHeroVideo');
+    const cabelloHeroSonido = document.getElementById('cabelloHeroSonido');
+
+    if (cabelloHeroVideo && cabelloHeroSonido) {
+
+        cabelloHeroSonido.addEventListener('click', function () {
+
+            cabelloHeroVideo.muted = !cabelloHeroVideo.muted;
+
+            if (cabelloHeroVideo.muted) {
+
+                cabelloHeroSonido.innerHTML =
+                    '<i class="fa-solid fa-volume-xmark"></i>';
+
+                cabelloHeroSonido.setAttribute(
+                    'aria-label',
+                    'Activar sonido'
+                );
+
+            } else {
+
+                cabelloHeroSonido.innerHTML =
+                    '<i class="fa-solid fa-volume-high"></i>';
+
+                cabelloHeroSonido.setAttribute(
+                    'aria-label',
+                    'Silenciar video'
+                );
+            }
+
+        });
+
+    }
     </script>
 
 
