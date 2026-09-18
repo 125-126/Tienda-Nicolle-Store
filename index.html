@@ -60,6 +60,7 @@
 
 <main id="contenido">
 
+```
 <!-- =================================================
      HERO
 ================================================== -->
@@ -72,6 +73,7 @@
     ================================================== -->
 
     <video
+        id="heroVideo"
         class="hero-video"
         autoplay
         muted
@@ -88,10 +90,95 @@
     </video>
 
 
-</section>
+    <!-- =================================================
+         BOTÓN DE AUDIO
+    ================================================== -->
 
+    <button
+        id="heroSoundButton"
+        class="hero-sound-button"
+        type="button"
+        aria-label="Activar sonido"
+        title="Activar sonido"
+    >
+
+        <i class="fa-solid fa-volume-xmark"></i>
+
+    </button>
+
+
+</section>
+```
 
 </main>
+
+<!-- =====================================================
+     CONTROL DEL AUDIO
+====================================================== -->
+
+<script>
+
+    const heroVideo = document.getElementById("heroVideo");
+
+    const heroSoundButton =
+        document.getElementById("heroSoundButton");
+
+
+    heroSoundButton.addEventListener("click", function() {
+
+
+        /*
+         * Si el video está silenciado,
+         * activamos el sonido.
+         */
+
+        if (heroVideo.muted) {
+
+            heroVideo.muted = false;
+
+            heroSoundButton.innerHTML =
+                '<i class="fa-solid fa-volume-high"></i>';
+
+            heroSoundButton.setAttribute(
+                "aria-label",
+                "Silenciar video"
+            );
+
+            heroSoundButton.setAttribute(
+                "title",
+                "Silenciar video"
+            );
+
+        }
+
+
+        /*
+         * Si el video tiene sonido,
+         * lo silenciamos.
+         */
+
+        else {
+
+            heroVideo.muted = true;
+
+            heroSoundButton.innerHTML =
+                '<i class="fa-solid fa-volume-xmark"></i>';
+
+            heroSoundButton.setAttribute(
+                "aria-label",
+                "Activar sonido"
+            );
+
+            heroSoundButton.setAttribute(
+                "title",
+                "Activar sonido"
+            );
+
+        }
+
+    });
+
+</script>
 
 
 
