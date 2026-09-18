@@ -294,6 +294,98 @@ CELULAR PEQUEÑO
 
 }
 
+/* ============================================================
+BOTÓN DE SONIDO
+============================================================ */
+
+.hero-sound-button {
+
+
+position: absolute;
+
+right: 25px;
+bottom: 25px;
+
+z-index: 5;
+
+width: 46px;
+height: 46px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+border: 1px solid rgba(255, 255, 255, 0.70);
+
+border-radius: 50%;
+
+background: rgba(255, 255, 255, 0.82);
+
+color: #62bcb5;
+
+font-size: 16px;
+
+cursor: pointer;
+
+backdrop-filter: blur(8px);
+
+-webkit-backdrop-filter: blur(8px);
+
+box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
+
+transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+
+
+}
+
+/* ============================================================
+EFECTO AL PASAR EL MOUSE
+============================================================ */
+
+.hero-sound-button:hover {
+
+
+transform: scale(1.08);
+
+background: #62bcb5;
+
+color: #ffffff;
+
+box-shadow:
+    0 10px 28px rgba(98, 188, 181, 0.28);
+
+
+}
+
+/* ============================================================
+CELULAR
+============================================================ */
+
+@media (max-width: 600px) {
+
+
+.hero-sound-button {
+
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 44px;
+
+    height: 44px;
+
+    font-size: 15px;
+
+}
+
+
+}
 
 
 
